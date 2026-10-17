@@ -232,15 +232,18 @@
       .desire-card p b{color:var(--ink)}
 
       /* ---------- Marquee ---------- */
-      .marquee{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding:13px 0}
+      /* Dải chữ chạy luôn giữ nền trắng + chữ tối như bản gốc, kể cả khi máy
+         đang ở chế độ tối (không dùng var(--surface)/var(--ink-2) vì chúng
+         đảo sang nền gần đen ở dark mode). */
+      .marquee{border-block:1px solid #d9e8dd;background:#fff;overflow:hidden;padding:13px 0}
       .marquee-track{display:flex;gap:0;width:max-content;flex-wrap:nowrap;will-change:transform}
       .marquee-track span{
-        font-weight:700;font-size:.9rem;color:var(--ink-2);white-space:nowrap;padding-right:14px;
+        font-weight:700;font-size:.9rem;color:#3d5546;white-space:nowrap;padding-right:14px;
         display:inline-flex;align-items:center;gap:14px;flex:none;
       }
-      .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+      .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:#03a84e;flex:none}
       @media (prefers-reduced-motion: no-preference){
-        .marquee-track{animation:mqslide 30s linear infinite}
+        .marquee-track{animation:mqslide 22s linear infinite}
         @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
       }
 
@@ -248,7 +251,7 @@
       .top-marquee{
         height:var(--strip-h);
         display:flex;align-items:center;overflow:hidden;
-        background:var(--surface);border-bottom:1px solid var(--line);
+        background:#fff;border-bottom:1px solid #d9e8dd;
       }
 
       /* ---------- Sections ---------- */
@@ -1244,10 +1247,11 @@
 
     <script>
       // Marquee: two identical halves -> the full list of trades scrolls
-      // through completely, then the loop restarts seamlessly at -50%.
+      // through completely, then the loop continues seamlessly at -50%.
       // Clones are built with cloneNode (no innerHTML re-parse, which can
-      // glitch on mobile webviews), and the animation is restarted cleanly
-      // after rotation / returning to the tab so it never sits frozen.
+      // glitch on mobile webviews). The CSS animation is left running
+      // untouched: no restart on tab return / rotation, so the text never
+      // jumps back to the start mid-scroll.
       (function () {
         var tracks = ['marqueeTrack', 'topMarqueeTrack'].map(function (id) {
           return document.getElementById(id);
@@ -1260,21 +1264,6 @@
             clone.setAttribute('aria-hidden', 'true');
             track.appendChild(clone);
           });
-        });
-        function restart() {
-          tracks.forEach(function (track) {
-            track.style.animation = 'none';
-            void track.offsetWidth; // force reflow so the animation truly resets
-            track.style.animation = '';
-          });
-        }
-        var t;
-        window.addEventListener('orientationchange', function () {
-          clearTimeout(t);
-          t = setTimeout(restart, 300);
-        });
-        document.addEventListener('visibilitychange', function () {
-          if (!document.hidden) restart();
         });
       })();
 
