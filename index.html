@@ -230,6 +230,15 @@
       .desire-card h2{font-size:clamp(1.45rem,3.4vw,2.05rem);font-weight:800;margin-bottom:10px}
       .desire-card p{font-size:1.03rem;color:var(--ink-2);max-width:62em}
       .desire-card p b{color:var(--ink)}
+      .desire-callout{
+        margin-top:18px;background:var(--green-soft);border:1px solid var(--green);
+        border-radius:14px;padding:15px 18px;display:flex;gap:13px;align-items:flex-start;
+        font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.55;max-width:62em;
+      }
+      .desire-callout .dc-ic{
+        width:34px;height:34px;flex:none;border-radius:10px;background:var(--green);color:#fff;
+        display:flex;align-items:center;justify-content:center;margin-top:1px;
+      }
 
       /* ---------- Marquee ---------- */
       /* Dải chữ chạy luôn giữ nền trắng + chữ tối như bản gốc, kể cả khi máy
@@ -244,6 +253,8 @@
       .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:#03a84e;flex:none}
       @media (prefers-reduced-motion: no-preference){
         .marquee-track{animation:mqslide 32s linear infinite}
+        /* Dải thứ hai chạy ngược chiều dải trên (trượt sang phải) */
+        .marquee-track.rev{animation-direction:reverse}
         @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
       }
 
@@ -254,11 +265,15 @@
         display:flex;align-items:center;overflow:hidden;position:relative;
       }
       .mq-frame .marquee-track{flex:none}
-      /* Cụm chữ cố định ở đầu dải — không chạy; chữ chạy trượt qua phía dưới nó. */
+      /* Cụm chữ cố định ở đầu dải — không chạy; chữ chạy trượt qua phía dưới nó.
+         Nền của nhãn kéo sát mép trái khung (margin-left âm bù đúng padding
+         20px của khung, chiều cao phủ kín dải) để che hết phần chữ trượt
+         ra phía sau nhãn, không còn khe hở cho chữ lấp ló ở mép trái. */
       .mq-label{
         flex:none;position:relative;z-index:2;background:#fff;
         font-weight:800;font-size:.9rem;color:#046c33;white-space:nowrap;
-        padding-right:8px;
+        align-self:stretch;display:flex;align-items:center;
+        margin-left:-20px;padding-left:20px;padding-right:8px;
       }
       .mq-label::after{
         content:"";position:absolute;top:0;bottom:0;right:-20px;width:20px;
@@ -537,7 +552,7 @@
     <!-- ===== Dải chữ chạy bên dưới dòng thương hiệu ===== -->
     <div class="top-marquee" aria-hidden="true">
       <div class="mq-frame">
-      <span class="mq-label">Web cho mọi ngành:</span>
+      <span class="mq-label">Web cho mọi sản phẩm:</span>
       <div class="marquee-track" id="topMarqueeTrack">
         <span>Thợ dịch vụ</span><span>Shop online</span><span>Nhà hàng &amp; cà phê</span><span>Homestay</span><span>Spa &amp; nha khoa</span><span>Trung tâm đào tạo</span><span>Bất động sản</span><span>Xây dựng &amp; nội thất</span><span>Doanh nghiệp</span><span>Nông sản OCOP</span><span>Studio cưới</span><span>Garage &amp; cứu hộ</span><span>Gym &amp; yoga</span><span>Mầm non tư thục</span><span>Luật sư &amp; kế toán</span><span>Khóa học online</span><span>Điện máy &amp; xe máy</span><span>Vệ sinh công nghiệp</span>
       </div>
@@ -675,8 +690,8 @@
     <!-- ===== Marquee ngành nghề ===== -->
     <div class="marquee" aria-hidden="true">
       <div class="mq-frame">
-      <span class="mq-label">Web cho mọi ngành:</span>
-      <div class="marquee-track" id="marqueeTrack">
+      <span class="mq-label">Web cho mọi sản phẩm:</span>
+      <div class="marquee-track rev" id="marqueeTrack">
         <span>Thợ dịch vụ</span><span>Shop online</span><span>Nhà hàng &amp; cà phê</span><span>Homestay</span><span>Spa &amp; nha khoa</span><span>Trung tâm đào tạo</span><span>Bất động sản</span><span>Xây dựng &amp; nội thất</span><span>Doanh nghiệp</span><span>Nông sản OCOP</span><span>Studio cưới</span><span>Garage &amp; cứu hộ</span><span>Gym &amp; yoga</span><span>Mầm non tư thục</span><span>Luật sư &amp; kế toán</span><span>Khóa học online</span><span>Điện máy &amp; xe máy</span><span>Vệ sinh công nghiệp</span>
       </div>
       </div>
@@ -693,6 +708,12 @@
             <span class="sec-kicker">SAU KHI CÓ WEB</span>
             <h2 id="desireTitle">Khách tìm thấy bạn trước — và đơn bắt đầu tự tìm đến</h2>
             <p>Hãy hình dung: khách gõ Google tìm dịch vụ trong khu vực, <b>tên bạn hiện ra trước đối thủ</b> với một website gọn gàng, giá rõ ràng, nút gọi và Zalo ngay trước mắt. Họ chưa cần gặp bạn đã thấy đáng tin, xem xong là liên hệ hoặc gửi đơn ngay. Trong lúc bạn bận làm việc, <b>web vẫn mở cửa 24/7 để đón khách mới</b> — phần khách trước đây đang lặng lẽ chảy sang đối thủ có web, nay quay về với bạn.</p>
+            <div class="desire-callout">
+              <span class="dc-ic" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </span>
+              <span>Đóng gói toàn bộ thông tin sản phẩm lên web: khách hỏi tới đâu, gửi link tới đó — nhanh gọn, thuyết phục, chốt đơn tại chỗ.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1389,5 +1410,18 @@
         setInterval(tick, 1000);
       })();
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6ad1c5a13770ba34c7b7ec74/1k51mo04r';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </body>
 </html>
