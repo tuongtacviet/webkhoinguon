@@ -243,16 +243,35 @@
       }
       .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:#03a84e;flex:none}
       @media (prefers-reduced-motion: no-preference){
-        .marquee-track{animation:mqslide 22s linear infinite}
+        .marquee-track{animation:mqslide 32s linear infinite}
         @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+      }
+
+      /* Khung chứa dải chữ: bám đúng khung trang 1180px của nội dung chính,
+         chữ chỉ chạy trong khung này chứ không tràn full màn hình. */
+      .mq-frame{
+        max-width:1180px;margin:0 auto;padding:0 20px;width:100%;
+        display:flex;align-items:center;overflow:hidden;position:relative;
+      }
+      .mq-frame .marquee-track{flex:none}
+      /* Cụm chữ cố định ở đầu dải — không chạy; chữ chạy trượt qua phía dưới nó. */
+      .mq-label{
+        flex:none;position:relative;z-index:2;background:#fff;
+        font-weight:800;font-size:.9rem;color:#046c33;white-space:nowrap;
+        padding-right:8px;
+      }
+      .mq-label::after{
+        content:"";position:absolute;top:0;bottom:0;right:-20px;width:20px;
+        background:linear-gradient(90deg,#fff,rgba(255,255,255,0));pointer-events:none;
       }
 
       /* ---------- Top marquee (chạy ngay dưới dòng thương hiệu, ghim cùng khối đầu trang) ---------- */
       .top-marquee{
         height:var(--strip-h);
-        display:flex;align-items:center;overflow:hidden;
+        overflow:hidden;
         background:#fff;border-bottom:1px solid #d9e8dd;
       }
+      .top-marquee .mq-frame{height:100%}
 
       /* ---------- Sections ---------- */
       section{padding:72px 0}
@@ -517,8 +536,11 @@
 
     <!-- ===== Dải chữ chạy bên dưới dòng thương hiệu ===== -->
     <div class="top-marquee" aria-hidden="true">
+      <div class="mq-frame">
+      <span class="mq-label">Web cho mọi ngành:</span>
       <div class="marquee-track" id="topMarqueeTrack">
         <span>Thợ dịch vụ</span><span>Shop online</span><span>Nhà hàng &amp; cà phê</span><span>Homestay</span><span>Spa &amp; nha khoa</span><span>Trung tâm đào tạo</span><span>Bất động sản</span><span>Xây dựng &amp; nội thất</span><span>Doanh nghiệp</span><span>Nông sản OCOP</span><span>Studio cưới</span><span>Garage &amp; cứu hộ</span><span>Gym &amp; yoga</span><span>Mầm non tư thục</span><span>Luật sư &amp; kế toán</span><span>Khóa học online</span><span>Điện máy &amp; xe máy</span><span>Vệ sinh công nghiệp</span>
+      </div>
       </div>
     </div>
     </div>
@@ -652,8 +674,11 @@
 
     <!-- ===== Marquee ngành nghề ===== -->
     <div class="marquee" aria-hidden="true">
+      <div class="mq-frame">
+      <span class="mq-label">Web cho mọi ngành:</span>
       <div class="marquee-track" id="marqueeTrack">
         <span>Thợ dịch vụ</span><span>Shop online</span><span>Nhà hàng &amp; cà phê</span><span>Homestay</span><span>Spa &amp; nha khoa</span><span>Trung tâm đào tạo</span><span>Bất động sản</span><span>Xây dựng &amp; nội thất</span><span>Doanh nghiệp</span><span>Nông sản OCOP</span><span>Studio cưới</span><span>Garage &amp; cứu hộ</span><span>Gym &amp; yoga</span><span>Mầm non tư thục</span><span>Luật sư &amp; kế toán</span><span>Khóa học online</span><span>Điện máy &amp; xe máy</span><span>Vệ sinh công nghiệp</span>
+      </div>
       </div>
     </div>
 
