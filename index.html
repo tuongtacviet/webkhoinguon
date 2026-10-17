@@ -32,6 +32,7 @@
         --shadow:0 18px 44px -18px rgba(4,80,40,.22);
         --shadow-sm:0 6px 20px -8px rgba(4,80,40,.18);
         --radius:18px;
+        --strip-h:40px;
       }
       @media (prefers-color-scheme: dark){
         :root{
@@ -72,8 +73,8 @@
       p{margin:0}
 
       /* ---------- Top bar ---------- */
+      .sticky-head{position:sticky;top:0;z-index:80}
       .topbar{
-        position:sticky;top:0;z-index:50;
         background:color-mix(in srgb, var(--bg) 88%, transparent);
         backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
         border-bottom:1px solid var(--line);
@@ -232,15 +233,22 @@
 
       /* ---------- Marquee ---------- */
       .marquee{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding:13px 0}
-      .marquee-track{display:flex;gap:0;width:max-content}
+      .marquee-track{display:flex;gap:0;width:max-content;flex-wrap:nowrap;will-change:transform}
       .marquee-track span{
         font-weight:700;font-size:.9rem;color:var(--ink-2);white-space:nowrap;padding-right:14px;
-        display:inline-flex;align-items:center;gap:14px;
+        display:inline-flex;align-items:center;gap:14px;flex:none;
       }
       .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
       @media (prefers-reduced-motion: no-preference){
-        .marquee-track{animation:slide 46s linear infinite}
-        @keyframes slide{to{transform:translateX(-50%)}}
+        .marquee-track{animation:mqslide 30s linear infinite}
+        @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+      }
+
+      /* ---------- Top marquee (chạy ngay dưới dòng thương hiệu, ghim cùng khối đầu trang) ---------- */
+      .top-marquee{
+        height:var(--strip-h);
+        display:flex;align-items:center;overflow:hidden;
+        background:var(--surface);border-bottom:1px solid var(--line);
       }
 
       /* ---------- Sections ---------- */
@@ -482,6 +490,8 @@
   </head>
   <body>
 
+    <!-- ===== Khối đầu trang ghim: dòng thương hiệu + dải chữ chạy ngay bên dưới ===== -->
+    <div class="sticky-head">
     <!-- ===== Top bar ===== -->
     <div class="topbar">
       <div class="wrap topbar-in">
@@ -500,6 +510,14 @@
         </nav>
         <a class="btn small" href="#dat-lam-web">Đặt làm web</a>
       </div>
+    </div>
+
+    <!-- ===== Dải chữ chạy bên dưới dòng thương hiệu ===== -->
+    <div class="top-marquee" aria-hidden="true">
+      <div class="marquee-track" id="topMarqueeTrack">
+        <span>Thợ dịch vụ</span><span>Shop online</span><span>Nhà hàng &amp; cà phê</span><span>Homestay</span><span>Spa &amp; nha khoa</span><span>Trung tâm đào tạo</span><span>Bất động sản</span><span>Xây dựng &amp; nội thất</span><span>Doanh nghiệp</span><span>Nông sản OCOP</span><span>Studio cưới</span><span>Garage &amp; cứu hộ</span><span>Gym &amp; yoga</span><span>Mầm non tư thục</span><span>Luật sư &amp; kế toán</span><span>Khóa học online</span><span>Điện máy &amp; xe máy</span><span>Vệ sinh công nghiệp</span>
+      </div>
+    </div>
     </div>
 
     <!-- ===== Hero ===== -->
@@ -1225,10 +1243,39 @@
     </div>
 
     <script>
-      // Marquee: duplicate track content for a seamless loop
+      // Marquee: two identical halves -> the full list of trades scrolls
+      // through completely, then the loop restarts seamlessly at -50%.
+      // Clones are built with cloneNode (no innerHTML re-parse, which can
+      // glitch on mobile webviews), and the animation is restarted cleanly
+      // after rotation / returning to the tab so it never sits frozen.
       (function () {
-        var track = document.getElementById('marqueeTrack');
-        if (track) track.innerHTML += track.innerHTML;
+        var tracks = ['marqueeTrack', 'topMarqueeTrack'].map(function (id) {
+          return document.getElementById(id);
+        }).filter(Boolean);
+        if (!tracks.length) return;
+        tracks.forEach(function (track) {
+          var items = Array.prototype.slice.call(track.children);
+          items.forEach(function (el) {
+            var clone = el.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+          });
+        });
+        function restart() {
+          tracks.forEach(function (track) {
+            track.style.animation = 'none';
+            void track.offsetWidth; // force reflow so the animation truly resets
+            track.style.animation = '';
+          });
+        }
+        var t;
+        window.addEventListener('orientationchange', function () {
+          clearTimeout(t);
+          t = setTimeout(restart, 300);
+        });
+        document.addEventListener('visibilitychange', function () {
+          if (!document.hidden) restart();
+        });
       })();
 
       // Audience filter
