@@ -108,8 +108,8 @@
       .hero{position:relative;overflow:hidden;background:
         radial-gradient(720px 380px at 88% -60px, var(--green-soft), transparent 65%),
         linear-gradient(180deg, var(--bg-2), var(--bg));}
-      .hero-in{display:grid;gap:44px;padding:52px 0 64px;align-items:center}
-      @media(min-width:980px){.hero-in{grid-template-columns:1.05fr .95fr;padding:76px 0 88px}}
+      .hero-in{display:grid;gap:44px;padding:52px 0 36px;align-items:center}
+      @media(min-width:980px){.hero-in{grid-template-columns:1.05fr .95fr;padding:64px 0 40px}}
       .hero-tag{
         display:inline-flex;align-items:center;gap:8px;background:var(--surface);
         border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;
@@ -531,16 +531,49 @@
       .foot-links{display:grid;gap:8px;font-size:.92rem}
       .foot-links a{text-decoration:none;font-weight:600}
       .foot-links a:hover{text-decoration:underline}
+      /* Thanh rút gọn và dừng sớm ở phía phải (right:92px) để chừa khoảng
+         trống cho bong bóng chat Tawk.to ở góc dưới phải — bong bóng nằm
+         ngoài thanh, không đè lên nút "Đặt ngay". */
       .sticky-cta{
-        position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
-        background:var(--ink);color:#fff;border-radius:16px;padding:12px 14px;
-        display:flex;align-items:center;gap:12px;box-shadow:0 16px 34px -12px rgba(0,0,0,.45);
+        position:fixed;left:10px;right:92px;bottom:10px;z-index:60;
+        background:var(--ink);color:#fff;border-radius:14px;padding:8px 10px 8px 12px;
+        display:flex;align-items:center;gap:10px;box-shadow:0 16px 34px -12px rgba(0,0,0,.45);
       }
-      .sticky-cta .sc-txt{line-height:1.3}
-      .sticky-cta .sc-txt b{display:block;font-size:.95rem}
-      .sticky-cta .sc-txt span{font-size:.76rem;color:#b9cec0}
-      .sticky-cta .btn{margin-left:auto;padding:11px 18px;font-size:.92rem;flex:none}
+      .sticky-cta .sc-txt{line-height:1.25;flex:1;min-width:0}
+      .sticky-cta .sc-txt b{display:block;font-size:.86rem}
+      .sticky-cta .sc-txt span{font-size:.7rem;color:#b9cec0}
+      .sticky-cta .btn{margin-left:auto;padding:8px 14px;font-size:.86rem;flex:none}
       @media(min-width:760px){.sticky-cta{display:none}}
+
+      /* ---------- Vì sao tin (bản demo — thêm mới) ---------- */
+      .trust{padding:28px 0 44px}
+      .fb-grid{display:grid;gap:14px;grid-template-columns:1fr}
+      @media(min-width:820px){.fb-grid{grid-template-columns:repeat(3,1fr)}}
+      @media(min-width:1080px){.fb-grid{grid-template-columns:repeat(4,1fr)}}
+      .fb-card{
+        background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+        padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:14px;
+      }
+      .fb-card .qic{
+        width:38px;height:38px;flex:none;border-radius:11px;background:var(--green-soft);
+        color:var(--green-ink);display:flex;align-items:center;justify-content:center;
+      }
+      .fb-card p{font-size:1rem;color:var(--ink-2);line-height:1.6}
+      .fb-who{margin-top:auto;font-weight:700;font-size:.93rem;color:var(--ink)}
+      .fb-who small{display:block;font-weight:500;color:var(--muted);font-size:.82rem;margin-top:2px}
+
+      /* ---------- Band CTA demo theo khung PAS (thêm mới) ---------- */
+      .pas-band{background:var(--ink);color:#eef6f0;border-radius:24px;padding:38px 30px}
+      @media (prefers-color-scheme: dark){.pas-band{background:#0d2016;border:1px solid var(--line)}}
+      @media(min-width:900px){.pas-band{padding:44px 48px}}
+      .pas-band h2{font-size:clamp(1.5rem,3.4vw,2.1rem);color:#fff}
+      .pas-steps{display:grid;gap:14px;margin-top:24px}
+      @media(min-width:760px){.pas-steps{grid-template-columns:1fr 1fr 1fr}}
+      .pas-step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}
+      .pas-step .ps-tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:#4ade80}
+      .pas-step b{display:block;color:#fff;margin:8px 0 5px;font-size:1rem}
+      .pas-step p{font-size:.9rem;color:#b9cec0}
+      .pas-band .btn{margin-top:26px}
     </style>
   </head>
   <body>
@@ -591,7 +624,7 @@
           <h1>Web trọn gói<br /><span class="price">300.000đ</span> — <span class="hl">có web</span><br />là có khách.</h1>
           <p class="hero-sub">Website 1–5 trang làm theo đúng nghề của bạn: chuẩn mobile, có giỏ hàng &amp; form đặt hàng, nút gọi — Zalo — bản đồ đầy đủ. Khách tìm thấy bạn trên Google, tin tưởng và chốt đơn ngay trên web.</p>
           <div class="hero-cta">
-            <a class="btn" href="#dat-lam-web">Đặt làm web ngay
+            <a class="btn" href="#dat-lam-web">Giữ suất ưu đãi ngay
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
             </a>
             <a class="btn ghost" href="#ai-can-web">Xem ai đang cần web</a>
@@ -704,6 +737,46 @@
         </div>
       </div>
     </header>
+
+    <!-- ===== Vì sao tin (bản demo — thêm mới, không thay đổi nội dung cũ) ===== -->
+    <section class="trust" aria-labelledby="trustTitle">
+      <div class="wrap">
+        <div class="sec-head center" style="margin-bottom:30px">
+          <span class="sec-kicker">VÌ SAO TIN</span>
+          <h2 id="trustTitle">Khách đã làm web nói gì?</h2>
+        </div>
+        <div class="fb-grid">
+          <div class="fb-card">
+            <span class="qic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v7h7v-7H7c0-1.7 1.3-3 3-3V7zm11 0h-4a3 3 0 0 0-3 3v7h7v-7h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+            </span>
+            <p>"Có web xong, khách hỏi là gửi link. Nhanh. Gọn. Đơn về đều hơn hẳn."</p>
+            <div class="fb-who">Chị Lan<small>Chủ shop quần áo</small></div>
+          </div>
+          <div class="fb-card">
+            <span class="qic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v7h7v-7H7c0-1.7 1.3-3 3-3V7zm11 0h-4a3 3 0 0 0-3 3v7h7v-7h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+            </span>
+            <p>"Bàn giao đúng 2 ngày. Nhờ sửa thêm vài chỗ cũng miễn phí, không lằng nhằng."</p>
+            <div class="fb-who">Anh Tuấn<small>Chủ garage ô tô</small></div>
+          </div>
+          <div class="fb-card">
+            <span class="qic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v7h7v-7H7c0-1.7 1.3-3 3-3V7zm11 0h-4a3 3 0 0 0-3 3v7h7v-7h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+            </span>
+            <p>"Trước toàn chốt đơn qua inbox, rất mệt. Giờ khách tự xem menu, tự đặt bàn ngay trên web."</p>
+            <div class="fb-who">Chị Hương<small>Chủ quán ăn</small></div>
+          </div>
+          <div class="fb-card">
+            <span class="qic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a3 3 0 0 0-3 3v7h7v-7H7c0-1.7 1.3-3 3-3V7zm11 0h-4a3 3 0 0 0-3 3v7h7v-7h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+            </span>
+            <p>"Đặt web buổi sáng, chiều đã có demo để xem. Giá rõ ràng, không phát sinh."</p>
+            <div class="fb-who">Anh Đức<small>Chủ cửa hàng điện máy</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== Marquee ngành nghề ===== -->
     <div class="marquee" aria-hidden="true">
@@ -1293,6 +1366,35 @@
       </div>
     </section>
 
+    <!-- ===== Band CTA demo theo khung PAS (thêm mới) ===== -->
+    <section style="padding-top:0" aria-labelledby="pasTitle">
+      <div class="wrap">
+        <div class="pas-band">
+          <h2 id="pasTitle">Đừng để khách hỏi tới… rồi đi mất</h2>
+          <div class="pas-steps">
+            <div class="pas-step">
+              <span class="ps-tag">PAIN — NỖI ĐAU</span>
+              <b>Khách hỏi tới.</b>
+              <p>Mà không có web để gửi. Chỉ có vài tấm ảnh trôi dần trong tin nhắn.</p>
+            </div>
+            <div class="pas-step">
+              <span class="ps-tag">AGITATE — ĐẨY MẠNH</span>
+              <b>Khách không chờ.</b>
+              <p>Họ quay sang đối thủ có web. Chỉ một cú nhấp chuột là mất khách.</p>
+            </div>
+            <div class="pas-step">
+              <span class="ps-tag">SOLVE — GIẢI PHÁP</span>
+              <b>Có web ngay.</b>
+              <p>Web 300k. Bàn giao 1–3 ngày. Sửa miễn phí 7 ngày. Chỉ cọc 150k.</p>
+            </div>
+          </div>
+          <a class="btn" href="#dat-lam-web">Đặt làm web ngay
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Footer ===== -->
     <footer>
       <div class="wrap foot">
@@ -1318,7 +1420,7 @@
 
     <!-- ===== Sticky CTA (mobile) ===== -->
     <div class="sticky-cta">
-      <div class="sc-txt"><b>Ưu đãi 300.000đ · gốc <s>2.000.000đ</s></b><span>Có thời hạn · cọc 150.000đ, nhận web trả nốt</span></div>
+      <div class="sc-txt"><b>Ưu đãi 300.000đ · gốc <s>2.000.000đ</s></b></div>
       <a class="btn" href="#dat-lam-web">Đặt ngay</a>
     </div>
 
