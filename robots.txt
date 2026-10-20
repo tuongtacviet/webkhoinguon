@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webkhoinguon.com/sitemap.xml
