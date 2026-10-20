@@ -616,6 +616,27 @@
       .pas-step p{font-size:.9rem;color:#b9cec0}
       .pas-band .btn{margin-top:26px}
     </style>
+  <style>
+      /* ===== Nút ☰ và menu điện thoại (thêm mới — không ảnh hưởng CSS cũ) ===== */
+      .nav-toggle{display:none;align-items:center;justify-content:center;width:42px;height:42px;
+        border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);
+        cursor:pointer;margin-left:auto;flex:none}
+      .mobile-nav{display:none;background:var(--surface);border-bottom:1px solid var(--line);
+        padding:10px 20px 16px;box-shadow:0 18px 30px -20px rgba(4,80,40,.25)}
+      .mobile-nav a{display:block;padding:12px 4px;color:var(--ink-2);font-weight:600;text-decoration:none;
+        border-bottom:1px solid var(--line)}
+      .mobile-nav a:last-child{border-bottom:0}
+      .mobile-nav a.btn{margin-top:10px;color:#fff}
+      .mobile-nav.open{display:block}
+      @media(max-width:859px){
+        .nav-toggle{display:inline-flex}
+        .topbar-in .btn.small{display:none}
+      }
+      @media(min-width:860px){
+        .nav-toggle{display:none!important}
+        .mobile-nav{display:none!important}
+      }
+    </style>
   </head>
   <body>
 
@@ -639,8 +660,22 @@
           <a href="#ve-web-khoi-nguon">Giới thiệu</a>
         </nav>
         <a class="btn small" href="#dat-lam-web">Đặt làm web</a>
+        <button id="navToggle" class="nav-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileNav">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+        </button>
       </div>
     </div>
+
+    <!-- ===== Menu điện thoại (nút ☰) ===== -->
+    <nav id="mobileNav" class="mobile-nav" aria-label="Menu điện thoại" hidden>
+      <a href="#goi-bao-gom">Gói bao gồm</a>
+      <a href="#ai-can-web">Ai cần website?</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#faq">Hỏi đáp</a>
+      <a href="#ve-web-khoi-nguon">Giới thiệu</a>
+      <a href="#dat-lam-web" class="btn">Đặt làm web</a>
+    </nav>
 
     <!-- ===== Dải chữ chạy bên dưới dòng thương hiệu ===== -->
     <div class="top-marquee" aria-hidden="true">
@@ -1611,5 +1646,23 @@
       })();
     </script>
     <!--End of Tawk.to Script-->
+  <script>
+      // Menu điện thoại (nút ☰) — script độc lập, không can thiệp JS cũ
+      (function(){
+        var t=document.getElementById('navToggle'),n=document.getElementById('mobileNav');
+        if(!t||!n)return;
+        function close(){
+          n.classList.remove('open');n.setAttribute('hidden','');
+          t.setAttribute('aria-expanded','false');
+        }
+        t.addEventListener('click',function(){
+          var open=n.classList.toggle('open');
+          t.setAttribute('aria-expanded',open?'true':'false');
+          if(open){n.removeAttribute('hidden');}else{n.setAttribute('hidden','');}
+        });
+        n.addEventListener('click',function(e){if(e.target.closest('a'))close();});
+        window.addEventListener('resize',function(){if(window.innerWidth>=860)close();});
+      })();
+    </script>
   </body>
 </html>
