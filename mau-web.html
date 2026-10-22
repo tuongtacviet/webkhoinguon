@@ -6,153 +6,910 @@
 <meta property="og:title" content="Mẫu Web Thực Tế Theo Ngành Nghề — Web Khởi Nguồn">
 <meta property="og:description" content="Xem 12 mẫu web cơ bản theo ngành. Web thật làm theo nhu cầu của bạn — chỉ cần liệt kê những gì bạn muốn, chúng tôi thực hiện.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://webkhoinguon.com/mau-web.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:"Be Vietnam Pro",system-ui,sans-serif;color:#1d2b21;background:#f6faf7;line-height:1.55}
 a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
-header{background:#fff;border-bottom:1px solid #d9e8dd;position:sticky;top:0;z-index:50}
+body>header{background:#fff;border-bottom:1px solid #d9e8dd;position:sticky;top:0;z-index:60}
 .hrow{display:flex;align-items:center;gap:18px;padding:12px 0}
 .logo{font-weight:800;font-size:20px;color:#046c33}.logo b{color:#f26d5b}
-nav{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:14.5px}
-nav a{color:#33473a;font-weight:600}nav a.on{color:#046c33}
+body>header nav{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:14.5px}
+body>header nav a{color:#33473a;font-weight:600}body>header nav a.on{color:#046c33}
 .zbtn{background:#03a84e;color:#fff!important;padding:9px 14px;border-radius:999px;font-weight:700}
 .hero{background:linear-gradient(135deg,#046c33,#03a84e);color:#fff;padding:44px 0 38px}
 .hero h1{font-size:32px;line-height:1.25;max-width:760px}
 .note{background:#fff;color:#274435;border-radius:14px;padding:18px 20px;margin-top:20px;font-size:16.5px;box-shadow:0 8px 24px rgba(0,0,0,.15);border-left:6px solid #f5bf4f}
 .note b{color:#046c33}
 .hero .cta{display:inline-block;margin-top:18px;background:#f26d5b;color:#fff;font-weight:700;padding:12px 22px;border-radius:999px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:30px 0 10px}
-.card{background:#fff;border:1px solid #d9e8dd;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.frame{background:#0e1f16}.fbar{display:flex;gap:6px;align-items:center;padding:7px 10px;background:#16382a}
-.fbar i{width:10px;height:10px;border-radius:50%;background:#f26d5b}.fbar i:nth-child(2){background:#f5bf4f}.fbar i:nth-child(3){background:#3ecf6e}
-.fbar em{color:#b9cec0;font-style:normal;font-size:11.5px;margin-left:6px}
-.frame img{width:100%;height:170px;object-fit:cover}
-.cbody{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
-.ctag{font-size:12px;font-weight:700;color:#03a84e;text-transform:uppercase;letter-spacing:.4px}
-.cbody h3{font-size:19px}.cbody p{font-size:14px;color:#4b5f52;flex:1}
-.chips{display:flex;gap:6px;flex-wrap:wrap}.chips span{background:#eef6f0;border:1px solid #d9e8dd;border-radius:999px;padding:3px 9px;font-size:12px;color:#33503f}
 .btn{background:#046c33;color:#fff;border:none;font:inherit;font-weight:700;padding:11px 16px;border-radius:10px;cursor:pointer;text-align:center}
-.btn:hover{background:#03a84e}
-#demo{display:none;background:#fff;border:1px solid #d9e8dd;border-radius:16px;margin:14px 0 30px;overflow:hidden}
-#demo.open{display:block}
-.cta2{background:#0e2a1c;color:#fff;border-radius:16px;padding:26px;margin:6px 0 34px;text-align:center}
+.cta2{background:#0e2a1c;color:#fff;border-radius:16px;padding:26px;margin:26px 0 34px;text-align:center}
 .cta2 h2{font-size:24px;margin-bottom:8px}.cta2 p{color:#cfe3d6;max-width:720px;margin:0 auto 16px}
-footer{background:#0b1f16;color:#b9cec0;padding:26px 0;font-size:14px}
-footer a{color:#e8f3ec;font-weight:600}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}nav a:not(.zbtn){display:none}}
+body>footer{background:#0b1f16;color:#b9cec0;padding:26px 0;font-size:14px}
+body>footer a{color:#e8f3ec;font-weight:600}
+@media(max-width:600px){.hero h1{font-size:25px}body>header nav a:not(.zbtn){display:none}}
+/* ===== THU VIEN MAU (scoped #tv) ===== */
+
+#tv{
+  --bg:#f6f3ee; --surface:#ffffff; --surface2:#efe9df; --ink:#1c1a16; --ink2:#5c564a;
+  --line:#ddd3c2; --accent:#0f5c4d; --accent-ink:#ffffff; --amber:#e8a020; --amber-soft:#fbeecb;
+  --ok:#177245; --ok-bg:#e2f2e7; --shadow:0 10px 30px rgba(28,26,22,.10);
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  #tv{
+    --bg:#171512; --surface:#221f1a; --surface2:#2b2721; --ink:#f2ede3; --ink2:#b8b0a0;
+    --line:#3d372d; --accent:#2ea88a; --accent-ink:#0d201a; --amber:#f0b23e; --amber-soft:#3a2f16;
+    --ok:#4cc38a; --ok-bg:#173527; --shadow:0 10px 30px rgba(0,0,0,.45);
+  }
+}
+#tv *{box-sizing:border-box}
+#tv{scroll-behavior:smooth}
+#tv{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+#tv a{color:var(--accent)}
+#tv button{font-family:inherit;cursor:pointer}
+#tv img{display:block;max-width:100%}
+#tv .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+#tv /* ---------- Header ---------- */
+header{padding:34px 0 8px}
+#tv .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:5px 12px}
+#tv h1{font-size:clamp(28px,5.4vw,46px);line-height:1.12;font-weight:900;margin:16px 0 10px;max-width:16em}
+#tv .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink2);max-width:62ch;margin:0}
+#tv .stats{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+#tv .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;min-width:132px;flex:1}
+#tv .stat b{display:block;font-size:24px;font-weight:900;line-height:1.1}
+#tv .stat span{font-size:12.5px;color:var(--ink2)}
+#tv .note{background:var(--amber-soft);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:16px 0 4px;font-size:14px}
+#tv .note b{font-weight:800}
+
+#tv /* ---------- Filters ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;padding:20px 0 4px;position:sticky;top:0;background:var(--bg);z-index:20;padding-top:14px}
+#tv .fbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:600}
+#tv .fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#tv .count-line{font-size:13px;color:var(--ink2);margin:10px 0 0}
+
+#tv /* ---------- Grid & cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding:14px 0 30px}
+@media (max-width:400px){#tv .grid{grid-template-columns:1fr}}
+#tv .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+#tv .card.approved{outline:2.5px solid var(--ok);outline-offset:-1px}
+#tv .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+#tv .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+#tv .card h2{font-size:19px;margin:0;font-weight:800;line-height:1.25}
+#tv .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--surface2);border:1px solid var(--line);padding:4px 9px;border-radius:999px;white-space:nowrap;color:var(--ink2)}
+#tv .badge-ok{display:none;font-size:11px;font-weight:800;background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok);padding:4px 9px;border-radius:999px;white-space:nowrap}
+#tv .card.approved .badge-ok{display:inline-block}
+#tv .card.approved .tag{display:none}
+#tv .desc{font-size:14px;color:var(--ink2);margin:0}
+#tv .chips{display:flex;flex-wrap:wrap;gap:6px}
+#tv .chip{font-size:12px;background:var(--surface2);border-radius:8px;padding:4px 9px;font-weight:500}
+#tv .palette{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);flex-wrap:wrap}
+#tv .dot{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.18);display:inline-block}
+#tv .card-actions{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+#tv .btn{border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);flex:1}
+#tv .btn.ghost{background:transparent;color:var(--ink)}
+#tv .btn.approve{background:var(--surface);color:var(--ink);border-color:var(--line)}
+#tv .card.approved .btn.approve{background:var(--ok);border-color:var(--ok);color:#fff}
+#tv .btn:active{transform:scale(.98)}
+
+#tv /* ---------- Card cover preview (real photo mini-site) ---------- */
+.mock{border-bottom:1px solid var(--line);background:#e9e4d8}
+#tv .mock-bar{display:flex;align-items:center;gap:8px;background:#d9d2c2;padding:8px 12px;border-bottom:1px solid rgba(0,0,0,.08)}
+@media (prefers-color-scheme: dark){#tv .mock{background:#14120f}#tv .mock-bar{background:#262219}}
+#tv .mdots{display:flex;gap:5px}
+#tv .mdots i{width:9px;height:9px;border-radius:50%;display:block}
+#tv .murl{flex:1;background:rgba(255,255,255,.75);color:#444;font-size:11px;border-radius:6px;padding:3px 10px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (prefers-color-scheme: dark){#tv .murl{background:rgba(0,0,0,.35);color:#cfc8b8}}
+#tv .cv{background:#fff;color:#222;font-size:12px}
+#tv .cv-top{display:flex;justify-content:space-between;gap:8px;background:#33302a;color:#f3ead9;font-size:9px;padding:4px 10px;font-weight:600}
+#tv .cv-head{display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff}
+#tv .cv-logo{font-weight:900;font-size:12.5px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tv .cv-search{flex:1;border:1.5px solid #ddd;border-radius:999px;color:#999;font-size:9.5px;padding:4px 10px;white-space:nowrap;overflow:hidden}
+#tv .cv-cart{font-size:10px;font-weight:800;color:#fff;border-radius:8px;padding:5px 8px;white-space:nowrap}
+#tv .cv-menu{display:flex;gap:10px;padding:5px 10px;color:#fff;font-size:9px;font-weight:700;white-space:nowrap;overflow:hidden}
+#tv .cv-hero{position:relative;height:158px;overflow:hidden}
+#tv .cv-hero img{width:100%;height:100%;object-fit:cover}
+#tv .cv-hero-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,8,5,.62) 0%,rgba(10,8,5,.28) 55%,rgba(10,8,5,0) 100%);color:#fff;padding:14px 12px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+#tv .cv-hero-ov .k{font-size:8.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+#tv .cv-hero-ov .t{font-size:16.5px;font-weight:900;line-height:1.18;max-width:15em}
+#tv .cv-hero-ov .s{font-size:9.5px;opacity:.92;max-width:32em}
+#tv .cv-hero-ov .b{align-self:flex-start;margin-top:5px;font-size:9.5px;font-weight:800;background:#fff;color:#222;border-radius:7px;padding:5px 10px}
+#tv .cv-prods{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#fff}
+#tv .cv-prod{padding:8px;border-right:1px solid #f0ece2}
+#tv .cv-prod:last-child{border-right:0}
+#tv .cv-prod img{width:100%;height:56px;object-fit:cover;border-radius:6px;margin-bottom:5px}
+#tv .cv-prod b{display:block;font-size:9.5px;line-height:1.3;font-weight:600;color:#333;height:2.6em;overflow:hidden}
+#tv .cv-prod span{font-size:10px;font-weight:800}
+#tv .cv-foot{display:flex;justify-content:space-between;padding:6px 10px;color:#fff;font-size:9px;font-weight:600}
+
+#tv /* ---------- Summary bar ---------- */
+.summary{position:sticky;bottom:0;z-index:30;background:var(--surface);border-top:1.5px solid var(--line);box-shadow:0 -8px 24px rgba(0,0,0,.08)}
+#tv .summary-in{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:13px 0}
+#tv .summary b{font-size:16px}
+#tv .summary .names{font-size:13px;color:var(--ink2);flex:1;min-width:200px}
+#tv .summary .sbtn{border-radius:10px;padding:10px 16px;font-size:14px;font-weight:700;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg)}
+#tv .summary .sbtn.ghost{background:transparent;color:var(--ink)}
+#tv .summary .sbtn:disabled{opacity:.45;cursor:not-allowed}
+#tv .toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:90vw;text-align:center}
+#tv .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+#tv /* ---------- Modal / sheet ---------- */
+.overlay{position:fixed;inset:0;background:rgba(15,13,10,.62);z-index:50;display:none;overflow-y:auto;padding:18px 12px 40px}
+#tv .overlay.open{display:block}
+#tv .sheet{background:var(--bg);border-radius:20px;max-width:1120px;margin:0 auto;padding:22px;box-shadow:var(--shadow)}
+#tv .sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+#tv .sheet-head h2{margin:0;font-size:clamp(22px,4vw,30px);font-weight:900}
+#tv .sheet-head p{margin:6px 0 0;color:var(--ink2);font-size:14.5px;max-width:60ch}
+#tv .xbtn{border:1.5px solid var(--line);background:var(--surface);width:40px;height:40px;border-radius:50%;font-size:18px;line-height:1;flex:none;color:var(--ink)}
+#tv .preview-row{display:grid;grid-template-columns:1fr 252px;gap:18px;margin-top:18px;align-items:start}
+@media (max-width:820px){#tv .preview-row{grid-template-columns:1fr}}
+#tv .frame-label{font-size:12px;font-weight:700;text-align:center;margin-bottom:8px;color:var(--ink2);letter-spacing:.06em;text-transform:uppercase}
+#tv .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media (max-width:760px){#tv .detail-grid{grid-template-columns:1fr}}
+#tv .dbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+#tv .dbox h3{margin:0 0 10px;font-size:15px;font-weight:800}
+#tv .dbox ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink2)}
+#tv .dbox li{margin-bottom:5px}
+#tv .sheet-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+#tv .sheet-actions .btn{flex:0 1 auto;padding:12px 20px}
+#tv footer{padding:26px 0 110px;color:var(--ink2);font-size:13.5px}
+@media (max-width:760px){
+  #tv .summary{position:static;box-shadow:none}
+  #tv footer{padding-bottom:30px}
+  #tv .summary-in{padding-bottom:22px}
+}
+#tv .serif{font-family:"Playfair Display",serif}
+#tv .hidden{display:none !important}
+
+#tv /* =====================================================================
+   DEMO SITE (trang chủ mẫu đầy đủ bên trong khung xem trước)
+   ===================================================================== */
+.dm{background:#f4f4f2;color:#26241f;font-size:14px;line-height:1.5;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+#tv .dm a{color:inherit;text-decoration:none}
+#tv .dm-topbar{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;background:#26241f;color:#f5efe2;font-size:11.5px;padding:6px 16px;font-weight:500}
+#tv .dm-topbar b{color:#ffd98a}
+#tv .dm-header{display:flex;align-items:center;gap:16px;background:#fff;padding:12px 16px;flex-wrap:wrap}
+#tv .dm-logo{display:flex;align-items:center;gap:10px;min-width:0}
+#tv .dm-logo-mark{width:42px;height:42px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+#tv .dm-logo-name{font-weight:900;font-size:17.5px;line-height:1.12;color:#26241f}
+#tv .dm-logo-sub{font-size:11px;color:#8a8272;font-weight:600}
+#tv .dm-search{flex:1;min-width:170px;display:flex;border:2px solid #e3ded2;border-radius:10px;overflow:hidden}
+#tv .dm-search span{flex:1;padding:8px 12px;color:#9a927e;font-size:12.5px;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tv .dm-search i{font-style:normal;color:#fff;font-weight:800;font-size:12.5px;padding:8px 14px;display:flex;align-items:center}
+#tv .dm-head-right{display:flex;align-items:center;gap:14px;margin-left:auto}
+#tv .dm-hotline{font-size:11px;color:#8a8272;line-height:1.25;font-weight:600}
+#tv .dm-hotline b{display:block;font-size:15.5px}
+#tv .dm-cart{position:relative;color:#fff;border-radius:10px;padding:8px 13px;font-weight:800;font-size:12.5px;white-space:nowrap}
+#tv .dm-cart em{position:absolute;top:-7px;right:-7px;background:#e02424;color:#fff;font-style:normal;font-size:10px;font-weight:800;border-radius:999px;padding:1px 6px;border:2px solid #fff}
+#tv .dm-menu{display:flex;flex-wrap:wrap;gap:2px 4px;padding:0 10px}
+#tv .dm-menu span{color:#fff;font-size:12.5px;font-weight:700;padding:9px 11px;white-space:nowrap}
+#tv .dm-hero{position:relative;min-height:300px;display:flex;align-items:stretch;overflow:hidden}
+#tv .dm-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#tv .dm-hero-ov{position:relative;background:linear-gradient(90deg,rgba(12,10,6,.72) 0%,rgba(12,10,6,.45) 52%,rgba(12,10,6,.05) 100%);color:#fff;padding:34px 30px;width:100%;display:flex;flex-direction:column;justify-content:center;gap:8px}
+#tv .dm-hero .k{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#ffd98a}
+#tv .dm-hero h3{margin:0;font-size:clamp(24px,3.6vw,38px);line-height:1.14;font-weight:900;max-width:13em}
+#tv .dm-hero p{margin:0;font-size:14px;opacity:.94;max-width:44em}
+#tv .dm-hero-btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+#tv .dm-btn{display:inline-block;font-size:13px;font-weight:800;padding:10px 18px;border-radius:9px;background:#fff;color:#222}
+#tv .dm-btn.alt{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.85)}
+#tv .dm-hero-badge{position:absolute;top:18px;right:18px;width:104px;height:104px;border-radius:50%;background:#f5b301;color:#26241f;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:12px;line-height:1.2;padding:10px;box-shadow:0 8px 20px rgba(0,0,0,.3);transform:rotate(8deg)}
+#tv .dm-hero-badge b{font-size:17px}
+#tv .dm-benefits{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1px solid #e8e2d4}
+#tv .dm-ben{display:flex;gap:10px;padding:13px 14px;border-right:1px solid #f0ebdd;align-items:flex-start}
+#tv .dm-ben:last-child{border-right:0}
+#tv .dm-ben svg{width:26px;height:26px;flex:none;margin-top:2px}
+#tv .dm-ben b{display:block;font-size:12.5px;line-height:1.3}
+#tv .dm-ben span{font-size:11.5px;color:#8a8272;line-height:1.35;display:block}
+#tv .dm-main{display:grid;grid-template-columns:212px 1fr;gap:0;background:#f4f4f2}
+#tv .dm-side{background:#fff;border-right:1px solid #e8e2d4;padding:0 0 10px}
+#tv .dm-side h4{margin:0;padding:11px 14px;color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+#tv .dm-side ul{list-style:none;margin:6px 0 0;padding:0}
+#tv .dm-side li{padding:7px 14px;font-size:12.5px;font-weight:500;color:#4c463a;border-bottom:1px dashed #eee7d6;display:flex;justify-content:space-between;gap:6px}
+#tv .dm-side li i{font-style:normal;color:#b3a888;font-size:11px}
+#tv .dm-side-promo{margin:12px;padding:12px;border-radius:10px;color:#fff}
+#tv .dm-side-promo b{display:block;font-size:13.5px;line-height:1.3}
+#tv .dm-side-promo span{font-size:11.5px;opacity:.92}
+#tv .dm-content{padding:16px}
+#tv .dm-sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:2px 0 12px}
+#tv .dm-sec-head h4{margin:0;font-size:17px;font-weight:900;color:#26241f}
+#tv .dm-sec-head h4::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:8px;background:currentColor;opacity:.0}
+#tv .dm-sec-head .dm-sec-title{display:flex;align-items:center;gap:9px}
+#tv .dm-sec-bar{width:10px;height:22px;border-radius:3px;flex:none}
+#tv .dm-sec-head span{font-size:12px;color:#8a8272;font-weight:600;white-space:nowrap}
+#tv .dm-pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#tv .dm-pcard{background:#fff;border:1px solid #e8e2d4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+#tv .dm-pcard img{width:100%;height:138px;object-fit:cover}
+#tv .dm-pcard-img{position:relative}
+#tv .dm-off{position:absolute;top:8px;left:8px;background:#e02424;color:#fff;font-size:10.5px;font-weight:800;border-radius:6px;padding:2px 7px}
+#tv .dm-hot{position:absolute;top:8px;right:8px;background:#f5b301;color:#26241f;font-size:10px;font-weight:800;border-radius:6px;padding:2px 7px}
+#tv .dm-pcard-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+#tv .dm-pcard b{font-size:13px;line-height:1.35;font-weight:700;color:#33302a}
+#tv .dm-pcard .meta{font-size:11.5px;color:#8a8272}
+#tv .dm-stars{color:#f5a623;font-size:11px;letter-spacing:1px}
+#tv .dm-stars span{color:#8a8272;letter-spacing:0;font-weight:600}
+#tv .dm-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto}
+#tv .dm-price b{font-size:15.5px;color:#d42413;font-weight:900}
+#tv .dm-price s{font-size:12px;color:#a89f8a}
+#tv .dm-add{margin-top:8px;text-align:center;font-size:12px;font-weight:800;color:#fff;border-radius:8px;padding:8px 6px}
+#tv .dm-promo{position:relative;border-radius:12px;overflow:hidden;margin:16px 0 4px;min-height:132px;display:flex;align-items:center}
+#tv .dm-promo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#tv .dm-promo-ov{position:relative;width:100%;padding:20px 24px;color:#fff;background:linear-gradient(90deg,rgba(12,10,6,.78),rgba(12,10,6,.25) 70%,rgba(12,10,6,0))}
+#tv .dm-promo-ov .k{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#ffd98a}
+#tv .dm-promo-ov b{display:block;font-size:clamp(19px,3vw,27px);font-weight:900;line-height:1.2;max-width:20em}
+#tv .dm-promo-ov span{font-size:13px;opacity:.94}
+#tv .dm-news{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px}
+#tv .dm-ncard{background:#fff;border:1px solid #e8e2d4;border-radius:10px;overflow:hidden}
+#tv .dm-ncard img{width:100%;height:104px;object-fit:cover}
+#tv .dm-ncard.feat img{height:150px}
+#tv .dm-ncard div{padding:10px 12px}
+#tv .dm-ncard b{display:block;font-size:13px;line-height:1.4;font-weight:700}
+#tv .dm-ncard span{font-size:11.5px;color:#8a8272}
+#tv .dm-testi{background:#fff;border:1px solid #e8e2d4;border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#4c463a}
+#tv .dm-testi .dm-stars{font-size:13px}
+#tv .dm-footer{color:#e9e2d0}
+#tv .dm-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:18px;padding:22px 20px 8px}
+#tv .dm-footer h5{margin:0 0 9px;font-size:13px;font-weight:800;color:#fff;letter-spacing:.04em;text-transform:uppercase}
+#tv .dm-footer p, #tv .dm-footer li{font-size:12px;line-height:1.6;color:#cfc7b2}
+#tv .dm-footer ul{list-style:none;margin:0;padding:0}
+#tv .dm-footer li{padding:2.5px 0}
+#tv .dm-footer .brandline{font-size:16px;font-weight:900;color:#fff}
+#tv .dm-zalo{display:inline-block;background:#0a68ff;color:#fff;font-weight:800;font-size:12px;border-radius:8px;padding:7px 13px;margin-top:6px}
+#tv .dm-copy{border-top:1px solid rgba(255,255,255,.16);padding:10px 20px 14px;font-size:11.5px;color:#b7ae97;display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
+
+#tv /* ---------- Phone demo ---------- */
+.phone{border:2px solid var(--ink);border-radius:30px;overflow:hidden;background:#fff;max-width:252px;margin:0 auto;width:100%}
+#tv .phone-notch{height:20px;display:flex;justify-content:center;align-items:center;background:#fff}
+#tv .phone-notch i{width:64px;height:5px;border-radius:3px;background:#ccc;display:block}
+#tv .phone-scroll{max-height:600px;overflow-y:auto}
+#tv .phone .dm{border:0;border-radius:0;font-size:11px}
+#tv .phone .dm-topbar{font-size:9px;padding:5px 9px;gap:2px 8px}
+#tv .phone .dm-header{padding:8px 9px;gap:8px}
+#tv .phone .dm-logo-mark{width:30px;height:30px;font-size:14px;border-radius:8px}
+#tv .phone .dm-logo-name{font-size:12.5px}
+#tv .phone .dm-logo-sub{display:none}
+#tv .phone .dm-search{display:none}
+#tv .phone .dm-hotline{display:none}
+#tv .phone .dm-cart{padding:6px 9px;font-size:10.5px}
+#tv .phone .dm-menu{flex-wrap:nowrap;overflow:hidden;padding:0 4px}
+#tv .phone .dm-menu span{font-size:9.5px;padding:6px 6px}
+#tv .phone .dm-hero{min-height:172px}
+#tv .phone .dm-hero-ov{padding:14px 12px}
+#tv .phone .dm-hero h3{font-size:16.5px}
+#tv .phone .dm-hero p{font-size:10px}
+#tv .phone .dm-hero .k{font-size:8.5px}
+#tv .phone .dm-btn{font-size:10px;padding:7px 11px}
+#tv .phone .dm-hero-badge{width:64px;height:64px;font-size:8.5px;top:10px;right:10px}
+#tv .phone .dm-hero-badge b{font-size:11px}
+#tv .phone .dm-benefits{grid-template-columns:1fr 1fr}
+#tv .phone .dm-ben{padding:8px 9px}
+#tv .phone .dm-ben svg{width:19px;height:19px}
+#tv .phone .dm-ben b{font-size:10px}
+#tv .phone .dm-ben span{font-size:9px}
+#tv .phone .dm-main{grid-template-columns:1fr}
+#tv .phone .dm-side{display:none}
+#tv .phone .dm-content{padding:10px}
+#tv .phone .dm-sec-head h4{font-size:13px}
+#tv .phone .dm-sec-head>span{display:none}
+#tv .phone .dm-pgrid{grid-template-columns:1fr 1fr;gap:8px}
+#tv .phone .dm-pcard img{height:84px}
+#tv .phone .dm-pcard b{font-size:10.5px}
+#tv .phone .dm-price b{font-size:12px}
+#tv .phone .dm-add{font-size:10px;padding:6px 4px}
+#tv .phone .dm-promo{min-height:96px;margin:10px 0 2px}
+#tv .phone .dm-promo-ov{padding:12px}
+#tv .phone .dm-news{grid-template-columns:1fr;gap:8px}
+#tv .phone .dm-ncard img, #tv .phone .dm-ncard.feat img{height:86px}
+#tv .phone .dm-footer-grid{grid-template-columns:1fr 1fr;gap:12px;padding:14px 12px 4px}
+#tv .phone .dm-copy{padding:8px 12px 10px}
+@media (max-width:640px){
+  #tv .dm-main{grid-template-columns:1fr}
+  #tv .dm-side{display:none}
+  #tv .dm-benefits{grid-template-columns:1fr 1fr}
+  #tv .dm-pgrid{grid-template-columns:repeat(2,1fr)}
+  #tv .dm-news{grid-template-columns:1fr}
+  #tv .dm-footer-grid{grid-template-columns:1fr 1fr}
+  #tv .dm-hero-badge{display:none}
+  #tv .dm-head-right{margin-left:0}
+  #tv .dm-sec-head>span{display:none}
+  #tv .dm-sec-head{flex-wrap:wrap}
+}
+
 </style></head><body>
 <header><div class="wrap hrow"><a class="logo" href="index.html">WEB <b>KHỞI NGUỒN</b></a>
 <nav><a href="index.html">Trang chủ</a><a href="index.html#goi-bao-gom">Gói bao gồm</a><a href="mau-web.html" class="on">Mẫu web</a><a href="index.html#bang-gia">Bảng giá</a><a class="zbtn" href="https://zalo.me/84868895144" target="_blank" rel="noopener">Zalo: 0868.895.144</a></nav></div></header>
 <section class="hero"><div class="wrap"><h1>Mẫu web thực tế theo ngành nghề — chọn phong cách bạn thích</h1>
 <div class="note">📌 <b>Lưu ý:</b> Đây là các web mẫu cơ bản để bạn tham khảo phong cách, bố cục và tính năng. Web thực tế, chúng tôi làm theo đúng nhu cầu của từng khách hàng — bạn chỉ cần liệt kê tất cả những gì bạn muốn có trên trang web của mình, chúng tôi sẽ thực hiện nó.</div>
 <a class="cta" href="index.html#dat-lam-web">Đặt làm web theo ý bạn →</a></div></section>
-<main class="wrap"><div class="grid"><article class="card" id="card-thoi-trang">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/thoi-trang</em></div>
-      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=70" alt="Thời trang & Shop bán hàng" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Thời trang & Shop bán hàng</div><h3>LAMI FASHION</h3><p>Shop thời trang nữ: banner lớn, lưới sản phẩm có giá + giảm %, giỏ hàng, đặt hàng nhanh qua Zalo.</p>
-      <div class="chips"><span>Váy đầm</span><span>Áo kiểu</span><span>Quần & chân váy</span></div>
-      <button class="btn xem" data-slug="thoi-trang">Xem demo đầy đủ</button></div></article><article class="card" id="card-nha-hang">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/nha-hang</em></div>
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70" alt="Nhà hàng & Quán ăn" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Nhà hàng & Quán ăn</div><h3>NHÀ HÀNG SEN VÀNG</h3><p>Nhà hàng/quán ăn: thực đơn có giá, đặt bàn, gọi món mang đi, bản đồ chỉ đường.</p>
-      <div class="chips"><span>Món chính</span><span>Lẩu các loại</span><span>Hải sản</span></div>
-      <button class="btn xem" data-slug="nha-hang">Xem demo đầy đủ</button></div></article><article class="card" id="card-spa">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/spa</em></div>
-      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=70" alt="Spa & Làm đẹp" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Spa & Làm đẹp</div><h3>AN NHIÊN SPA</h3><p>Spa/thẩm mỹ: bảng giá dịch vụ rõ ràng, đặt lịch hẹn, gói liệu trình và ưu đãi thành viên.</p>
-      <div class="chips"><span>Massage body</span><span>Chăm sóc da</span><span>Gội dưỡng sinh</span></div>
-      <button class="btn xem" data-slug="spa">Xem demo đầy đủ</button></div></article><article class="card" id="card-khach-san">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/khach-san</em></div>
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=70" alt="Khách sạn & Du lịch" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Khách sạn & Du lịch</div><h3>KHÁCH SẠN BIỂN XANH</h3><p>Khách sạn/tour: đặt phòng theo ngày, giá công khai từng hạng phòng, combo và tour nổi bật.</p>
-      <div class="chips"><span>Phòng nghỉ</span><span>Tour trong ngày</span><span>Combo nghỉ dưỡng</span></div>
-      <button class="btn xem" data-slug="khach-san">Xem demo đầy đủ</button></div></article><article class="card" id="card-bat-dong-san">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/bat-dong-san</em></div>
-      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=70" alt="Bất động sản" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Bất động sản</div><h3>ĐẤT VÀNG LAND</h3><p>Bất động sản: danh sách dự án/căn hộ có giá, lọc theo khu vực, form đăng ký xem nhà mẫu.</p>
-      <div class="chips"><span>Căn hộ</span><span>Nhà phố</span><span>Đất nền</span></div>
-      <button class="btn xem" data-slug="bat-dong-san">Xem demo đầy đủ</button></div></article><article class="card" id="card-dich-vu">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/dich-vu</em></div>
-      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=70" alt="Dịch vụ địa phương & Thợ" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Dịch vụ địa phương & Thợ</div><h3>THỢ NHANH 24/7</h3><p>Dịch vụ sửa chữa/thợ tại nhà: báo giá trước, nút gọi khẩn nổi bật, khu vực phục vụ rõ ràng.</p>
-      <div class="chips"><span>Sửa điện</span><span>Sửa nước</span><span>Điện lạnh</span></div>
-      <button class="btn xem" data-slug="dich-vu">Xem demo đầy đủ</button></div></article><article class="card" id="card-ca-phe">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/ca-phe</em></div>
-      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=70" alt="Quán cà phê" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Quán cà phê</div><h3>CÀ PHÊ PHỐ XƯA</h3><p>Quán cà phê: menu đồ uống có giá, đặt bàn/đặt mang đi, không gian quán qua ảnh thật.</p>
-      <div class="chips"><span>Cà phê</span><span>Trà & nước ép</span><span>Bánh ngọt</span></div>
-      <button class="btn xem" data-slug="ca-phe">Xem demo đầy đủ</button></div></article><article class="card" id="card-nha-khoa">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/nha-khoa</em></div>
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=70" alt="Nha khoa & Phòng khám" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Nha khoa & Phòng khám</div><h3>NHA KHOA NỤ CƯỜI</h3><p>Nha khoa/phòng khám: bảng giá dịch vụ công khai, đặt lịch khám, đội ngũ bác sĩ và cam kết vô trùng.</p>
-      <div class="chips"><span>Khám tổng quát</span><span>Niềng răng</span><span>Implant</span></div>
-      <button class="btn xem" data-slug="nha-khoa">Xem demo đầy đủ</button></div></article><article class="card" id="card-giao-duc">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/giao-duc</em></div>
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=70" alt="Giáo dục & Đào tạo" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Giáo dục & Đào tạo</div><h3>ANH NGỮ SKY</h3><p>Trung tâm đào tạo: khóa học có học phí, lịch khai giảng, đăng ký học thử miễn phí.</p>
-      <div class="chips"><span>Tiếng Anh trẻ em</span><span>IELTS</span><span>Giao tiếp</span></div>
-      <button class="btn xem" data-slug="giao-duc">Xem demo đầy đủ</button></div></article><article class="card" id="card-o-to">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/o-to</em></div>
-      <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=70" alt="Ô tô & Xe máy" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Ô tô & Xe máy</div><h3>AUTO PRO GARAGE</h3><p>Gara/showroom ô tô: phụ kiện có giá, đặt lịch bảo dưỡng, bảng giá dịch vụ minh bạch.</p>
-      <div class="chips"><span>Phụ kiện</span><span>Bảo dưỡng</span><span>Độ xe</span></div>
-      <button class="btn xem" data-slug="o-to">Xem demo đầy đủ</button></div></article><article class="card" id="card-me-be">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/me-be</em></div>
-      <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=70" alt="Mẹ & Bé" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Mẹ & Bé</div><h3>SHOP BÉ YÊU</h3><p>Shop mẹ và bé: sản phẩm theo độ tuổi, combo tiết kiệm, tư vấn dinh dưỡng qua Zalo.</p>
-      <div class="chips"><span>Sữa & dinh dưỡng</span><span>Tã bỉm</span><span>Quần áo bé</span></div>
-      <button class="btn xem" data-slug="me-be">Xem demo đầy đủ</button></div></article><article class="card" id="card-doanh-nghiep">
-      <div class="frame"><div class="fbar"><i></i><i></i><i></i><em>mau-web/doanh-nghiep</em></div>
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=70" alt="Công ty & Doanh nghiệp" loading="lazy"></div>
-      <div class="cbody"><div class="ctag">Công ty & Doanh nghiệp</div><h3>AN PHÁT GROUP</h3><p>Web giới thiệu công ty: năng lực, dịch vụ, dự án đã làm, đối tác và form liên hệ báo giá.</p>
-      <div class="chips"><span>Giới thiệu</span><span>Dịch vụ</span><span>Dự án</span></div>
-      <button class="btn xem" data-slug="doanh-nghiep">Xem demo đầy đủ</button></div></article></div>
-<section id="demo" aria-live="polite"></section>
+<main class="wrap">
+<div id="tv">
+<div class="wrap">
+  <header>
+    <span class="kicker">Web Khởi Nguồn · Thư viện mẫu web</span>
+    <h1>12 mẫu web đa ngành — trang chủ demo đầy đủ như web thật</h1>
+    <p class="lede">Mỗi mẫu nay là một <b>trang chủ hoàn chỉnh như web thật đang bán hàng</b>: thanh thông tin trên cùng, header có logo – tìm kiếm – giỏ hàng, banner lớn bằng ảnh thật đúng ngành, lưới sản phẩm / dịch vụ có giá và nhãn giảm giá, banner khuyến mãi, tin tức và chân trang đầy đủ. Bấm <b>Xem trước</b> để xem toàn bộ trang mẫu (bản máy tính + bản điện thoại) — ưng mẫu nào, bấm <b>Chọn mẫu này</b> để đánh dấu lại.</p>
+    <div class="stats">
+      <div class="stat"><b>12</b><span>mẫu đa ngành</span></div>
+      <div class="stat"><b>6</b><span>mẫu chủ lực bán chạy</span></div>
+      <div class="stat"><b>100%</b><span>ảnh thật đúng ngành</span></div>
+      <div class="stat"><b id="statApproved">0/12</b><span>đã chọn</span></div>
+    </div>
+    <div class="note">📌 <b>Cách chọn mẫu:</b> mở “Xem trước” để cuộn hết trang chủ mẫu như khách thật sẽ thấy → ưng mẫu nào bấm “Chọn mẫu này”. Kéo xuống cuối trang, bấm <b>Sao chép danh sách mẫu đã chọn</b> rồi gửi cho chúng tôi qua Zalo khi liên hệ làm web — chúng tôi làm theo đúng phong cách mẫu bạn chọn, thay toàn bộ nội dung bằng thông tin thật của bạn.</div>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Lọc theo nhóm ngành"></nav>
+  <p class="count-line" id="countLine"></p>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    <p>Tất cả 12 mẫu đều theo chuẩn gói web của Web Khởi Nguồn: giá trọn gói 1 lần không phát sinh, giao diện chỉn chu theo ngành, tải nhanh, sẵn giỏ hàng / form đặt hàng, nút gọi + Zalo + bản đồ, SSL miễn phí, trang quản trị tự đăng bài. Tên shop, giá và nội dung trong mẫu là ví dụ minh hoạ sát thực tế từng ngành — khi làm cho khách sẽ thay bằng thông tin thật của khách. Ảnh trong mẫu là ảnh thật đúng ngành nghề để bạn hình dung đúng chất lượng trang khi bàn giao.</p>
+  </footer>
+</div>
+
+<div class="summary">
+  <div class="wrap summary-in">
+    <b id="sumCount">Đã chọn 0/12 mẫu</b>
+    <span class="names" id="sumNames">Chưa chọn mẫu nào — bấm “Chọn mẫu này” ở từng mẫu bạn ưng.</span>
+    <button class="sbtn ghost" id="resetBtn" type="button">Bỏ chọn hết</button>
+    <button class="sbtn" id="copyBtn" type="button" disabled>Sao chép danh sách mẫu đã chọn</button>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+</div>
 <div class="cta2"><h2>Chưa thấy đúng mẫu ngành của bạn?</h2><p>Đây là các web mẫu cơ bản để bạn tham khảo phong cách, bố cục và tính năng. Web thực tế, chúng tôi làm theo đúng nhu cầu của từng khách hàng — bạn chỉ cần liệt kê tất cả những gì bạn muốn có trên trang web của mình, chúng tôi sẽ thực hiện nó.</p><a class="btn" style="background:#f26d5b;display:inline-block" href="index.html#dat-lam-web">Gửi yêu cầu làm web →</a></div>
+
 </main>
 <footer><div class="wrap">© Web Khởi Nguồn — Làm website trọn gói theo yêu cầu · Zalo/Hotline: <a href="https://zalo.me/84868895144" target="_blank" rel="noopener">0868.895.144</a> · <a href="index.html">Trang chủ</a> · <a href="index.html#bang-gia">Bảng giá</a> · <a href="index.html#dat-lam-web">Đặt làm web</a></div></footer>
 <script>
-const DATA = [{"slug": "thoi-trang", "name": "Thời trang & Shop bán hàng", "brand": "LAMI FASHION", "tag": "Váy đầm — công sở — dạ hội", "main": "#c2436b", "dark": "#571c33", "accent": "#f5bf4f", "desc": "Shop thời trang nữ: banner lớn, lưới sản phẩm có giá + giảm %, giỏ hàng, đặt hàng nhanh qua Zalo.", "cats": ["Váy đầm", "Áo kiểu", "Quần & chân váy", "Set bộ", "Phụ kiện"], "products": [{"n": "Váy hoa nhí công sở", "p": "349.000đ", "o": "499.000đ", "pct": 30, "img": "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=70"}, {"n": "Áo sơ mi lụa cao cấp", "p": "299.000đ", "o": "399.000đ", "pct": 25, "img": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=70"}, {"n": "Set vest nữ 2 món", "p": "690.000đ", "o": "890.000đ", "pct": 22, "img": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=70"}, {"n": "Đầm dạ hội sang trọng", "p": "1.290.000đ", "o": "1.690.000đ", "pct": 24, "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70"}], "feats": ["Giỏ hàng + đặt hàng COD", "Ảnh sản phẩm sắc nét", "Nút Zalo tư vấn size", "Chuẩn SEO Google"], "news": ["5 cách phối đồ công sở cả tuần không trùng", "Sale giữa mùa: giảm đến 30% toàn bộ váy đầm"], "addr": "214 Nguyễn Trãi, Q. Thanh Xuân, Hà Nội", "testi": [{"who": "Chị Ngọc Anh", "role": "Khách mua online", "text": "Đặt hàng nhanh, shop tư vấn size rất kỹ. Váy nhận về đẹp hơn cả trong ảnh!"}, {"who": "Chị Thu Hằng", "role": "Chủ shop đối tác", "text": "Từ ngày có web, khách tự xem mẫu và chốt đơn qua Zalo, đỡ rep tin nhắn hẳn."}], "hero": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=70"}, {"slug": "nha-hang", "name": "Nhà hàng & Quán ăn", "brand": "NHÀ HÀNG SEN VÀNG", "tag": "Ẩm thực Việt — đặt bàn online", "main": "#b3541e", "dark": "#5f2c0e", "accent": "#f5bf4f", "desc": "Nhà hàng/quán ăn: thực đơn có giá, đặt bàn, gọi món mang đi, bản đồ chỉ đường.", "cats": ["Món chính", "Lẩu các loại", "Hải sản", "Tráng miệng", "Đồ uống"], "products": [{"n": "Bò lúc lắc đặc biệt", "p": "189.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70"}, {"n": "Lẩu thái hải sản (4 người)", "p": "399.000đ", "o": "499.000đ", "pct": 20, "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=70"}, {"n": "Cá hồi áp chảo sốt bơ", "p": "259.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=70"}, {"n": "Gà nướng muối ớt", "p": "229.000đ", "o": "289.000đ", "pct": 21, "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=70"}], "feats": ["Thực đơn online có giá", "Đặt bàn qua form/Zalo", "Bản đồ Google Maps", "Ảnh món ăn chân thực"], "news": ["Ưu đãi đặt bàn trước: tặng món khai vị", "Thực đơn tiệc cuối năm đã mở nhận đặt"], "addr": "56 Bạch Đằng, Q. Hải Châu, Đà Nẵng", "testi": [{"who": "Anh Minh Tuấn", "role": "Khách đặt tiệc", "text": "Đặt bàn sinh nhật 20 khách qua web, nhà hàng chuẩn bị chu đáo, món nào cũng ngon."}, {"who": "Chị Lan Phương", "role": "Khách quen", "text": "Xem thực đơn online trước nên gọi món nhanh, giá rõ ràng không lo bị hớ."}], "hero": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70"}, {"slug": "spa", "name": "Spa & Làm đẹp", "brand": "AN NHIÊN SPA", "tag": "Massage — chăm sóc da — gội dưỡng sinh", "main": "#5f7a61", "dark": "#2f4433", "accent": "#d9b98a", "desc": "Spa/thẩm mỹ: bảng giá dịch vụ rõ ràng, đặt lịch hẹn, gói liệu trình và ưu đãi thành viên.", "cats": ["Massage body", "Chăm sóc da", "Gội dưỡng sinh", "Nail & mi", "Xông hơi"], "products": [{"n": "Massage body 60 phút", "p": "349.000đ", "o": "450.000đ", "pct": 22, "img": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=70"}, {"n": "Chăm sóc da chuyên sâu", "p": "499.000đ", "o": "650.000đ", "pct": 23, "img": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=70"}, {"n": "Gội đầu dưỡng sinh", "p": "199.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=70"}, {"n": "Liệu trình trẻ hóa da", "p": "1.990.000đ", "o": "2.900.000đ", "pct": 31, "img": "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=900&q=70"}], "feats": ["Đặt lịch hẹn online", "Bảng giá dịch vụ công khai", "Gói liệu trình ưu đãi", "Không gian thư giãn qua ảnh thật"], "news": ["Thẻ thành viên: mua 5 tặng 1 mọi dịch vụ", "Gội dưỡng sinh — trải nghiệm chỉ 99K lần đầu"], "addr": "89 Lý Thường Kiệt, TP. Huế, Thừa Thiên Huế", "testi": [{"who": "Chị Mỹ Linh", "role": "Khách liệu trình da", "text": "Da cải thiện rõ sau 3 buổi. Đặt lịch online tiện, không phải chờ đợi."}, {"who": "Chị Khánh Vy", "role": "Khách massage", "text": "Không gian thơm, yên tĩnh. Kỹ thuật viên tay nghề cao, giá niêm yết rõ ràng."}], "hero": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=70"}, {"slug": "khach-san", "name": "Khách sạn & Du lịch", "brand": "KHÁCH SẠN BIỂN XANH", "tag": "Đặt phòng — tour — combo nghỉ dưỡng", "main": "#0e7490", "dark": "#164e63", "accent": "#f5bf4f", "desc": "Khách sạn/tour: đặt phòng theo ngày, giá công khai từng hạng phòng, combo và tour nổi bật.", "cats": ["Phòng nghỉ", "Tour trong ngày", "Combo nghỉ dưỡng", "Nhà hàng", "Ưu đãi"], "products": [{"n": "Phòng Deluxe hướng biển", "p": "890.000đ", "o": "1.200.000đ", "pct": 26, "img": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=70"}, {"n": "Suite gia đình 2 phòng ngủ", "p": "1.590.000đ", "o": "1.990.000đ", "pct": 20, "img": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=70"}, {"n": "Tour khám phá vịnh 1 ngày", "p": "650.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=70"}, {"n": "Combo 2 ngày 1 đêm", "p": "1.990.000đ", "o": "2.600.000đ", "pct": 23, "img": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=70"}], "feats": ["Đặt phòng theo ngày", "Giá từng hạng phòng rõ ràng", "Tour & combo bán kèm", "Ảnh phòng/khuôn viên thật"], "news": ["Đặt sớm 14 ngày: giảm thêm 10% giá phòng", "Combo hè cho gia đình 4 người chỉ 2,9 triệu"], "addr": "12 Trần Phú, TP. Nha Trang, Khánh Hòa", "testi": [{"who": "Anh Quốc Bảo", "role": "Khách gia đình", "text": "Phòng đúng như ảnh trên web, view biển đẹp. Đặt combo rẻ hơn đặt lẻ nhiều."}, {"who": "Chị Thanh Thảo", "role": "Khách công tác", "text": "Đặt phòng online 5 phút là xong, lễ tân hỗ trợ nhận phòng sớm rất nhiệt tình."}], "hero": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=70"}, {"slug": "bat-dong-san", "name": "Bất động sản", "brand": "ĐẤT VÀNG LAND", "tag": "Căn hộ — nhà phố — đất nền", "main": "#1f4e79", "dark": "#122f4a", "accent": "#d4a017", "desc": "Bất động sản: danh sách dự án/căn hộ có giá, lọc theo khu vực, form đăng ký xem nhà mẫu.", "cats": ["Căn hộ", "Nhà phố", "Đất nền", "Cho thuê", "Dự án mới"], "products": [{"n": "Căn hộ 2PN gần trung tâm", "p": "1,85 tỷ", "o": "2,1 tỷ", "pct": 12, "img": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=70"}, {"n": "Nhà phố 3 tầng mặt tiền", "p": "3,2 tỷ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=70"}, {"n": "Đất nền ven đô 100m²", "p": "950 triệu", "o": "1,1 tỷ", "pct": 14, "img": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=70"}, {"n": "Villa nghỉ dưỡng view đồi", "p": "6,5 tỷ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=70"}], "feats": ["Danh sách BĐS có giá", "Lọc theo khu vực/ngân sách", "Form đăng ký tư vấn", "Ảnh thực tế dự án"], "news": ["Mở bán đợt 1: chiết khấu 3% cho 10 khách đầu", "Hướng dẫn vay mua nhà trả góp 2026"], "addr": "320 Điện Biên Phủ, Q. Bình Thạnh, TP. Hồ Chí Minh", "testi": [{"who": "Anh Văn Đức", "role": "Khách mua căn hộ", "text": "Thông tin trên web rõ ràng, pháp lý minh bạch. Đội tư vấn hỗ trợ vay ngân hàng tận tình."}, {"who": "Chị Hoàng Yến", "role": "Nhà đầu tư", "text": "Theo dõi dự án qua web rất tiện, giá cập nhật thật, không chiêu trò."}], "hero": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=70"}, {"slug": "dich-vu", "name": "Dịch vụ địa phương & Thợ", "brand": "THỢ NHANH 24/7", "tag": "Sửa chữa tận nơi — có mặt nhanh", "main": "#e36414", "dark": "#7a3405", "accent": "#ffd166", "desc": "Dịch vụ sửa chữa/thợ tại nhà: báo giá trước, nút gọi khẩn nổi bật, khu vực phục vụ rõ ràng.", "cats": ["Sửa điện", "Sửa nước", "Điện lạnh", "Sửa khóa", "Sơn & sửa nhà"], "products": [{"n": "Sửa điện tại nhà", "p": "Từ 150.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=70"}, {"n": "Vệ sinh máy lạnh", "p": "250.000đ", "o": "350.000đ", "pct": 29, "img": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=70"}, {"n": "Thông tắc cống nghẹt", "p": "Từ 300.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=900&q=70"}, {"n": "Sửa khóa tận nơi", "p": "Từ 200.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=900&q=70"}], "feats": ["Báo giá trước khi làm", "Nút gọi khẩn 24/7", "Cam kết có mặt nhanh", "Đánh giá khách hàng thật"], "news": ["Giảm 10% vệ sinh máy lạnh đầu mùa nóng", "Khu vực phục vụ mới: thêm 3 phường lân cận"], "addr": "74 Lê Lợi, Q. Ngô Quyền, Hải Phòng", "testi": [{"who": "Anh Phạm Hùng", "role": "Khách sửa điện", "text": "Gọi lúc 9h tối, 30 phút sau thợ có mặt. Báo giá trước, làm xong dọn dẹp sạch sẽ."}, {"who": "Chị Đỗ Mai", "role": "Khách vệ sinh máy lạnh", "text": "Giá đúng như trên web, không phát sinh. Máy lạnh chạy mát hẳn, rất ưng."}], "hero": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=70"}, {"slug": "ca-phe", "name": "Quán cà phê", "brand": "CÀ PHÊ PHỐ XƯA", "tag": "Cà phê — trà — bánh ngọt", "main": "#6f4e37", "dark": "#3e2c20", "accent": "#d9a441", "desc": "Quán cà phê: menu đồ uống có giá, đặt bàn/đặt mang đi, không gian quán qua ảnh thật.", "cats": ["Cà phê", "Trà & nước ép", "Bánh ngọt", "Ăn sáng", "Mang đi"], "products": [{"n": "Cà phê muối", "p": "39.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=70"}, {"n": "Latte nóng", "p": "49.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=70"}, {"n": "Croissant bơ Pháp", "p": "35.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=70"}, {"n": "Trà đào cam sả", "p": "45.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=70"}], "feats": ["Menu online có giá", "Đặt mang đi qua Zalo", "Ảnh không gian quán", "Ưu đãi khung giờ vàng"], "news": ["Giờ vàng 7–9h sáng: mua 1 tặng 1 cà phê", "Bánh mới mỗi cuối tuần — số lượng có hạn"], "addr": "18 Nguyễn Chí Thanh, TP. Đà Lạt, Lâm Đồng", "testi": [{"who": "Bạn Gia Bảo", "role": "Khách quen", "text": "Cà phê muối ở đây là chân ái. Xem menu online rồi đặt mang đi siêu tiện."}, {"who": "Chị Phương Anh", "role": "Khách du lịch", "text": "Quán xinh như ảnh trên web, góc nào cũng chụp được hình đẹp."}], "hero": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=70"}, {"slug": "nha-khoa", "name": "Nha khoa & Phòng khám", "brand": "NHA KHOA NỤ CƯỜI", "tag": "Khám răng — niềng răng — implant", "main": "#0ea5a4", "dark": "#115e59", "accent": "#fbbf24", "desc": "Nha khoa/phòng khám: bảng giá dịch vụ công khai, đặt lịch khám, đội ngũ bác sĩ và cam kết vô trùng.", "cats": ["Khám tổng quát", "Niềng răng", "Implant", "Tẩy trắng", "Nha khoa trẻ em"], "products": [{"n": "Cạo vôi + đánh bóng răng", "p": "299.000đ", "o": "500.000đ", "pct": 40, "img": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=70"}, {"n": "Tẩy trắng răng công nghệ Mỹ", "p": "1.990.000đ", "o": "3.500.000đ", "pct": 43, "img": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=70"}, {"n": "Niềng răng mắc cài", "p": "Từ 25.000.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=70"}, {"n": "Trồng răng Implant", "p": "Từ 12.000.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=900&q=70"}], "feats": ["Bảng giá công khai", "Đặt lịch khám online", "Hồ sơ bác sĩ rõ ràng", "Nhắc lịch tái khám tự động"], "news": ["Khám + tư vấn miễn phí cho khách lần đầu", "Trả góp 0% cho niềng răng và implant"], "addr": "250 Cách Mạng Tháng Tám, Q. Ninh Kiều, Cần Thơ", "testi": [{"who": "Chị Kim Ngân", "role": "Khách tẩy trắng", "text": "Răng trắng lên rõ sau 1 buổi mà không ê buốt. Giá niêm yết sẵn nên rất yên tâm."}, {"who": "Anh Trọng Nghĩa", "role": "Khách niềng răng", "text": "Bác sĩ tư vấn kỹ, lộ trình và chi phí rõ ràng từ đầu, trả góp nhẹ nhàng."}], "hero": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=70"}, {"slug": "giao-duc", "name": "Giáo dục & Đào tạo", "brand": "ANH NGỮ SKY", "tag": "Tiếng Anh — IELTS — luyện thi", "main": "#2563eb", "dark": "#1e3a8a", "accent": "#f59e0b", "desc": "Trung tâm đào tạo: khóa học có học phí, lịch khai giảng, đăng ký học thử miễn phí.", "cats": ["Tiếng Anh trẻ em", "IELTS", "Giao tiếp", "Toán tư duy", "Luyện thi"], "products": [{"n": "Khóa IELTS mục tiêu 6.5+", "p": "8.900.000đ", "o": "10.500.000đ", "pct": 15, "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=70"}, {"n": "Tiếng Anh trẻ em (khóa 3 tháng)", "p": "2.400.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=70"}, {"n": "Giao tiếp cấp tốc", "p": "3.900.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=70"}, {"n": "Toán tư duy tiểu học", "p": "1.800.000đ", "o": "2.200.000đ", "pct": 18, "img": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=70"}], "feats": ["Đăng ký học thử miễn phí", "Lịch khai giảng rõ ràng", "Học phí công khai", "Kết quả học viên thật"], "news": ["Khai giảng tháng này: tặng bộ giáo trình", "Học thử 2 buổi miễn phí mọi khóa trẻ em"], "addr": "96 Phan Chu Trinh, TP. Vinh, Nghệ An", "testi": [{"who": "Phụ huynh bé Minh Khôi", "role": "Học viên trẻ em", "text": "Con học 2 khóa rồi, tiến bộ rõ rệt. Học phí công khai trên web, đăng ký rất nhanh."}, {"who": "Bạn Khánh Linh", "role": "Học viên IELTS", "text": "Từ 5.5 lên 7.0 sau một khóa. Giáo viên chấm bài kỹ từng lỗi nhỏ."}], "hero": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=70"}, {"slug": "o-to", "name": "Ô tô & Xe máy", "brand": "AUTO PRO GARAGE", "tag": "Phụ kiện — bảo dưỡng — độ xe", "main": "#c81e1e", "dark": "#450a0a", "accent": "#facc15", "desc": "Gara/showroom ô tô: phụ kiện có giá, đặt lịch bảo dưỡng, bảng giá dịch vụ minh bạch.", "cats": ["Phụ kiện", "Bảo dưỡng", "Độ xe", "Lốp & ắc quy", "Thu mua xe cũ"], "products": [{"n": "Camera hành trình 2K", "p": "1.890.000đ", "o": "2.590.000đ", "pct": 27, "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=70"}, {"n": "Màn hình Android 10 inch", "p": "4.500.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=70"}, {"n": "Bảo dưỡng định kỳ 10.000km", "p": "499.000đ", "o": "699.000đ", "pct": 29, "img": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=70"}, {"n": "Dán phim cách nhiệt", "p": "3.900.000đ", "o": "5.200.000đ", "pct": 25, "img": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=70"}], "feats": ["Đặt lịch bảo dưỡng", "Giá dịch vụ minh bạch", "Phụ kiện chính hãng", "Bảo hành rõ ràng"], "news": ["Tháng này: miễn phí kiểm tra 20 hạng mục", "Giảm 15% dán phim cách nhiệt toàn xe"], "addr": "78 An Dương Vương, TP. Quy Nhơn, Bình Định", "testi": [{"who": "Anh Tuấn Anh", "role": "Chủ xe Vios", "text": "Đặt lịch bảo dưỡng qua web, đến nơi là làm ngay không phải chờ. Giá đúng niêm yết."}, {"who": "Anh Đức Long", "role": "Khách độ xe", "text": "Lên màn hình Android + camera 360, thợ làm cẩn thận, bảo hành rõ ràng 2 năm."}], "hero": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=70"}, {"slug": "me-be", "name": "Mẹ & Bé", "brand": "SHOP BÉ YÊU", "tag": "Sữa — tã bỉm — đồ dùng cho bé", "main": "#ec4899", "dark": "#831843", "accent": "#fbbf24", "desc": "Shop mẹ và bé: sản phẩm theo độ tuổi, combo tiết kiệm, tư vấn dinh dưỡng qua Zalo.", "cats": ["Sữa & dinh dưỡng", "Tã bỉm", "Quần áo bé", "Đồ chơi", "Dành cho mẹ"], "products": [{"n": "Sữa bột cao cấp 900g", "p": "545.000đ", "o": "620.000đ", "pct": 12, "img": "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&w=900&q=70"}, {"n": "Tã quần gói siêu đại", "p": "329.000đ", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=70"}, {"n": "Set quần áo sơ sinh 5 món", "p": "259.000đ", "o": "320.000đ", "pct": 19, "img": "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=900&q=70"}, {"n": "Xe đẩy gấp gọn du lịch", "p": "1.290.000đ", "o": "1.590.000đ", "pct": 19, "img": "https://images.unsplash.com/photo-1602052577122-f73b9710adba?auto=format&fit=crop&w=900&q=70"}], "feats": ["Lọc theo độ tuổi của bé", "Combo mẹ & bé tiết kiệm", "Hàng chính hãng có tem", "Tư vấn dinh dưỡng miễn phí"], "news": ["Freeship đơn từ 500K trong nội thành", "Quà tặng cho bé sinh nhật trong tháng"], "addr": "33 Quang Trung, TP. Bắc Ninh, Bắc Ninh", "testi": [{"who": "Chị Thanh Tâm", "role": "Mẹ bé 8 tháng", "text": "Mua sữa ở đây yên tâm hàng chuẩn, giá tốt hơn siêu thị. Tư vấn rất có tâm."}, {"who": "Chị Ngọc Mai", "role": "Mẹ bầu", "text": "Đồ sơ sinh mua một lần đủ cả bộ, chất vải mềm, giao hàng nhanh."}], "hero": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=70"}, {"slug": "doanh-nghiep", "name": "Công ty & Doanh nghiệp", "brand": "AN PHÁT GROUP", "tag": "Giới thiệu công ty — dịch vụ — dự án", "main": "#334155", "dark": "#0f172a", "accent": "#38bdf8", "desc": "Web giới thiệu công ty: năng lực, dịch vụ, dự án đã làm, đối tác và form liên hệ báo giá.", "cats": ["Giới thiệu", "Dịch vụ", "Dự án", "Đối tác", "Liên hệ"], "products": [{"n": "Tư vấn & thiết kế", "p": "Liên hệ báo giá", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=70"}, {"n": "Thi công trọn gói", "p": "Theo dự án", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=70"}, {"n": "Bảo trì định kỳ", "p": "Theo gói", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=900&q=70"}, {"n": "Cung ứng vật tư", "p": "Báo giá 24h", "o": "", "pct": null, "img": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=70"}], "feats": ["Hồ sơ năng lực ấn tượng", "Dự án thực tế đã bàn giao", "Form yêu cầu báo giá", "Chuẩn niềm tin doanh nghiệp"], "news": ["Ký kết hợp tác chiến lược với đối tác Nhật", "Hoàn thành bàn giao dự án trọng điểm quý này"], "addr": "128 Bà Triệu, TP. Vũng Tàu, Bà Rịa – Vũng Tàu", "testi": [{"who": "Ông Trần Văn Bình", "role": "Đối tác xây dựng", "text": "Hồ sơ năng lực trình bày chuyên nghiệp, đối tác nước ngoài đánh giá cao web của công ty."}, {"who": "Chị Lê Thu Trang", "role": "Khách hàng doanh nghiệp", "text": "Gửi yêu cầu báo giá qua web, 2 giờ sau đã có nhân viên liên hệ lại."}], "hero": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=70"}];
-const demo = document.getElementById('demo');
-function priceHTML(p){return p.o?`<s style="color:#999;font-weight:400">${p.o}</s> <b style="color:#e11d48">${p.p}</b>`:`<b style="color:#e11d48">${p.p}</b>`}
-function render(d){
-  const sideCats = d.cats.map(c=>`<div style="padding:9px 12px;border-bottom:1px solid #eef0ee;font-size:14px;display:flex;justify-content:space-between"><span>${c}</span><span style="color:#9ca3af">›</span></div>`).join('');
-  const prods = d.products.map(p=>`<div style="position:relative;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:#fff">${p.pct?`<span style="position:absolute;top:8px;left:8px;background:#e11d48;color:#fff;font-size:12px;font-weight:800;padding:3px 8px;border-radius:999px;z-index:2">-${p.pct}%</span>`:''}<img src="${p.img}" style="width:100%;height:140px;object-fit:cover" loading="lazy"><div style="padding:10px"><div style="font-weight:600;font-size:14px;min-height:38px">${p.n}</div><div style="font-size:14px">${priceHTML(p)}</div><div style="margin-top:8px;background:${d.main};color:#fff;text-align:center;border-radius:8px;padding:7px;font-size:13px;font-weight:700">Đặt hàng / Đặt lịch</div></div></div>`).join('');
-  const feats = d.feats.map(f=>`<div style="flex:1;min-width:150px;background:#f6f8f7;border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px;font-size:13.5px">✅ ${f}</div>`).join('');
-  const news = d.news.map(n=>`<div style="flex:1;min-width:220px;border:1px solid #e5e7eb;border-radius:10px;padding:12px;font-size:14px">📰 ${n}</div>`).join('');
-  const testi = d.testi.map(t=>`<div style="flex:1;min-width:240px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px"><div style="color:#f59e0b;font-size:14px">★★★★★</div><p style="font-size:14px;margin:6px 0">“${t.text}”</p><b style="font-size:13.5px">${t.who}</b> <span style="color:#6b7280;font-size:12.5px">— ${t.role}</span></div>`).join('');
-  const footCats = d.cats.map(c=>`${c}<br>`).join('');
-  demo.innerHTML = `<div style="background:${d.dark};color:#fff;padding:8px 14px;font-size:13px;display:flex;gap:14px;flex-wrap:wrap"><span>📍 ${d.addr}</span><span>📞 Hotline: 0909.999.999</span><span style="margin-left:auto">🕘 Mở cửa 8:00 – 21:00 hằng ngày</span></div>
-  <div style="display:flex;align-items:center;gap:14px;padding:14px;flex-wrap:wrap"><div style="font-size:23px;font-weight:800;color:${d.main}">${d.brand}</div><div style="flex:1;min-width:180px;display:flex;border:1px solid #d1d5db;border-radius:999px;overflow:hidden"><input placeholder="Tìm sản phẩm, dịch vụ..." style="flex:1;border:none;padding:9px 14px;font:inherit;font-size:13.5px"><span style="background:${d.main};color:#fff;padding:9px 16px;font-size:13.5px">🔍</span></div><div style="font-weight:700;font-size:14px">🛒 Giỏ hàng (0)</div></div>
-  <div style="background:${d.main};color:#fff;padding:9px 14px;display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;font-weight:600"><span>Trang chủ</span>${d.cats.map(c=>`<span>${c}</span>`).join('')}<span>Liên hệ</span></div>
-  <div style="position:relative"><img src="${d.hero}" style="width:100%;height:300px;object-fit:cover"><div style="position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;padding:34px 16px 14px"><div style="font-size:24px;font-weight:800">${d.brand}</div><div style="font-size:14.5px;margin-bottom:10px">${d.tag}</div><span style="background:${d.accent};color:#1c1917;font-weight:800;padding:8px 14px;border-radius:999px;font-size:13px">Xem sản phẩm</span> <span style="background:#fff;color:#111;font-weight:700;padding:8px 14px;border-radius:999px;font-size:13px">Đặt hàng ngay</span></div></div>
-  <div style="padding:16px"><div style="display:flex;gap:10px;flex-wrap:wrap">${feats}</div>
-  <div class="dbody" style="display:flex;gap:16px;margin-top:18px;align-items:flex-start">
-    <aside style="width:230px;flex:none;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
-      <div style="background:${d.main};color:#fff;font-weight:800;padding:10px 12px;font-size:14px">📂 DANH MỤC</div>${sideCats}
-      <div style="padding:12px;background:#f6f8f7;font-size:13px"><b>🎧 Hỗ trợ 24/7</b><br>Hotline: 0909.999.999<br><span style="color:#6b7280">Tư vấn miễn phí, báo giá nhanh trong ngày.</span></div>
-      <div style="padding:12px;font-size:13px;border-top:1px solid #eef0ee"><b>📍 Địa chỉ</b><br>${d.addr}</div>
-    </aside>
-    <div style="flex:1;min-width:260px">
-      <h3 style="font-size:19px;margin-bottom:10px">Sản phẩm / Dịch vụ tiêu biểu</h3>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px" class="pgrid">${prods}</div>
-      <div style="margin-top:16px;background:${d.accent};color:#231f04;border-radius:12px;padding:16px;text-align:center;font-weight:800;font-size:17px">🎉 ƯU ĐÃI THÁNG NÀY — GIẢM ĐẾN 30% + TẶNG KÈM DỊCH VỤ HẬU MÃI</div>
-    </div>
-  </div>
-  <h3 style="margin:24px 0 10px;font-size:19px">Khách hàng nói gì về ${d.brand}?</h3><div style="display:flex;gap:12px;flex-wrap:wrap">${testi}</div>
-  <h3 style="margin:22px 0 10px;font-size:19px">Tin tức & ưu đãi</h3><div style="display:flex;gap:12px;flex-wrap:wrap">${news}</div></div>
-  <div style="background:${d.dark};color:#e8e8e8;padding:20px 14px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;font-size:13.5px" class="fgrid">
-    <div><b style="color:#fff;font-size:15px">${d.brand}</b><br><span style="color:#c9d4cf">${d.tag}</span><br>📍 ${d.addr}<br>📞 0909.999.999</div>
-    <div><b style="color:#fff">Danh mục</b><br>${footCats}</div>
-    <div><b style="color:#fff">Hỗ trợ khách hàng</b><br>Chính sách bảo hành<br>Hướng dẫn đặt hàng<br>Chính sách đổi trả<br>Câu hỏi thường gặp</div>
-    <div><b style="color:#fff">Kết nối với chúng tôi</b><br><span style="color:#c9d4cf">🕘 8:00 – 21:00 hằng ngày</span><br><br><a href="https://zalo.me/84868895144" target="_blank" rel="noopener" style="background:#03a84e;color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;display:inline-block">💬 Chat Zalo ngay</a></div>
-  </div>
-  <style>@media(max-width:760px){#demo .dbody{flex-direction:column}#demo aside{width:100%!important}#demo .pgrid{grid-template-columns:repeat(2,1fr)!important}#demo .fgrid{grid-template-columns:repeat(2,1fr)!important}}</style>`;
-  demo.classList.add('open');
-  demo.scrollIntoView({behavior:'smooth',block:'start'});
+var BEN = {
+  support:["phone","Tư vấn 24/7","Hoàn toàn miễn phí"],
+  cod:["cash","Thanh toán khi nhận hàng","Kiểm tra hàng trước khi trả tiền"],
+  ship:["truck","Giao hàng toàn quốc","Nhanh 2–4 ngày làm việc"],
+  warranty:["shield","Bảo hành chính hãng","Đổi trả dễ dàng, không làm khó"],
+  price:["tag","Giá niêm yết rõ ràng","Không phát sinh chi phí ẩn"],
+  booking:["cal","Đặt lịch online","Xác nhận lại trong ít phút"],
+  quality:["star","Cam kết chất lượng","Không hài lòng hoàn tiền"],
+  fast:["clock","Phục vụ nhanh chóng","Đúng hẹn đã cam kết với khách"]
+};
+var ICONS = {
+  phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  cash:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/>',
+  truck:'<rect x="1" y="4" width="14" height="12" rx="1"/><path d="M15 9h4l3 3v4h-7z"/><circle cx="5.5" cy="18.5" r="2.2"/><circle cx="17.5" cy="18.5" r="2.2"/>',
+  shield:'<path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4"/>',
+  tag:'<path d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r="1.3"/>',
+  cal:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  star:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  wrench:'<path d="M14.7 6.3a4.6 4.6 0 0 0-6.1 5.9L3 17.8V21h3.2l5.6-5.6a4.6 4.6 0 0 0 5.9-6.1L14 13l-3-3 3.7-3.7z"/>'
+};
+function benIcon(k){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[k]||ICONS.star)+'</svg>'; }
+
+var TEMPLATES = [
+{ id:"thoi-trang", num:"01", group:"ban-hang", groupLabel:"Bán hàng",
+  name:"Shop Thời Trang", brand:"ATELIER", brandSub:"Thời trang nữ · Hàng thiết kế", url:"mau-thoi-trang.webkhoinguon.com",
+  desc:"Cho shop quần áo, phụ kiện bán online: khách xem bộ sưu tập, chọn size/màu, bỏ giỏ và thanh toán ngay trên web.",
+  phone:"0901 246 868", email:"shop@atelier.vn", hours:"8h30 – 21h30 hằng ngày", address:"128 Nguyễn Trãi, Thanh Xuân, Hà Nội",
+  heroKicker:"Bộ sưu tập Thu 2026", heroTitle:"Đẹp mỗi ngày, giá xưởng tận gốc", heroSub:"Hàng mới về mỗi tuần · Đổi trả 7 ngày · Freeship đơn từ 499K",
+  cta1:"Mua ngay", cta2:"Xem bộ sưu tập", heroBadge:["Giảm đến","40%","váy đầm tuần này"],
+  menu:["Trang chủ","Váy đầm","Áo & Blazer","Chân váy","Set bộ","Sale","Tin tức"],
+  cats:[["Váy hoa nhí",24],["Váy công sở",18],["Áo blazer",12],["Áo len & cardigan",15],["Set bộ",9],["Túi xách",11],["Giày cao gót",8]],
+  benefits:["support","cod","ship","warranty"],
+  products:[
+    ["p1","Váy midi hoa nhí vintage dáng dài","349.000đ","449.000đ","-22%","Đã bán 1,2k"],
+    ["p2","Set đồ công sở thanh lịch 2 món","459.000đ","590.000đ","-22%","Đã bán 860"],
+    ["p3","Váy dạ hội dự tiệc sang trọng","529.000đ","","Bán chạy","Đã bán 640"],
+    ["p4","Outfit dạo phố Thu – Đông phối sẵn","399.000đ","499.000đ","-20%","Đã bán 512"],
+    ["p5","Set len phối đồ phong cách Hàn Quốc","489.000đ","","Mới về","Đã bán 388"],
+    ["p6","Váy liền thân công sở tay dài","429.000đ","520.000đ","-17%","Đã bán 745"]],
+  itemHead:"Sản phẩm bán chạy", itemSub:"Cập nhật mỗi tuần · Đủ size S–XL",
+  promoKicker:"Ưu đãi giữa mùa", promoTitle:"SALE ĐẾN 40% — toàn bộ váy đầm & set bộ", promoSub:"Áp dụng đến hết Chủ nhật · Nhập mã ATELIER10 giảm thêm 10% cho đơn đầu tiên",
+  news:[["5 cách phối blazer đi làm cả tuần không chán","18/10/2026"],["BST Thu 2026: gam màu đất & len dệt lên ngôi","15/10/2026"],["Bí quyết chọn váy theo từng dáng người","10/10/2026"]],
+  newsHead:"Góc phối đồ & xu hướng",
+  testi:"“Web load nhanh, đặt hàng 2 phút là xong. Shop gói hàng đẹp lắm!” — Chị Hương, Hà Nội",
+  about:"ATELIER chuyên thời trang nữ thiết kế, may đo theo form Việt, chất vải tuyển chọn. Đổi trả 7 ngày, kiểm tra hàng trước khi thanh toán.",
+  palette:["#1c1a16","#d9a05b","#f3ead9"], main:"#1c1a16", accent:"#b3543f", heroBg:"linear-gradient(120deg,#262019,#4a3a26)",
+  sections:["Topbar hotline – email – giờ mở cửa","Header: logo, ô tìm kiếm, giỏ hàng","Menu ngành hàng + banner hero ảnh thật","Dải tiện ích: tư vấn 24/7, COD, giao hàng, đổi trả","Lưới sản phẩm có giá, giá cũ, nhãn giảm %, đã bán","Banner khuyến mãi giữa trang","Mục tin tức / góc phối đồ","Chân trang 4 cột: giới thiệu, danh mục, hỗ trợ, Zalo"],
+  features:["Giỏ hàng & thanh toán online","Lọc size / màu / khoảng giá","Form tư vấn size qua Zalo","Banner khuyến mãi theo đợt"],
+  fit:"Shop thời trang nữ, giày dép, túi xách, phụ kiện, mỹ phẩm bán lẻ." },
+
+{ id:"nha-hang", num:"02", group:"an-uong", groupLabel:"Ăn uống & Cà phê",
+  name:"Nhà Hàng – Quán Ăn", brand:"CƠM NIÊU SÀI GÒN", brandSub:"Cơm niêu · Lẩu · Nướng", url:"mau-nha-hang.webkhoinguon.com",
+  desc:"Cho nhà hàng, quán ăn, quán nhậu: thực đơn có giá rõ ràng, khách đặt bàn trước và gọi món mang về ngay trên web.",
+  phone:"0909 318 686", email:"datban@comnieusaigon.vn", hours:"9h00 – 22h00 hằng ngày", address:"45 Võ Văn Tần, Quận 3, TP.HCM",
+  heroKicker:"Mở cửa 9h – 22h mỗi ngày", heroTitle:"Cơm niêu nóng hổi, vị quê đậm đà", heroSub:"Đặt bàn trước 30 phút · Giao mang về trong 5km · Nhóm 6 người giảm 10%",
+  cta1:"Đặt bàn ngay", cta2:"Xem thực đơn", heroBadge:["Giảm","10%","nhóm từ 6 khách"],
+  menu:["Trang chủ","Thực đơn","Combo gia đình","Đặt bàn","Ưu đãi","Tin tức","Liên hệ"],
+  cats:[["Cơm niêu",8],["Món chính",16],["Lẩu các loại",6],["Đồ nướng",9],["Combo gia đình",5],["Rau & canh",7],["Đồ uống",10]],
+  benefits:["booking","price","fast","quality"],
+  products:[
+    ["p1","Phở bò tái nạm gầu — nước dùng ninh 8 giờ","55.000đ","","Bán chạy","Gọi 320+ lần/tuần"],
+    ["p2","Mâm cơm gia đình 4 người (5 món)","299.000đ","350.000đ","-15%","Đủ 4–5 người ăn"],
+    ["p3","Thịt nướng tảng sốt tiêu đen","189.000đ","","","Kèm rau sống & bánh tráng"],
+    ["p4","Lẩu thập cẩm hải sản & bò Mỹ","299.000đ","","","Nồi 3–4 người"],
+    ["p5","Combo nướng – lẩu cuối tuần","399.000đ","460.000đ","-13%","Tặng kèm nước ngọt"],
+    ["p6","Set lẩu nướng tại bàn cho 2 người","259.000đ","","Mới","Đặt trước giảm thêm 5%"]],
+  itemHead:"Món được gọi nhiều nhất", itemSub:"Giá đã gồm VAT · Phục vụ tại bàn & mang về",
+  promoKicker:"Ưu đãi đặt bàn", promoTitle:"Đặt bàn trước — tặng trà đá & tráng miệng cho cả bàn", promoSub:"Áp dụng thứ 2 – thứ 6 · Nhóm từ 6 khách giảm thêm 10% hóa đơn món ăn",
+  news:[["Thực đơn trưa văn phòng chỉ từ 45K, ra món trong 10 phút","17/10/2026"],["Khai trương chi nhánh 2 — giảm 20% toàn menu tuần đầu","12/10/2026"],["Cách chọn mâm cơm cúng gia tiên chuẩn vị Bắc","05/10/2026"]],
+  newsHead:"Tin tức & ưu đãi của quán",
+  testi:"“Khách đặt bàn qua web tăng hẳn, đỡ sót cuộc gọi giờ cao điểm.” — Anh Tuấn, chủ quán",
+  about:"Cơm Niêu Sài Gòn phục vụ cơm niêu, lẩu và đồ nướng theo vị gia đình Việt. Nguyên liệu tươi mỗi sáng, không dùng bột ngọt quá tay, giá niêm yết rõ ràng.",
+  palette:["#7c2415","#e8a020","#fdf3e0"], main:"#7c2415", accent:"#c0392b", heroBg:"linear-gradient(120deg,#5f1a0e,#93331a)",
+  sections:["Topbar hotline đặt bàn – giờ mở cửa","Header: logo, tìm món, nút đặt bàn","Hero ảnh món ăn full chiều ngang","Menu món dạng lưới có ảnh & giá","Banner ưu đãi đặt bàn giữa trang","Mục tin tức / thực đơn theo tuần","Chân trang: địa chỉ, bản đồ, hotline, Zalo"],
+  features:["Form đặt bàn trực tuyến","Thực đơn cập nhật giá dễ dàng","Nút gọi giao hàng nổi bật","Album không gian quán"],
+  fit:"Nhà hàng, quán cơm, quán nhậu, lẩu nướng, tiệm ăn gia đình." },
+
+{ id:"spa", num:"03", group:"lam-dep", groupLabel:"Làm đẹp & Sức khỏe",
+  name:"Spa – Làm Đẹp", brand:"LOTUS SPA", brandSub:"Spa & chăm sóc da chuyên sâu", url:"mau-spa.webkhoinguon.com",
+  desc:"Cho spa, salon tóc, nail, thẩm mỹ: bảng giá dịch vụ minh bạch, khách đặt lịch online, xem ảnh không gian thật.",
+  phone:"0933 520 686", email:"booking@lotusspa.vn", hours:"9h00 – 20h00 hằng ngày", address:"72 Lê Lợi, TP. Huế, Thừa Thiên Huế",
+  heroKicker:"Đặt lịch hôm nay giảm 20%", heroTitle:"Thư giãn trọn vẹn, đẹp lên mỗi ngày", heroSub:"Chuyên viên 5+ năm kinh nghiệm · Sản phẩm chính hãng · Không gian riêng tư, yên tĩnh",
+  cta1:"Đặt lịch ngay", cta2:"Bảng giá dịch vụ", heroBadge:["Giảm","20%","khi đặt lịch online"],
+  menu:["Trang chủ","Dịch vụ","Bảng giá","Đặt lịch","Cảm nhận khách","Tin tức"],
+  cats:[["Massage body",6],["Chăm sóc da mặt",8],["Gội đầu dưỡng sinh",4],["Trị liệu chuyên sâu",5],["Combo thư giãn",4],["Thẻ liệu trình",3]],
+  benefits:["booking","quality","price","support"],
+  products:[
+    ["p1","Massage body đá nóng 60 phút","299.000đ","399.000đ","-25%","Hơn 2.400 lượt đặt"],
+    ["p2","Chăm sóc da mặt chuyên sâu 12 bước","399.000đ","","Bán chạy","Đánh giá 4.9/5"],
+    ["p3","Massage thư giãn toàn thân 90 phút","349.000đ","450.000đ","-22%","Tặng xông hơi thảo dược"],
+    ["p4","Liệu trình trẻ hoá & căng bóng da","599.000đ","","","Công nghệ Hàn Quốc"],
+    ["p5","Gội đầu dưỡng sinh thảo dược","149.000đ","199.000đ","-25%","Kèm massage cổ vai gáy"],
+    ["p6","Combo thư giãn cuối tuần (2 dịch vụ)","499.000đ","650.000đ","-23%","Đi 2 người giảm thêm 10%"]],
+  itemHead:"Dịch vụ được yêu thích", itemSub:"Đặt lịch trước để được phục vụ đúng giờ",
+  promoKicker:"Ưu đãi tháng này", promoTitle:"Mua thẻ 10 buổi — tặng thêm 2 buổi & 1 lần chăm sóc da", promoSub:"Thẻ dùng chung cho cả gia đình · Không giới hạn thời hạn trong 12 tháng",
+  news:[["Massage cổ vai gáy đúng cách cho dân văn phòng","16/10/2026"],["Quy trình chăm sóc da mùa hanh khô từ chuyên viên Lotus","09/10/2026"],["Gội đầu dưỡng sinh: khác gì gội đầu thường?","02/10/2026"]],
+  newsHead:"Kiến thức làm đẹp",
+  testi:"“Khách đặt lịch qua web đỡ phải nhắn qua lại, lịch xếp gọn hẳn.” — Chị Mai, chủ spa",
+  about:"Lotus Spa mang không gian thư giãn chuẩn Nhật – Hàn giữa lòng thành phố: phòng riêng yên tĩnh, thảo dược tự nhiên, đội ngũ chuyên viên được đào tạo bài bản.",
+  palette:["#2f5d50","#d9a08a","#f7efe8"], main:"#2f5d50", accent:"#b06a4a", heroBg:"linear-gradient(120deg,#274e43,#5e8c7b)",
+  sections:["Topbar hotline – giờ mở cửa","Header: logo, tìm dịch vụ, nút đặt lịch","Hero ảnh spa thật, tông thư giãn","Bảng giá dịch vụ dạng lưới có ảnh","Banner bán thẻ liệu trình giữa trang","Mục kiến thức làm đẹp","Chân trang: địa chỉ, đặt lịch, Zalo"],
+  features:["Đặt lịch online theo giờ","Bảng giá minh bạch","Album không gian thật","Nhắc lịch qua Zalo"],
+  fit:"Spa, salon tóc, tiệm nail, phun xăm, thẩm mỹ viện nhỏ." },
+
+{ id:"khach-san", num:"04", group:"du-lich-bds", groupLabel:"Du lịch & BĐS",
+  name:"Khách Sạn – Du Lịch", brand:"VIETGO TRAVEL", brandSub:"Tour · Khách sạn · Du thuyền", url:"mau-khach-san.webkhoinguon.com",
+  desc:"Cho khách sạn, homestay, công ty tour: khách xem phòng/tour, giá theo ngày và gửi yêu cầu đặt ngay.",
+  phone:"0968 240 686", email:"booking@vietgotravel.vn", hours:"Tư vấn 7h00 – 22h00 hằng ngày", address:"18 đường Hạ Long, Bãi Cháy, TP. Hạ Long, Quảng Ninh",
+  heroKicker:"Tour Hạ Long khởi hành hằng ngày", heroTitle:"Du thuyền Hạ Long chỉ từ 1.200.000đ", heroSub:"Du thuyền 5 sao · Xe limousine đưa đón · Giữ chỗ không cần cọc trước",
+  cta1:"Đặt tour ngay", cta2:"Xem phòng & tour", heroBadge:["Chỉ từ","1,2tr","tour Hạ Long 2N1Đ"],
+  menu:["Trang chủ","Khách sạn","Tour du lịch","Du thuyền","Kinh nghiệm","Liên hệ"],
+  cats:[["Khách sạn Hà Nội",12],["Khách sạn Hạ Long",9],["Khách sạn Sa Pa",8],["Khách sạn Nha Trang",11],["Khách sạn Phú Quốc",7],["Tour trong ngày",14],["Tour 2N1Đ – 3N2Đ",10]],
+  benefits:["support","price","booking","quality"],
+  products:[
+    ["p1","Phòng Deluxe view biển — khách sạn 4 sao","890.000đ/đêm","1.200.000đ","-26%","Bao gồm bữa sáng"],
+    ["p2","Phòng Family 2 giường lớn view thung lũng","1.490.000đ/đêm","","","Ở tối đa 4 khách"],
+    ["p3","Resort biển 5 sao — hồ bơi vô cực","2.590.000đ/đêm","3.400.000đ","-24%","Đưa đón sân bay"],
+    ["p4","Tour vịnh Hạ Long – hang Sửng Sốt 1 ngày","1.200.000đ/khách","","Bán chạy","Khởi hành hằng ngày"],
+    ["p5","Du thuyền ngủ đêm 5 sao 2N1Đ","2.390.000đ/khách","2.990.000đ","-20%","Trọn gói ăn uống"],
+    ["p6","Phòng Suite hướng biển, ban công riêng","1.850.000đ/đêm","2.300.000đ","-20%","Check-in sớm miễn phí"]],
+  itemHead:"Khách sạn & tour nổi bật", itemSub:"Giá đã gồm thuế phí · Hoàn hủy linh hoạt",
+  promoKicker:"Combo tiết kiệm", promoTitle:"Combo phòng + tour giảm thêm 15% khi đặt cùng lúc", promoSub:"Áp dụng cho Hạ Long, Sa Pa, Nha Trang · Đặt trước 7 ngày được giữ giá ưu đãi",
+  news:[["Kinh nghiệm đi Hạ Long 2N1Đ tự túc chỉ với 2 triệu","18/10/2026"],["Sa Pa tháng 10: mùa lúa chín & săn mây đẹp nhất năm","11/10/2026"],["Checklist chuẩn bị cho chuyến du thuyền đầu tiên","04/10/2026"]],
+  newsHead:"Kinh nghiệm du lịch",
+  testi:"“Khách nước ngoài đặt qua web nhiều hẳn vì giao diện rõ ràng, giá minh bạch.” — Quản lý VietGo",
+  about:"VietGo Travel chuyên tour ghép & đặt phòng khách sạn toàn quốc, đội ngũ tư vấn viên người bản địa, hỗ trợ đổi lịch linh hoạt và hoàn hủy rõ ràng.",
+  palette:["#274b63","#d9b36a","#eef3f0"], main:"#274b63", accent:"#0e7a8a", heroBg:"linear-gradient(120deg,#1d3a4f,#3e6b8c)",
+  sections:["Topbar hotline tư vấn tour 7–22h","Header: logo, tìm tour/khách sạn, giỏ tour","Hero ảnh Hạ Long full màn hình + giá tour","Danh mục điểm đến dạng sidebar","Lưới phòng & tour: ảnh, giá gốc – giá giảm","Banner combo phòng + tour giữa trang","Mục kinh nghiệm du lịch","Chân trang: liên hệ, Zalo, fanpage"],
+  features:["Form đặt phòng / tour theo ngày","Giá theo hạng phòng rõ ràng","Album ảnh thật 100%","Hỗ trợ song ngữ VN – EN"],
+  fit:"Khách sạn, homestay, villa, resort nhỏ, công ty tour địa phương." },
+
+{ id:"bat-dong-san", num:"05", group:"du-lich-bds", groupLabel:"Du lịch & BĐS",
+  name:"Bất Động Sản", brand:"LANDHOUSE", brandSub:"Nhà đất Đà Nẵng · Giá thật", url:"mau-bat-dong-san.webkhoinguon.com",
+  desc:"Cho môi giới và sàn BĐS: danh sách nhà đất có lọc theo khu vực/giá, khách để lại số là nhận tư vấn ngay.",
+  phone:"0915 678 686", email:"tuvan@landhouse.vn", hours:"7h30 – 21h00 hằng ngày", address:"Số 6 Bạch Đằng, Q. Hải Châu, Đà Nẵng",
+  heroKicker:"Cập nhật nguồn hàng mỗi ngày", heroTitle:"Nhà đất Đà Nẵng — giá thật, pháp lý rõ", heroSub:"Hơn 120 tin đang bán · Hỗ trợ vay ngân hàng · Xem nhà miễn phí cuối tuần",
+  cta1:"Xem nhà đang bán", cta2:"Nhận tư vấn miễn phí", heroBadge:["120+","tin bán","cập nhật mỗi ngày"],
+  menu:["Trang chủ","Nhà phố","Đất nền","Căn hộ","Cho thuê","Tin tức","Liên hệ"],
+  cats:[["Nhà phố trung tâm",18],["Đất nền dự án",24],["Biệt thự",9],["Căn hộ chung cư",15],["Nhà cho thuê",11],["Mặt bằng kinh doanh",7]],
+  benefits:["price","support","quality","fast"],
+  products:[
+    ["p1","Nhà phố 3 tầng mặt tiền kinh doanh","2,85 tỷ","","Mới đăng","85m² · 4 phòng ngủ · Sổ đỏ sẵn"],
+    ["p2","Biệt thự sân vườn khu đô thị mới","5,6 tỷ","","","210m² · 5 phòng ngủ · Nội thất gỗ"],
+    ["p3","Villa hiện đại có hồ bơi riêng","7,9 tỷ","","Nổi bật","260m² · View đồi thoáng"],
+    ["p4","Nhà liền kề 4 tầng gần trường học","3,45 tỷ","","","72m² · Đường ô tô tránh"],
+    ["p5","Biệt thự nghỉ dưỡng đang hoàn thiện","6,2 tỷ","","","Bàn giao quý 1/2027"],
+    ["p6","Căn hộ 2 phòng ngủ view sông Hồng","1,92 tỷ","","Giá tốt","68m² · Tầng 12 · Full nội thất"]],
+  itemHead:"Tin đăng mới nhất", itemSub:"Giá và diện tích công khai · Sổ đỏ / pháp lý kiểm tra trước khi đăng",
+  promoKicker:"Hỗ trợ mua nhà", promoTitle:"Tặng gói thẩm định pháp lý & hỗ trợ vay ngân hàng miễn phí", promoSub:"Ký gửi bán nhà trong tháng này: miễn phí chụp ảnh, quay video và đăng tin nổi bật 30 ngày",
+  news:[["Bảng giá đất nền Đà Nẵng tháng 10/2026 cập nhật mới nhất","15/10/2026"],["5 lưu ý pháp lý khi mua nhà lần đầu tránh mất tiền oan","08/10/2026"],["Khu vực nào ở Đà Nẵng đang được săn đón nhất?","01/10/2026"]],
+  newsHead:"Tin tức thị trường",
+  testi:"“Khách gọi từ web toàn khách thật, đỡ tốn tiền chạy ads lọc lead.” — Anh Đức, môi giới",
+  about:"LandHouse là sàn giao dịch nhà đất tại Đà Nẵng với nguồn hàng kiểm chứng pháp lý trước khi đăng. Đội ngũ môi giới theo từng khu vực, dẫn xem nhà miễn phí.",
+  palette:["#1f3350","#c9a24d","#f2f0e9"], main:"#1f3350", accent:"#a8791f", heroBg:"linear-gradient(120deg,#16273f,#2c4a73)",
+  sections:["Topbar hotline tư vấn – giờ làm việc","Header: logo, ô tìm theo khu vực / giá","Hero ảnh nhà thật + cam kết giá thật","Sidebar khu vực & phân khúc giá","Lưới tin đăng: ảnh, diện tích, số phòng, giá","Banner hỗ trợ pháp lý & vay vốn","Mục tin tức thị trường","Chân trang: văn phòng, hotline từng khu vực, Zalo"],
+  features:["Lọc tin theo giá / khu vực","Form thu lead tự động","Ảnh + vị trí bản đồ từng tin","Nút gọi nhanh theo tin"],
+  fit:"Sàn BĐS, môi giới cá nhân, chủ đầu tư dự án nhỏ, cho thuê mặt bằng." },
+
+{ id:"dich-vu-tho", num:"06", group:"dich-vu", groupLabel:"Dịch vụ & Doanh nghiệp",
+  name:"Dịch Vụ Địa Phương (Thợ)", brand:"SỬA KHÓA 24/7", brandSub:"Có mặt sau 15 phút · Hải Phòng", url:"mau-dich-vu-tho.webkhoinguon.com",
+  desc:"Cho thợ khóa, điện lạnh, sửa chữa tại nhà: khách đang cần gấp thấy ngay số điện thoại, giá dịch vụ và khu vực phục vụ.",
+  phone:"0855 27 86 27", email:"suakhoa24h@gmail.com", hours:"Phục vụ 24/7 kể cả lễ Tết", address:"Phục vụ tận nơi tại TP. Hải Phòng & vùng lân cận",
+  heroKicker:"Phục vụ 24/7 · Kể cả lễ Tết", heroTitle:"Kẹt khóa? Gọi là có mặt sau 15 phút", heroSub:"Mở khóa không hư ổ · Làm chìa tại chỗ · Báo giá trước khi làm, không phát sinh",
+  cta1:"Gọi ngay 0855 27 86 27", cta2:"Xem bảng giá", heroBadge:["15","phút","có mặt tận nơi"],
+  menu:["Trang chủ","Mở khóa","Làm chìa","Khóa vân tay","Bảng giá","Khu vực phục vụ"],
+  cats:[["Mở khóa cửa nhà",0],["Mở khóa ô tô",0],["Làm chìa khóa xe",0],["Thay ổ khóa",0],["Khóa vân tay",0],["Sửa khóa két sắt",0]],
+  benefits:["fast","price","warranty","support"],
+  products:[
+    ["p1","Mở khóa cửa nhà tận nơi, không hư ổ","150–250K","","24/7","Báo giá trước khi làm"],
+    ["p2","Làm chìa khóa xe máy & ô tô tại chỗ","80–300K","","","Chìa zin & chìa độ"],
+    ["p3","Thay ổ khóa cửa chính chính hãng","từ 350K","","Bảo hành 12 tháng","Nhiều mẫu khóa sẵn hàng"],
+    ["p4","Lắp khóa vân tay & khóa thẻ từ","từ 1.850K","","","Tư vấn chọn mẫu tận nhà"]],
+  itemHead:"Bảng giá dịch vụ tham khảo", itemSub:"Giá chốt trước khi làm · Không phát sinh",
+  promoKicker:"Cam kết của thợ", promoTitle:"Không mở được khóa — không thu tiền", promoSub:"Mở khóa bằng dụng cụ chuyên dụng, không phá ổ. Khách được kiểm tra khóa vận hành trơn tru rồi mới thanh toán.",
+  news:[["Mất chìa khóa xe máy lúc nửa đêm phải làm sao?","14/10/2026"],["Nên thay ổ khóa khi nào? 5 dấu hiệu không nên bỏ qua","07/10/2026"]],
+  newsHead:"Kinh nghiệm & mẹo hay",
+  testi:"“Từ ngày có web, khách Google gọi tới liên tục, toàn ca gần nhà.” — Thợ khóa Minh Tuấn",
+  about:"Đội thợ khóa cơ động tại TP. Hải Phòng, trực 24/7. Chuyên mở khóa, làm chìa, thay ổ và lắp khóa thông minh cho hộ gia đình, cửa hàng và xe cộ.",
+  palette:["#191919","#f5b301","#fff8e1"], main:"#191919", accent:"#b97e04", heroBg:"linear-gradient(120deg,#141414,#33302a)",
+  sections:["Topbar: trực 24/7 + hotline thật to","Header tối giản: logo, nút gọi ngay","Hero ảnh thợ làm việc thật + cam kết 15 phút","Dải cam kết: nhanh, giá rõ, bảo hành","Bảng giá dịch vụ dạng thẻ có ảnh","Banner cam kết không mở được không thu tiền","Mục mẹo hay / tin tức","Chân trang: khu vực phục vụ, hotline, Zalo"],
+  features:["Nút gọi nổi luôn hiển thị","Bảng giá rõ, không phát sinh","SEO địa phương theo phường/xã","Form yêu cầu gọi lại"],
+  fit:"Thợ khóa, điện lạnh, thông tắc, sửa xe lưu động, vệ sinh tại nhà." }
+];
+
+TEMPLATES = TEMPLATES.concat([
+{ id:"ca-phe", num:"07", group:"an-uong", groupLabel:"Ăn uống & Cà phê",
+  name:"Quán Cà Phê", brand:"GÓC PHỐ COFFEE", brandSub:"Rang xay tại quán · Mở 7h–22h30", url:"mau-ca-phe.webkhoinguon.com",
+  desc:"Cho quán cà phê, trà sữa, tiệm bánh: menu đồ uống đẹp mắt, câu chuyện thương hiệu và địa điểm check-in.",
+  phone:"0904 118 686", email:"hello@gocphocoffee.vn", hours:"7h00 – 22h30 hằng ngày", address:"12 Phan Bội Châu, TP. Đà Lạt, Lâm Đồng",
+  heroKicker:"Rang xay tại quán mỗi sáng", heroTitle:"Một góc phố nhỏ, một ly cà phê ngon", heroSub:"Wifi mạnh · Ổ điện mọi bàn · Nhận đặt bàn nhóm & sự kiện nhỏ",
+  cta1:"Xem menu", cta2:"Tìm đường tới quán", heroBadge:["-20%","thứ 3","mọi món matcha"],
+  menu:["Trang chủ","Menu","Câu chuyện","Không gian","Đặt bàn","Liên hệ"],
+  cats:[["Cà phê pha máy",7],["Cà phê phin",5],["Matcha & trà",6],["Trà hoa quả",5],["Nước ép & sinh tố",6],["Bánh ngọt",8]],
+  benefits:["quality","price","fast","support"],
+  products:[
+    ["p1","Cà phê muối — best seller của quán","29.000đ","","Bán chạy","Pha từ hạt Robusta Đắk Lắk"],
+    ["p2","Matcha latte đá viên sữa tươi","39.000đ","45.000đ","-13%","Matcha Uji Nhật Bản"],
+    ["p3","Latte nóng vẽ hình (latte art)","35.000đ","","","Barista vẽ theo yêu cầu"],
+    ["p4","Trà đào cam sả mát lạnh","39.000đ","","","Size lớn 700ml"],
+    ["p5","Cold brew cam sả ủ lạnh 18 giờ","45.000đ","","Mới","Ủ lạnh mỗi ngày, số lượng có hạn"],
+    ["p6","Bánh ngọt & đồ ăn nhẹ trong ngày","từ 25.000đ","","","Làm mới mỗi sáng"]],
+  itemHead:"Menu được gọi nhiều", itemSub:"Giá tại quán · Mang đi cộng thêm 0đ",
+  promoKicker:"Khung giờ vàng", promoTitle:"Mua 2 tặng 1 — mọi món trà & matcha, 14h–17h mỗi ngày", promoSub:"Áp dụng tại quán và đặt mang đi · Tích điểm đổi ly miễn phí sau 8 ly",
+  news:[["Hạt cà phê Robusta Đắk Lắk: vì sao Góc Phố chọn rang vừa?","13/10/2026"],["5 góc check-in được yêu thích nhất tại quán","06/10/2026"],["Menu mùa thu: thêm 3 món matcha & quế ấm","29/09/2026"]],
+  newsHead:"Câu chuyện & tin mới",
+  testi:"“Khách trẻ tìm thấy quán qua Google rồi check-in suốt.” — Chủ quán Góc Phố",
+  about:"Góc Phố Coffee là quán cà phê nhỏ yên tĩnh giữa phố, rang xay hạt tại chỗ mỗi sáng. Không gian nhiều cây xanh, phù hợp làm việc, học tập và gặp gỡ bạn bè.",
+  palette:["#4a3220","#c99a4b","#faf3e7"], main:"#4a3220", accent:"#96762f", heroBg:"linear-gradient(120deg,#38240f,#6b4a2f)",
+  sections:["Topbar giờ mở cửa – địa chỉ quán","Header: logo, tìm món trong menu","Hero ảnh quán & barista thật","Menu đồ uống dạng lưới có ảnh & giá","Banner khung giờ vàng giữa trang","Mục câu chuyện thương hiệu","Chân trang: địa chỉ, chỉ đường, Zalo đặt bàn"],
+  features:["Menu cập nhật theo mùa","Album không gian quán","Nút chỉ đường Google Maps","Đặt bàn nhóm qua form"],
+  fit:"Quán cà phê, trà sữa, tiệm bánh, quán bar nhỏ, beer club." },
+
+{ id:"nha-khoa", num:"08", group:"lam-dep", groupLabel:"Làm đẹp & Sức khỏe",
+  name:"Nha Khoa – Phòng Khám", brand:"SMILECARE", brandSub:"Nha khoa gia đình · Trả góp 0%", url:"mau-nha-khoa.webkhoinguon.com",
+  desc:"Cho nha khoa, phòng khám, nhà thuốc: dịch vụ và bảng giá rõ ràng, đặt lịch khám online, giới thiệu đội ngũ bác sĩ.",
+  phone:"1900 6868", email:"datlich@smilecare.vn", hours:"8h00 – 20h00 (T2 – CN)", address:"Số 9 Trần Hưng Đạo, Q. Ninh Kiều, Cần Thơ",
+  heroKicker:"Khám & tư vấn miễn phí lần đầu", heroTitle:"Nụ cười khỏe bắt đầu từ hôm nay", heroSub:"Bác sĩ 10+ năm kinh nghiệm · Vô trùng chuẩn Bộ Y tế · Trả góp 0% implant & niềng răng",
+  cta1:"Đặt lịch khám", cta2:"Bảng giá dịch vụ", heroBadge:["0%","trả góp","implant & niềng"],
+  menu:["Trang chủ","Dịch vụ","Bảng giá","Đội ngũ bác sĩ","Đặt lịch","Hỏi đáp"],
+  cats:[["Khám tổng quát",3],["Lấy cao răng",2],["Niềng răng",4],["Implant",3],["Răng sứ thẩm mỹ",4],["Tẩy trắng răng",2],["Nha khoa trẻ em",3]],
+  benefits:["booking","price","warranty","quality"],
+  products:[
+    ["p1","Khám tổng quát & chụp phim kiểm tra","Miễn phí","","Lần đầu","Tư vấn phác đồ rõ ràng"],
+    ["p2","Lấy cao răng & đánh bóng 2 hàm","199.000đ","300.000đ","-34%","Không đau, máy siêu âm"],
+    ["p3","Niềng răng mắc cài — trả góp theo tháng","từ 990K/tháng","","Trả góp 0%","Bác sĩ chỉnh nha trực tiếp"],
+    ["p4","Tẩy trắng răng công nghệ Laser","1.499.000đ","2.500.000đ","-40%","Trắng bật 3–5 tông sau 60 phút"],
+    ["p5","Cấy ghép Implant Hàn Quốc / Thụy Sĩ","Trả góp 0%","","Bảo hành 10 năm","Trụ chính hãng, có tem kiểm chứng"],
+    ["p6","Bọc răng sứ thẩm mỹ","từ 1,2tr/răng","1,8tr/răng","-33%","Bảo hành sứ 7 năm"]],
+  itemHead:"Dịch vụ & bảng giá", itemSub:"Giá công khai · Báo giá chốt trước khi điều trị",
+  promoKicker:"Ưu đãi tháng này", promoTitle:"Tẩy trắng răng giảm 40% — khám & tư vấn miễn phí cho khách mới", promoSub:"Đặt lịch online được ưu tiên khung giờ vàng · Không phát sinh chi phí ngoài phác đồ đã ký",
+  news:[["Niềng răng trong suốt và mắc cài: nên chọn loại nào?","15/10/2026"],["Implant có đau không? Bác sĩ SmileCare giải đáp","08/10/2026"],["Lịch khám ngoài giờ cho người đi làm bận rộn","01/10/2026"]],
+  newsHead:"Kiến thức nha khoa",
+  testi:"“Bệnh nhân đặt lịch online chiếm 60%, lễ tân nhàn hẳn.” — Bs. Lan Anh",
+  about:"SmileCare là nha khoa gia đình với đội ngũ bác sĩ 10+ năm kinh nghiệm, trang thiết bị hiện đại và quy trình vô trùng khép kín. Mọi chi phí đều báo trước bằng văn bản.",
+  palette:["#1d5f7a","#7fb5c9","#f2f8fa"], main:"#1d5f7a", accent:"#0e7a8a", heroBg:"linear-gradient(120deg,#174b61,#2f7ea3)",
+  sections:["Topbar tổng đài – giờ khám","Header: logo, tìm dịch vụ, nút đặt lịch","Hero ảnh phòng khám thật, sạch & tin cậy","Bảng giá dịch vụ dạng thẻ có ảnh","Banner ưu đãi giữa trang","Mục kiến thức nha khoa","Chân trang: địa chỉ, đặt lịch, Zalo nhắc lịch"],
+  features:["Đặt lịch khám online","Hồ sơ đội ngũ bác sĩ","Bảng giá công khai","Nhắc lịch tái khám qua Zalo"],
+  fit:"Nha khoa, phòng khám đa khoa, vật lý trị liệu, nhà thuốc lớn." },
+
+{ id:"giao-duc", num:"09", group:"dich-vu", groupLabel:"Dịch vụ & Doanh nghiệp",
+  name:"Giáo Dục – Đào Tạo", brand:"TRUNG TÂM TRÍ TUỆ", brandSub:"Ngoại ngữ · Luyện thi · Tin học", url:"mau-giao-duc.webkhoinguon.com",
+  desc:"Cho trung tâm ngoại ngữ, dạy thêm, kỹ năng: danh sách khóa học, học phí công khai và form đăng ký tư vấn.",
+  phone:"0987 345 686", email:"tuvan@tritue.edu.vn", hours:"8h00 – 21h00 (T2 – T7)", address:"Tầng 3, số 21 Lê Lợi, TP. Vinh, Nghệ An",
+  heroKicker:"Khai giảng lớp mới mỗi tháng", heroTitle:"Học thật — giỏi thật — thi đậu thật", heroSub:"Lớp tối đa 12 học viên · Học thử 2 buổi miễn phí · Cam kết đầu ra bằng văn bản",
+  cta1:"Đăng ký học thử", cta2:"Xem khóa học", heroBadge:["2 buổi","học thử","hoàn toàn miễn phí"],
+  menu:["Trang chủ","Khóa học","Lịch khai giảng","Giáo viên","Học viên","Liên hệ"],
+  cats:[["Tiếng Anh giao tiếp",0],["Tiếng Anh trẻ em",0],["Luyện thi vào 10",0],["Luyện thi THPT",0],["Tin học văn phòng",0],["Luyện chữ & toán tư duy",0]],
+  benefits:["price","quality","booking","support"],
+  products:[
+    ["p1","Tiếng Anh giao tiếp cho người đi làm","1.200K/khóa","","Khai giảng 05/11","24 buổi · Lớp tối đa 12 bạn"],
+    ["p2","Luyện thi vào 10 — Toán, Văn, Anh","1.500K/khóa","","","Cam kết đầu ra bằng văn bản"],
+    ["p3","Tiếng Anh trẻ em 6–11 tuổi","1.100K/khóa","","Học thử miễn phí","Học qua trò chơi & dự án"],
+    ["p4","Tin học văn phòng Word – Excel – PowerPoint","900K/khóa","","","Cấp chứng chỉ sau khóa"]],
+  itemHead:"Khóa học đang tuyển sinh", itemSub:"Học phí trọn khóa · Đóng theo đợt linh hoạt",
+  promoKicker:"Ưu đãi ghi danh sớm", promoTitle:"Đăng ký trước khai giảng 10 ngày — giảm 15% học phí & tặng bộ tài liệu", promoSub:"Áp dụng cho tất cả khóa khai giảng tháng 11 · Học thử 2 buổi trước khi quyết định",
+  news:[["Lịch khai giảng các lớp tháng 11/2026","16/10/2026"],["Vinh danh học viên đạt IELTS 7.0+ đợt thi tháng 9","09/10/2026"]],
+  newsHead:"Tin tức trung tâm",
+  testi:"“Phụ huynh đăng ký học thử qua web gấp đôi so với chỉ đăng Facebook.” — Cô Hạnh, giám đốc TT",
+  about:"Trung tâm Trí Tuệ đào tạo ngoại ngữ, luyện thi và tin học với lớp học nhỏ tối đa 12 học viên. Phụ huynh nhận báo cáo tiến bộ sau mỗi tháng học.",
+  palette:["#24513c","#e07b2a","#f4f7f0"], main:"#24513c", accent:"#c25e10", heroBg:"linear-gradient(120deg,#1a4030,#2e6e4e)",
+  sections:["Topbar hotline tư vấn – lịch khai giảng","Header: logo, tìm khóa học, nút học thử","Hero ảnh lớp học thật + form học thử","Danh sách khóa học & học phí công khai","Banner ưu đãi ghi danh sớm","Mục tin tức & vinh danh học viên","Chân trang: địa chỉ, tư vấn, Zalo"],
+  features:["Form đăng ký học thử","Học phí công khai từng khóa","Lịch khai giảng cập nhật","Trang tin tức / tài liệu ôn tập"],
+  fit:"Trung tâm ngoại ngữ, gia sư, dạy nhạc/vẽ, đào tạo nghề, mầm non tư thục." },
+
+{ id:"o-to", num:"10", group:"dich-vu", groupLabel:"Dịch vụ & Doanh nghiệp",
+  name:"Ô Tô – Xe Máy", brand:"AUTOPRO", brandSub:"Gara · Bảo dưỡng · Phụ tùng chính hãng", url:"mau-o-to.webkhoinguon.com",
+  desc:"Cho gara ô tô, tiệm sửa xe, bán phụ tùng: bảng giá bảo dưỡng, đặt lịch trước và tra cứu phụ tùng theo dòng xe.",
+  phone:"0977 456 686", email:"gara@autopro.vn", hours:"7h30 – 19h00 hằng ngày · Cứu hộ 24/7", address:"Km 4, Quốc lộ 1A, TP. Quy Nhơn, Bình Định",
+  heroKicker:"Bảo hành dịch vụ 6 tháng", heroTitle:"Xe khỏe như mới, giá báo trước khi làm", heroSub:"Thay dầu 20 phút · Kiểm tra tổng quát miễn phí · Phụ tùng chính hãng có tem",
+  cta1:"Đặt lịch bảo dưỡng", cta2:"Bảng giá dịch vụ", heroBadge:["Miễn phí","kiểm tra","38 hạng mục"],
+  menu:["Trang chủ","Xe đang bán","Bảo dưỡng","Phụ tùng","Bảng giá","Cứu hộ 24/7"],
+  cats:[["Thay dầu & lọc",0],["Bảo dưỡng định kỳ",0],["Gầm & phanh",0],["Điều hòa ô tô",0],["Lốp & ắc quy",0],["Đồng sơn",0]],
+  benefits:["price","warranty","fast","quality"],
+  products:[
+    ["p1","SUV 7 chỗ bản cao cấp — trả góp ưu đãi","từ 8tr/tháng","","Xe mới 2026","Bảo hành 5 năm chính hãng"],
+    ["p2","Sedan hạng C tiết kiệm nhiên liệu","từ 539tr","","","Hỗ trợ đăng ký, biển số"],
+    ["p3","Bảo dưỡng định kỳ 10.000km","từ 450K","","Báo giá trước","Thợ 8+ năm kinh nghiệm"],
+    ["p4","Kiểm tra tổng quát 38 hạng mục","Miễn phí","","Đặt lịch trước","Có biên bản kiểm tra"],
+    ["p5","Thay dầu & lọc dầu chính hãng","từ 450K","","20 phút","Dầu Castrol / Shell chính hãng"],
+    ["p6","SUV đô thị gầm cao — sẵn xe giao ngay","từ 669tr","","","Tặng gói phụ kiện 15 triệu"]],
+  itemHead:"Xe & dịch vụ nổi bật", itemSub:"Giá báo trước khi làm · Bảo hành dịch vụ 6 tháng",
+  promoKicker:"Ưu đãi bảo dưỡng", promoTitle:"Đặt lịch online — giảm 10% công bảo dưỡng & tặng rửa xe, hút bụi", promoSub:"Áp dụng thứ 2 – thứ 6 · Khách đặt trước được ưu tiên cầu nâng, không phải chờ",
+  news:[["Bao lâu nên thay dầu ô tô? Dấu hiệu nhiều người bỏ qua","14/10/2026"],["Quy trình kiểm tra 38 hạng mục tại AutoPro có gì?","06/10/2026"]],
+  newsHead:"Kinh nghiệm chăm xe",
+  testi:"“Khách đặt lịch trước nên gara xếp việc đều, hết cảnh dồn cuối tuần.” — Anh Phát, chủ gara",
+  about:"AutoPro là gara ô tô & trung tâm bảo dưỡng tại Quy Nhơn: cầu nâng hiện đại, thợ tay nghề cao, phụ tùng chính hãng có tem. Mọi hạng mục đều báo giá và chụp ảnh gửi khách trước khi làm.",
+  palette:["#232323","#c93b2e","#f0f0ee"], main:"#232323", accent:"#c0392b", heroBg:"linear-gradient(120deg,#171717,#3a3a3a)",
+  sections:["Topbar giờ mở cửa – cứu hộ 24/7","Header: logo, tìm xe / phụ tùng, giỏ hàng","Hero ảnh xe thật + cam kết báo giá trước","Sidebar hạng mục dịch vụ","Lưới xe & dịch vụ có giá, ghi chú rõ ràng","Banner ưu đãi đặt lịch online","Mục kinh nghiệm chăm xe","Chân trang: địa chỉ gara, cứu hộ, Zalo"],
+  features:["Đặt lịch bảo dưỡng online","Bảng giá từng hạng mục","Bán phụ tùng có giỏ hàng","Nút gọi cứu hộ 24/7"],
+  fit:"Gara ô tô, sửa xe máy, rửa & chăm sóc xe, cửa hàng phụ tùng, lốp." },
+
+{ id:"me-va-be", num:"11", group:"ban-hang", groupLabel:"Bán hàng",
+  name:"Mẹ & Bé", brand:"BÉ YÊU SHOP", brandSub:"Đồ sơ sinh & mẹ bầu chính hãng", url:"mau-me-va-be.webkhoinguon.com",
+  desc:"Cho shop mẹ & bé, đồ chơi trẻ em: sản phẩm theo độ tuổi, kiến thức chăm con và combo tiết kiệm cho mẹ bỉm.",
+  phone:"0906 782 686", email:"cskh@beyeushop.vn", hours:"8h00 – 21h00 hằng ngày", address:"56 Trần Phú, TP. Bắc Ninh, Bắc Ninh",
+  heroKicker:"Hàng chính hãng · Kiểm tra trước khi nhận", heroTitle:"Chăm con nhàn hơn, mẹ yên tâm hơn", heroSub:"Tư vấn chọn size/số miễn phí · Đổi trả 15 ngày · Combo sơ sinh tiết kiệm 20%",
+  cta1:"Mua sắm ngay", cta2:"Combo sơ sinh", heroBadge:["-20%","combo","sơ sinh trọn gói"],
+  menu:["Trang chủ","Sơ sinh","Bé 0–1 tuổi","Bé 1–3 tuổi","Đồ chơi","Cẩm nang","Sale"],
+  cats:[["Quần áo sơ sinh",32],["Bỉm & sữa",18],["Bình sữa & ăn dặm",15],["Xe đẩy & địu",9],["Đồ chơi an toàn",21],["Chăm sóc mẹ bầu",12]],
+  benefits:["support","cod","ship","warranty"],
+  products:[
+    ["p1","Combo sơ sinh trọn gói 12 món","699.000đ","899.000đ","-22%","Đủ dùng tháng đầu"],
+    ["p2","Bộ đồ dùng thiết yếu cho bé yêu","249.000đ","","Bán chạy","Chất liệu an toàn, không BPA"],
+    ["p3","Set quần áo sơ sinh cotton mềm","189.000đ","240.000đ","-21%","Đủ size 0–12 tháng"],
+    ["p4","Bộ chăm sóc & đồ chơi cho bé","159.000đ","","","Đạt chuẩn an toàn trẻ em"],
+    ["p5","Xe đẩy gấp gọn & phụ kiện đi kèm","1.290.000đ","1.590.000đ","-19%","Gấp 1 tay, nhẹ 5,2kg"]],
+  itemHead:"Bán chạy cho bé 0–3 tuổi", itemSub:"Chọn theo độ tuổi · Tư vấn size miễn phí qua Zalo",
+  promoKicker:"Combo tiết kiệm", promoTitle:"Combo sơ sinh trọn gói — tiết kiệm 20% so với mua lẻ", promoSub:"Tặng kèm sổ tay chăm bé tháng đầu & freeship nội thành cho đơn từ 499K",
+  news:[["Danh sách đồ sơ sinh thật sự cần: tránh mua thừa lãng phí","17/10/2026"],["Cách chọn size quần áo cho bé theo cân nặng","10/10/2026"],["5 món đồ chơi giúp bé phát triển vận động tinh","03/10/2026"]],
+  newsHead:"Cẩm nang chăm con",
+  testi:"“Các mẹ trong nhóm bỉm sữa chia sẻ link web cho nhau suốt.” — Chị Thủy, chủ shop",
+  about:"Bé Yêu Shop chuyên đồ sơ sinh và mẹ bầu chính hãng, chọn lọc từng sản phẩm theo tiêu chí an toàn cho làn da nhạy cảm của bé. Tư vấn tận tâm như người nhà.",
+  palette:["#8a4b57","#e8a2ad","#fdf3ee"], main:"#8a4b57", accent:"#c05b74", heroBg:"linear-gradient(120deg,#7c3f4d,#b06a76)",
+  sections:["Topbar hotline tư vấn – giờ mở cửa","Header: logo, tìm sản phẩm, giỏ hàng","Hero ảnh mẹ & bé ấm áp","Sidebar sản phẩm theo độ tuổi","Lưới sản phẩm có giá & nhãn giảm","Banner combo sơ sinh giữa trang","Mục cẩm nang chăm con","Chân trang: địa chỉ, hotline, Zalo tư vấn"],
+  features:["Giỏ hàng & thanh toán online","Lọc sản phẩm theo độ tuổi","Blog chăm sóc bé chuẩn SEO","Form tư vấn chọn đồ sơ sinh"],
+  fit:"Shop mẹ & bé, đồ chơi trẻ em, thời trang trẻ em, trung tâm tiêm chủng tư." },
+
+{ id:"doanh-nghiep", num:"12", group:"dich-vu", groupLabel:"Dịch vụ & Doanh nghiệp",
+  name:"Công Ty – Doanh Nghiệp", brand:"VIỆT PHÁT CORP", brandSub:"Xây dựng · Thiết kế · Bảo trì", url:"mau-doanh-nghiep.webkhoinguon.com",
+  desc:"Cho công ty, nhà thầu, xưởng sản xuất cần web giới thiệu uy tín: hồ sơ năng lực, dự án đã làm và đối tác.",
+  phone:"0912 908 686", email:"info@vietphatcorp.vn", hours:"8h00 – 17h30 (T2 – T7)", address:"Tòa nhà Việt Phát, KCN Đông Xuyên, TP. Vũng Tàu",
+  heroKicker:"Thành lập 2015 · 200+ dự án bàn giao", heroTitle:"Đối tác tin cậy cho công trình của bạn", heroSub:"Hồ sơ năng lực đầy đủ · Báo giá trong thời gian sớm nhất · Bảo hành công trình 24 tháng",
+  cta1:"Nhận báo giá", cta2:"Xem dự án đã làm", heroBadge:["200+","dự án","đã bàn giao đúng hẹn"],
+  menu:["Trang chủ","Giới thiệu","Lĩnh vực","Dự án","Đối tác","Liên hệ"],
+  cats:[["Thi công xây dựng",0],["Thiết kế kỹ thuật",0],["Giám sát công trình",0],["Bảo trì & cải tạo",0],["Cung cấp vật tư",0],["Hồ sơ đấu thầu",0]],
+  benefits:["quality","price","support","warranty"],
+  products:[
+    ["p1","Thi công xây dựng trọn gói","Theo báo giá","","200+ dự án","Nhà xưởng, nhà phố, công trình công cộng"],
+    ["p2","Thiết kế kiến trúc & kết cấu","Theo báo giá","","","Đội ngũ KTS, kỹ sư có chứng chỉ hành nghề"],
+    ["p3","Tư vấn giám sát công trình","Theo báo giá","","","Báo cáo tiến độ hằng tuần bằng hình ảnh"],
+    ["p4","Bảo trì & cải tạo công trình","Từ 5tr/năm","","","Phản hồi sự cố trong ngày làm việc"],
+    ["p5","Hồ sơ năng lực & hỗ trợ đấu thầu","Theo báo giá","","","Hồ sơ chuẩn chỉnh, trình bày chuyên nghiệp"],
+    ["p6","Hợp tác & liên doanh dự án","Liên hệ","","","Ưu tiên đối tác dài hạn"]],
+  itemHead:"Lĩnh vực hoạt động", itemSub:"Báo giá chi tiết theo từng hạng mục, không phát sinh mập mờ",
+  promoKicker:"Cam kết hợp tác", promoTitle:"Khảo sát & tư vấn giải pháp miễn phí cho dự án mới", promoSub:"Đội ngũ kỹ sư đến tận nơi khảo sát, đề xuất phương án tối ưu chi phí và tiến độ trước khi ký hợp đồng",
+  news:[["Việt Phát bàn giao nhà xưởng 5.000m² tại KCN Bắc Duyên Hải","12/10/2026"],["Chứng nhận ISO 9001:2015 — cam kết chất lượng mọi công trình","28/09/2026"]],
+  newsHead:"Tin công ty",
+  testi:"“Có web giới thiệu, gửi link cho đối tác là họ tự tin ký hợp đồng hơn hẳn.” — GĐ Việt Phát",
+  about:"Việt Phát Corp hoạt động trong lĩnh vực xây dựng, thiết kế và bảo trì công trình từ 2015. Chúng tôi coi tiến độ và minh bạch chi phí là danh dự của nhà thầu.",
+  palette:["#20394f","#7fa6bd","#eef1f3"], main:"#20394f", accent:"#2f6db3", heroBg:"linear-gradient(120deg,#182c3e,#33526e)",
+  sections:["Topbar email – giờ làm việc – hotline","Header: logo công ty, menu trang trọng","Hero ảnh tòa nhà / dự án + số liệu uy tín","Sidebar lĩnh vực hoạt động","Thẻ lĩnh vực & dự án có ảnh thật","Banner cam kết khảo sát miễn phí","Mục tin công ty","Chân trang: trụ sở, liên hệ báo giá, Zalo"],
+  features:["Hồ sơ năng lực dạng web","Album dự án theo lĩnh vực","Form liên hệ báo giá","Song ngữ VN – EN (tuỳ chọn)"],
+  fit:"Công ty xây dựng, nhà thầu, xưởng sản xuất, xuất nhập khẩu, logistics." }
+]);
+
+var FILTERS = [
+  {key:"all", label:"Tất cả 12 mẫu"},
+  {key:"ban-hang", label:"Bán hàng"},
+  {key:"an-uong", label:"Ăn uống & Cà phê"},
+  {key:"lam-dep", label:"Làm đẹp & Sức khỏe"},
+  {key:"du-lich-bds", label:"Du lịch & BĐS"},
+  {key:"dich-vu", label:"Dịch vụ & Doanh nghiệp"}
+];
+
+var approved = {};
+var currentFilter = "all";
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+function img(t, key){ return "assets/" + t.id + "/" + key + ".jpg"; }
+
+/* ---------- Card cover (ảnh thật) ---------- */
+function coverMock(t){
+  var prods = t.products.slice(0,3).map(function(p){
+    return '<div class="cv-prod"><img src="'+img(t,p[0])+'" alt="'+esc(p[1])+'" loading="lazy"><b>'+esc(p[1])+'</b><span style="color:'+t.accent+'">'+esc(p[2])+'</span></div>';
+  }).join("");
+  return '<div class="mock"><div class="mock-bar"><span class="mdots"><i style="background:#e0655a"></i><i style="background:#e8b93e"></i><i style="background:#58b368"></i></span><span class="murl">'+esc(t.url)+'</span></div>'
+    + '<div class="cv"><div class="cv-top"><span>📞 '+esc(t.phone)+' · '+esc(t.hours)+'</span><span>Đăng nhập | Đăng ký</span></div>'
+    + '<div class="cv-head"><span class="cv-logo" style="color:'+t.main+'">'+esc(t.brand)+'</span><span class="cv-search">Tìm kiếm sản phẩm, dịch vụ…</span><span class="cv-cart" style="background:'+t.main+'">🛒 Giỏ hàng</span></div>'
+    + '<div class="cv-menu" style="background:'+t.main+'">'+t.menu.slice(0,5).map(function(m){return '<span>'+esc(m)+'</span>';}).join("")+'</div>'
+    + '<div class="cv-hero"><img src="'+img(t,"hero")+'" alt="Ảnh bìa mẫu '+esc(t.name)+'" loading="lazy"><div class="cv-hero-ov"><div class="k">'+esc(t.heroKicker)+'</div><div class="t">'+esc(t.heroTitle)+'</div><div class="s">'+esc(t.heroSub)+'</div><span class="b">'+esc(t.cta1)+'</span></div></div>'
+    + '<div class="cv-prods">'+prods+'</div>'
+    + '<div class="cv-foot" style="background:'+t.main+'"><span>📞 Hotline · Zalo · Bản đồ</span><span>© '+esc(t.brand)+'</span></div>'
+    + '</div></div>';
 }
-document.querySelectorAll('.xem').forEach(b=>b.addEventListener('click',()=>{const d=DATA.find(x=>x.slug===b.dataset.slug);render(d);history.replaceState(null,'','#'+d.slug);}));
-const h=location.hash.replace('#','');if(h){const d=DATA.find(x=>x.slug===h);if(d)render(d);}
+
+/* ---------- Trang chủ demo đầy đủ ---------- */
+function productCard(t, p){
+  var off = p[4] && p[4].indexOf("-")===0 ? '<span class="dm-off">'+esc(p[4])+'</span>' : '';
+  var hot = p[4] && p[4].indexOf("-")!==0 ? '<span class="dm-hot">'+esc(p[4])+'</span>' : '';
+  var old = p[3] ? '<s>'+esc(p[3])+'</s>' : '';
+  return '<div class="dm-pcard"><div class="dm-pcard-img"><img src="'+img(t,p[0])+'" alt="'+esc(p[1])+'" loading="lazy">'+off+hot+'</div>'
+    + '<div class="dm-pcard-body"><b>'+esc(p[1])+'</b>'
+    + '<div class="dm-stars">★★★★★ <span>'+esc(p[5]||"")+'</span></div>'
+    + '<div class="dm-price"><b style="color:#d42413">'+esc(p[2])+'</b>'+old+'</div>'
+    + '<div class="dm-add" style="background:'+t.main+'">Thêm vào giỏ / Đặt ngay</div></div></div>';
+}
+function newsCard(t, n, i){
+  var key = i===0 ? "n1" : (i===1 ? t.products[1][0] : t.products[3][0]);
+  return '<div class="dm-ncard'+(i===0?" feat":"")+'"><img src="'+img(t,key)+'" alt="'+esc(n[0])+'" loading="lazy"><div><b>'+esc(n[0])+'</b><span>🗓 '+esc(n[1])+' · '+esc(t.brand)+'</span></div></div>';
+}
+function demoHTML(t, phoneMode){
+  var bens = t.benefits.map(function(k){
+    var b = BEN[k];
+    return '<div class="dm-ben"><span style="color:'+t.main+'">'+benIcon(b[0])+'</span><div><b>'+esc(b[1])+'</b><span>'+esc(b[2])+'</span></div></div>';
+  }).join("");
+  var cats = t.cats.map(function(c){
+    return '<li><span>'+esc(c[0])+'</span>'+(c[1]?'<i>'+c[1]+'</i>':'')+'</li>';
+  }).join("");
+  var prods = t.products.map(function(p){ return productCard(t,p); }).join("");
+  var news = t.news.map(function(n,i){ return newsCard(t,n,i); }).join("");
+  var badge = t.heroBadge ? '<div class="dm-hero-badge"><span>'+esc(t.heroBadge[0])+'</span><b>'+esc(t.heroBadge[1])+'</b><span>'+esc(t.heroBadge[2])+'</span></div>' : '';
+  return '<div class="dm">'
+  + '<div class="dm-topbar"><span>📞 Hotline: <b>'+esc(t.phone)+'</b> &nbsp;·&nbsp; ✉ '+esc(t.email)+'</span><span>🕘 '+esc(t.hours)+' &nbsp;·&nbsp; Đăng nhập | Đăng ký</span></div>'
+  + '<div class="dm-header"><div class="dm-logo"><span class="dm-logo-mark" style="background:'+t.main+'">'+esc(t.brand.charAt(0))+'</span><span><span class="dm-logo-name">'+esc(t.brand)+'</span><br><span class="dm-logo-sub">'+esc(t.brandSub)+'</span></span></div>'
+  + '<div class="dm-search"><span>Tìm kiếm sản phẩm, dịch vụ…</span><i style="background:'+t.main+'">Tìm kiếm</i></div>'
+  + '<div class="dm-head-right"><div class="dm-hotline">Tư vấn & đặt hàng<b style="color:'+t.accent+'">'+esc(t.phone)+'</b></div><span class="dm-cart" style="background:'+t.main+'">🛒 Giỏ hàng <em>2</em></span></div></div>'
+  + '<nav class="dm-menu" style="background:'+t.main+'">'+t.menu.map(function(m){return '<span>'+esc(m)+'</span>';}).join("")+'</nav>'
+  + '<div class="dm-hero"><img src="'+img(t,"hero")+'" alt="Banner '+esc(t.name)+'">'
+  + '<div class="dm-hero-ov"><div class="k">'+esc(t.heroKicker)+'</div><h3>'+esc(t.heroTitle)+'</h3><p>'+esc(t.heroSub)+'</p><div class="dm-hero-btns"><span class="dm-btn">'+esc(t.cta1)+'</span><span class="dm-btn alt">'+esc(t.cta2)+'</span></div></div>'+badge+'</div>'
+  + '<div class="dm-benefits">'+bens+'</div>'
+  + '<div class="dm-main"><aside class="dm-side"><h4 style="background:'+t.main+'">Danh mục</h4><ul>'+cats+'</ul>'
+  + '<div class="dm-side-promo" style="background:'+t.heroBg+'"><b>'+esc(t.promoKicker)+'</b><span>'+esc(t.promoSub)+'</span></div></aside>'
+  + '<div class="dm-content">'
+  + '<div class="dm-sec-head"><div class="dm-sec-title"><span class="dm-sec-bar" style="background:'+t.main+'"></span><h4>'+esc(t.itemHead)+'</h4></div><span>'+esc(t.itemSub)+' · Xem tất cả ›</span></div>'
+  + '<div class="dm-pgrid">'+prods+'</div>'
+  + '<div class="dm-promo"><img src="'+img(t,"hero")+'" alt="" loading="lazy"><div class="dm-promo-ov"><div class="k">'+esc(t.promoKicker)+'</div><b>'+esc(t.promoTitle)+'</b><span>'+esc(t.promoSub)+'</span></div></div>'
+  + '<div class="dm-sec-head" style="margin-top:16px"><div class="dm-sec-title"><span class="dm-sec-bar" style="background:'+t.main+'"></span><h4>'+esc(t.newsHead)+'</h4></div><span>Xem thêm ›</span></div>'
+  + '<div class="dm-news">'+news+'</div>'
+  + '<div class="dm-testi"><div class="dm-stars">★★★★★</div>'+esc(t.testi)+'</div>'
+  + '</div></div>'
+  + '<div class="dm-footer" style="background:'+t.main+'"><div class="dm-footer-grid">'
+  + '<div><div class="brandline">'+esc(t.brand)+'</div><p>'+esc(t.about)+'</p><span class="dm-zalo">Chat Zalo: '+esc(t.phone)+'</span></div>'
+  + '<div><h5>Danh mục</h5><ul>'+t.cats.slice(0,5).map(function(c){return '<li>'+esc(c[0])+'</li>';}).join("")+'</ul></div>'
+  + '<div><h5>Hỗ trợ khách hàng</h5><ul><li>Hướng dẫn mua hàng</li><li>Chính sách đổi trả</li><li>Chính sách bảo hành</li><li>Phương thức thanh toán</li><li>Câu hỏi thường gặp</li></ul></div>'
+  + '<div><h5>Liên hệ</h5><ul><li>📍 '+esc(t.address)+'</li><li>📞 Hotline: '+esc(t.phone)+'</li><li>✉ '+esc(t.email)+'</li><li>🕘 '+esc(t.hours)+'</li></ul></div>'
+  + '</div><div class="dm-copy"><span>© 2026 '+esc(t.brand)+' — Bản demo giao diện do Web Khởi Nguồn thực hiện.</span><span>Điều khoản · Bảo mật · Sitemap</span></div></div>'
+  + '</div>';
+}
+function phoneMock(t){
+  return '<div class="phone"><div class="phone-notch"><i></i></div><div class="phone-scroll">'+demoHTML(t,true)+'</div></div>';
+}
+
+/* ---------- Thư viện: lọc, lưới, chọn ---------- */
+function renderFilters(){
+  var el = document.getElementById("filters");
+  el.innerHTML = FILTERS.map(function(f){
+    return '<button type="button" class="fbtn" data-f="'+f.key+'" aria-pressed="'+(currentFilter===f.key)+'">'+f.label+'</button>';
+  }).join("");
+  var btns = el.querySelectorAll(".fbtn");
+  for (var i=0;i<btns.length;i++){
+    btns[i].addEventListener("click", function(){ currentFilter = this.getAttribute("data-f"); renderFilters(); renderGrid(); });
+  }
+}
+function renderGrid(){
+  var list = TEMPLATES.filter(function(t){ return currentFilter==="all" || t.group===currentFilter; });
+  document.getElementById("countLine").textContent = "Đang hiển thị " + list.length + " mẫu" + (currentFilter==="all" ? "" : " trong nhóm này") + ".";
+  var grid = document.getElementById("grid");
+  grid.innerHTML = list.map(function(t){
+    var isOk = !!approved[t.id];
+    return '<article class="card'+(isOk?" approved":"")+'" data-id="'+t.id+'">'
+      + coverMock(t)
+      + '<div class="card-body"><div class="card-top"><h2>Mẫu '+t.num+' · '+esc(t.name)+'</h2><span class="tag">'+esc(t.groupLabel)+'</span><span class="badge-ok">✓ ĐÃ CHỌN</span></div>'
+      + '<p class="desc">'+esc(t.desc)+'</p>'
+      + '<div class="chips">'+t.features.slice(0,3).map(function(f){return '<span class="chip">'+esc(f)+'</span>';}).join("")+'</div>'
+      + '<div class="palette">Bảng màu: '+t.palette.map(function(c){return '<span class="dot" style="background:'+c+'"></span>';}).join("")+'</div>'
+      + '<div class="card-actions"><button type="button" class="btn ghost" data-act="view">Xem trước</button><button type="button" class="btn approve" data-act="approve">'+(isOk?"✓ Đã chọn — bấm để bỏ":"Chọn mẫu này")+'</button></div>'
+      + '</div></article>';
+  }).join("");
+  var cards = grid.querySelectorAll(".card");
+  for (var i=0;i<cards.length;i++){
+    (function(card){
+      var id = card.getAttribute("data-id");
+      card.querySelector('[data-act="view"]').addEventListener("click", function(){ openSheet(id); });
+      card.querySelector('[data-act="approve"]').addEventListener("click", function(){ toggleApprove(id); });
+    })(cards[i]);
+  }
+  renderSummary();
+}
+function toggleApprove(id){
+  approved[id] = !approved[id];
+  if (!approved[id]) delete approved[id];
+  renderGrid();
+  var t = TEMPLATES.filter(function(x){return x.id===id;})[0];
+  showToast(approved[id] ? "Đã chọn: Mẫu " + t.num + " · " + t.name : "Đã bỏ chọn: Mẫu " + t.num + " · " + t.name);
+  renderSummary();
+}
+function approvedList(){ return TEMPLATES.filter(function(t){ return approved[t.id]; }); }
+function renderSummary(){
+  var list = approvedList();
+  document.getElementById("statApproved").textContent = list.length + "/12";
+  document.getElementById("sumCount").textContent = "Đã chọn " + list.length + "/12 mẫu";
+  document.getElementById("sumNames").textContent = list.length
+    ? list.map(function(t){ return "Mẫu " + t.num + " " + t.name; }).join(" · ")
+    : "Chưa chọn mẫu nào — bấm “Chọn mẫu này” ở từng mẫu anh ưng.";
+  document.getElementById("copyBtn").disabled = list.length === 0;
+  var sheetBtn = document.getElementById("sheetApprove");
+  if (sheetBtn && sheetBtn.getAttribute("data-id")){
+    var id = sheetBtn.getAttribute("data-id");
+    sheetBtn.textContent = approved[id] ? "✓ Đã chọn mẫu này — bấm để bỏ" : "Chọn mẫu này";
+  }
+}
+function showToast(msg){
+  var el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("show");
+  setTimeout(function(){ el.classList.remove("show"); }, 2200);
+}
+function openSheet(id){
+  var t = TEMPLATES.filter(function(x){return x.id===id;})[0];
+  if (!t) return;
+  var sheet = document.getElementById("sheet");
+  sheet.innerHTML =
+    '<div class="sheet-head"><div><span class="tag">'+esc(t.groupLabel)+'</span><h2 style="margin-top:8px">Mẫu '+t.num+' · '+esc(t.name)+'</h2><p>'+esc(t.desc)+' Cuộn xuống để xem trọn trang chủ mẫu như khách thật sẽ thấy.</p></div><button type="button" class="xbtn" id="sheetClose" aria-label="Đóng">✕</button></div>'
+    + '<div class="preview-row"><div><div class="frame-label">Bản máy tính — trang chủ đầy đủ</div><div class="big-frame">'+demoHTML(t,false)+'</div></div>'
+    + '<div><div class="frame-label">Bản điện thoại</div>'+phoneMock(t)+'</div></div>'
+    + '<div class="detail-grid"><div class="dbox"><h3>Trang chủ gồm những khối nào?</h3><ul>'+t.sections.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ul></div>'
+    + '<div class="dbox"><h3>Tính năng chính</h3><ul>'+t.features.map(function(s){return '<li>'+esc(s)+'</li>';}).join("")+'</ul><h3 style="margin-top:14px">Hợp với ai?</h3><p style="margin:0;font-size:14px;color:var(--ink2)">'+esc(t.fit)+'</p>'
+    + '<div class="palette" style="margin-top:12px">Bảng màu mẫu: '+t.palette.map(function(c){return '<span class="dot" style="background:'+c+'"></span><span style="font-size:11px">'+c+'</span>';}).join(" ")+'</div></div></div>'
+    + '<div class="sheet-actions"><button type="button" class="btn approve" id="sheetApprove" data-id="'+t.id+'">'+(approved[t.id]?"✓ Đã chọn mẫu này — bấm để bỏ":"Chọn mẫu này")+'</button><button type="button" class="btn ghost" id="sheetBack">Quay lại danh sách</button></div>';
+  document.getElementById("overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("overlay").scrollTop = 0;
+  document.getElementById("sheetClose").addEventListener("click", closeSheet);
+  document.getElementById("sheetBack").addEventListener("click", closeSheet);
+  document.getElementById("sheetApprove").addEventListener("click", function(){ toggleApprove(t.id); });
+  renderSummary();
+}
+function closeSheet(){
+  document.getElementById("overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("overlay").addEventListener("click", function(e){ if (e.target === this) closeSheet(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeSheet(); });
+document.getElementById("resetBtn").addEventListener("click", function(){
+  approved = {}; renderGrid(); showToast("Đã bỏ chọn tất cả — chọn lại từ đầu nhé anh.");
+});
+document.getElementById("copyBtn").addEventListener("click", function(){
+  var list = approvedList();
+  var text = "DANH SÁCH MẪU WEB ĐÃ CHỌN (" + list.length + "/12):
+" + list.map(function(t){ return "- Mẫu " + t.num + ": " + t.name + " (" + t.url + ")"; }).join("
+");
+  function done(){ showToast("Đã sao chép " + list.length + " mẫu đã chọn — dán gửi lại cho em là được."); }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+  } else { fallbackCopy(text); done(); }
+});
+function fallbackCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); } catch(e){}
+  document.body.removeChild(ta);
+}
+renderFilters();
+renderGrid();
 </script></body></html>
