@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minh Châu Watch &amp; Jewelry — Đồng hồ và trang sức | Mẫu demo Web Khởi Nguồn</title>
+<style>:root{--ac:#8a6d1b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;color:#222;line-height:1.55}
+a{color:inherit}.banner{background:#111;color:#fff;padding:10px 14px;font-size:14px;text-align:center}
+header{padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px}nav a{margin:0 8px;text-decoration:none}
+.cart{background:var(--ac);color:#fff;border:0;padding:10px 16px;border-radius:24px;font-weight:700;cursor:pointer}
+.hero{padding:44px 16px;text-align:center;background:linear-gradient(135deg,var(--ac),#ffffff);color:#111}
+.hero h1{margin:0 0 8px;font-size:34px}.hero p{max-width:640px;margin:0 auto}
+.cta{display:inline-block;margin-top:16px;background:#111;color:#fff;padding:12px 22px;border-radius:24px;text-decoration:none;font-weight:700}
+.slider{position:relative;overflow:hidden;height:420px;background:#222}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.slide.active{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slide .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 28px 56px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.slide .cap h2{margin:0 0 6px;font-size:32px}.slide .cap p{margin:0 0 12px;max-width:620px}
+.slide .cap a{display:inline-block;background:#fff;color:#111;padding:11px 22px;border-radius:24px;text-decoration:none;font-weight:800}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:20px;cursor:pointer}
+.prev{left:14px}.next{right:14px}
+.dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;text-align:center}
+.dot{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.55);margin:0 4px;cursor:pointer}
+.dot.active{background:#fff}
+.brief{border:2px dashed #b45309;background:#fffbeb;border-radius:14px;padding:18px 20px}
+.brief h2,.checklist h2{margin-top:0}
+.checklist{border:2px dashed #166534;background:#f0fdf4;border-radius:14px;padding:18px 20px}
+.checklist li{margin:6px 0}.status{font-weight:800;color:#b45309}
+.catgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cattile{position:relative;border-radius:14px;overflow:hidden;height:150px}
+.cattile img{width:100%;height:100%;object-fit:cover;display:block}
+.cattile span{position:absolute;left:0;right:0;bottom:0;padding:10px;text-align:center;color:#fff;font-weight:800;background:rgba(0,0,0,.55)}
+section{padding:28px 16px;max-width:1080px;margin:0 auto}h2{margin-top:0}
+.cats{display:flex;gap:10px;flex-wrap:wrap}.cats span{border:1px solid #ddd;padding:8px 14px;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;height:100%}
+.pimg{height:260px;position:relative;overflow:hidden;background:#f3f3f3;cursor:pointer}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.sale{position:absolute;top:12px;right:12px;z-index:2;width:56px;height:56px;border-radius:50%;background:#e11d48;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.overlay{position:absolute;inset:0;display:flex;gap:10px;align-items:center;justify-content:center;background:rgba(0,0,0,.5);opacity:0;transition:opacity .25s}
+.pimg:hover .overlay,.pimg.show .overlay{opacity:1}
+.overlay button{padding:11px 16px;border-radius:24px;border:0;font-weight:800;cursor:pointer;background:#fff}
+.body{padding:14px;text-align:center;flex:1;display:flex;flex-direction:column}
+.body h3{margin:0 0 8px}.old{text-decoration:line-through;color:#888}.new{font-weight:800;font-size:20px;color:var(--ac)}
+.body .add{margin-top:auto}
+.add{width:100%;margin-top:10px;padding:10px;border:0;border-radius:10px;background:var(--ac);color:#fff;font-weight:700;cursor:pointer}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}.btn{display:inline-block;padding:11px 18px;border-radius:10px;background:#111;color:#fff;text-decoration:none;margin:4px 6px 4px 0}
+.map{border:2px dashed #bbb;border-radius:12px;padding:28px;text-align:center;background:#fafafa}
+form input,form textarea{width:100%;padding:11px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
+footer{background:#111;color:#fff;padding:22px 16px;text-align:center}
+.note{font-size:14px;color:#555}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#111;color:#fff;padding:12px 18px;border-radius:24px;display:none;z-index:9}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.catgrid{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}.hero h1{font-size:26px}.slider{height:280px}.slide .cap h2{font-size:22px}.pimg{height:200px}}
+</style></head><body>
+<div style="background:#046c33;color:#fff;padding:10px 16px;font-family:system-ui,Arial,sans-serif;font-size:15px;text-align:center"><a href="../mau-web.html" style="color:#fff;font-weight:700">← Quay lại trang mẫu web</a> &nbsp;·&nbsp; <a href="../index.html" style="color:#fff;font-weight:700">Trang chủ Web Khởi Nguồn</a> &nbsp;·&nbsp; Mẫu demo — liên hệ 0868.895.144 để làm web tương tự</div>
+<div class="banner">BẢN DEMO — Mẫu này thuộc gói làm website 586.000đ (giá gốc 2.000.000đ) của Web Khởi Nguồn • Bàn giao 1–3 ngày • Hiển thị tốt trên điện thoại • Giỏ hàng + COD • Tặng tên miền + hosting + SSL năm đầu • Bảo hành trọn đời</div>
+<header><div class="logo">Minh Châu Watch &amp; Jewelry</div><nav><a href="#san-pham">Sản phẩm</a><a href="#lien-he">Liên hệ</a></nav>
+<button class="cart" id="cartBtn" onclick="alert('Giỏ hàng demo: chưa thanh toán thật.')">Giỏ hàng: 0 món</button></header>
+<div class="slider"><div class="slide active"><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-va-trang-suc-nho-gon.jpg" alt="Đồng hồ và trang sức nhỏ gọn" loading="lazy"><div class="cap"><h2>Đồng hồ và trang sức nhỏ gọn</h2><p>Ghi rõ chất liệu và bảo hành.</p><a href="#san-pham">Xem sản phẩm</a></div></div><div class="slide"><img src="assets/mau-05-dong-ho-trang-suc-gia-ro-rang-co-gia-cu-va-gia-moi.jpg" alt="Giá rõ ràng, có giá cũ và giá mới" loading="lazy"><div class="cap"><h2>Giá rõ ràng, có giá cũ và giá mới</h2><p>Mỗi sản phẩm đều ghi giá minh họa để khách hình dung.</p><a href="#san-pham">Xem sản phẩm</a></div></div><div class="slide"><img src="assets/mau-05-dong-ho-trang-suc-chon-qua-theo-ngan-sach.jpg" alt="Chọn quà theo ngân sách" loading="lazy"><div class="cap"><h2>Chọn quà theo ngân sách</h2><p>Nhắn tin để được tư vấn khi bàn giao thật.</p><a href="#san-pham">Xem sản phẩm</a></div></div><button type="button" class="prev" aria-label="Slide trước" onclick="prevSlide()">‹</button><button type="button" class="next" aria-label="Slide sau" onclick="nextSlide()">›</button><div class="dots"><button type="button" class="dot active" aria-label="Slide 1" onclick="showSlide(0)"></button><button type="button" class="dot" aria-label="Slide 2" onclick="showSlide(1)"></button><button type="button" class="dot" aria-label="Slide 3" onclick="showSlide(2)"></button></div></div>
+<section><h2>Danh mục</h2><div class="catgrid"><div class="cattile"><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nam-day-da-nau.jpg" alt="Đồng hồ nam" loading="lazy"><span>Đồng hồ nam</span></div><div class="cattile"><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nu-mat-tron-nho.jpg" alt="Đồng hồ nữ" loading="lazy"><span>Đồng hồ nữ</span></div><div class="cattile"><img src="assets/mau-05-dong-ho-trang-suc-nhan-bac-tron.jpg" alt="Nhẫn" loading="lazy"><span>Nhẫn</span></div><div class="cattile"><img src="assets/mau-05-dong-ho-trang-suc-day-chuyen-bac-mat-da-nho.jpg" alt="Dây chuyền" loading="lazy"><span>Dây chuyền</span></div></div></section>
+<section id="san-pham"><h2>Sản phẩm</h2>
+<p class="note">Giá sản phẩm trong mẫu này chỉ là giá minh họa, sẽ thay bằng giá thật của khách khi bàn giao.</p>
+<div class="grid"><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-26%</span><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nam-day-da-nau.jpg" alt="Đồng hồ nam dây da nâu" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Đồng hồ nam dây da nâu')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Đồng hồ nam dây da nâu')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Đồng hồ nam dây da nâu</h3><div><span class="old">1.890.000đ</span> <span class="new">1.390.000đ</span></div>
+<button class="add" onclick="addToCart(1390000,'Đồng hồ nam dây da nâu')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-25%</span><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nu-mat-tron-nho.jpg" alt="Đồng hồ nữ mặt tròn nhỏ" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Đồng hồ nữ mặt tròn nhỏ')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Đồng hồ nữ mặt tròn nhỏ')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Đồng hồ nữ mặt tròn nhỏ</h3><div><span class="old">1.590.000đ</span> <span class="new">1.190.000đ</span></div>
+<button class="add" onclick="addToCart(1190000,'Đồng hồ nữ mặt tròn nhỏ')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-28%</span><img src="assets/mau-05-dong-ho-trang-suc-nhan-bac-tron.jpg" alt="Nhẫn bạc trơn" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Nhẫn bạc trơn')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Nhẫn bạc trơn')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Nhẫn bạc trơn</h3><div><span class="old">690.000đ</span> <span class="new">499.000đ</span></div>
+<button class="add" onclick="addToCart(499000,'Nhẫn bạc trơn')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-27%</span><img src="assets/mau-05-dong-ho-trang-suc-day-chuyen-bac-mat-da-nho.jpg" alt="Dây chuyền bạc mặt đá nhỏ" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Dây chuyền bạc mặt đá nhỏ')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Dây chuyền bạc mặt đá nhỏ')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Dây chuyền bạc mặt đá nhỏ</h3><div><span class="old">790.000đ</span> <span class="new">579.000đ</span></div>
+<button class="add" onclick="addToCart(579000,'Dây chuyền bạc mặt đá nhỏ')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-26%</span><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nam-day-kim-loai.jpg" alt="Đồng hồ nam dây kim loại" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Đồng hồ nam dây kim loại')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Đồng hồ nam dây kim loại')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Đồng hồ nam dây kim loại</h3><div><span class="old">2.290.000đ</span> <span class="new">1.690.000đ</span></div>
+<button class="add" onclick="addToCart(1690000,'Đồng hồ nam dây kim loại')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-28%</span><img src="assets/mau-05-dong-ho-trang-suc-bong-tai-bac-nu-tron.jpg" alt="Bông tai bạc nụ tròn" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Bông tai bạc nụ tròn')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Bông tai bạc nụ tròn')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Bông tai bạc nụ tròn</h3><div><span class="old">390.000đ</span> <span class="new">279.000đ</span></div>
+<button class="add" onclick="addToCart(279000,'Bông tai bạc nụ tròn')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-27%</span><img src="assets/mau-05-dong-ho-trang-suc-lac-tay-bac-mat-xich.jpg" alt="Lắc tay bạc mắt xích" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Lắc tay bạc mắt xích')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Lắc tay bạc mắt xích')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Lắc tay bạc mắt xích</h3><div><span class="old">590.000đ</span> <span class="new">429.000đ</span></div>
+<button class="add" onclick="addToCart(429000,'Lắc tay bạc mắt xích')">Thêm vào giỏ</button></div></article><article class="card"><div class="pimg" onclick="toggleOverlay(this)"><span class="sale">-27%</span><img src="assets/mau-05-dong-ho-trang-suc-dong-ho-nu-day-luoi.jpg" alt="Đồng hồ nữ dây lưới" loading="lazy"><div class="overlay"><button type="button" onclick="event.stopPropagation();previewProduct('Đồng hồ nữ dây lưới')">Xem trước</button><button type="button" onclick="event.stopPropagation();detailProduct('Đồng hồ nữ dây lưới')">Xem chi tiết</button></div></div>
+<div class="body"><h3>Đồng hồ nữ dây lưới</h3><div><span class="old">1.490.000đ</span> <span class="new">1.090.000đ</span></div>
+<button class="add" onclick="addToCart(1090000,'Đồng hồ nữ dây lưới')">Thêm vào giỏ</button></div></article></div>
+<p class="note">Thanh toán khi nhận hàng (COD) áp dụng theo chính sách của shop thật sau khi bàn giao, không thanh toán trong bản demo này.</p></section>
+<section id="lien-he"><h2>Liên hệ</h2><div class="contact"><div>
+<p><strong>Liên hệ Web Khởi Nguồn:</strong> 0868.895.144 (đây là mẫu demo, tên shop và giá sản phẩm là minh họa — muốn làm web tương tự, liên hệ Web Khởi Nguồn)</p>
+<a class="btn" href="tel:0868895144">📞 Gọi Web Khởi Nguồn: 0868.895.144</a>
+<a class="btn" href="https://zalo.me/84868895144">💬 Zalo Web Khởi Nguồn</a>
+<div class="map">📍 Bản đồ minh họa<br>Địa chỉ demo: Số 1, đường Minh Họa, Hà Nội<br>(sẽ thay bằng địa chỉ thật của khách khi bàn giao)</div></div>
+<div><form onsubmit="sendForm(event)"><label>Họ tên</label><input required placeholder="Họ tên của bạn">
+<label>Số điện thoại</label><input required placeholder="Số điện thoại">
+<label>Nội dung</label><textarea rows="4" placeholder="Bạn cần tư vấn sản phẩm nào?"></textarea>
+<button class="add" type="submit">Gửi liên hệ (demo)</button><p id="formMsg"></p></form></div></div></section>
+<footer><p>Minh Châu Watch &amp; Jewelry — Mẫu demo ngành Đồng hồ và trang sức của gói làm website Web Khởi Nguồn.</p>
+<p class="note" style="color:#ccc">Đây là bản demo, chưa phải website thật của shop. Thông tin liên hệ trong mẫu đã thay bằng liên hệ của Web Khởi Nguồn để khách đặt làm web tương tự; tên shop và giá sản phẩm vẫn là minh họa.</p>
+<p class="note" style="color:#ccc">Ảnh minh họa - Pexels, dùng theo giấy phép Pexels.</p></footer>
+<div id="toast"></div><script>
+let n=0,total=0;
+let cur=0,timer=null;
+function showSlide(i){const s=document.querySelectorAll('.slide'),d=document.querySelectorAll('.dot');
+ if(!s.length)return;cur=(i+s.length)%s.length;
+ s.forEach((el,k)=>el.classList.toggle('active',k===cur));
+ d.forEach((el,k)=>el.classList.toggle('active',k===cur));}
+function nextSlide(){showSlide(cur+1)}function prevSlide(){showSlide(cur-1)}
+function startSlider(){stopSlider();timer=setInterval(nextSlide,4500);}
+function stopSlider(){if(timer)clearInterval(timer);}
+function initSlider(){const el=document.querySelector('.slider');if(!el)return;
+ el.addEventListener('mouseenter',stopSlider);el.addEventListener('mouseleave',startSlider);
+ let x0=null;el.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stopSlider();},{passive:true});
+ el.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;
+  if(dx<-40)nextSlide();else if(dx>40)prevSlide();x0=null;startSlider();},{passive:true});
+ showSlide(0);startSlider();}
+function toggleOverlay(el){el.classList.toggle('show');}
+function previewProduct(name){const t=document.getElementById('toast');t.textContent='Xem trước (demo): '+name;t.style.display='block';setTimeout(()=>t.style.display='none',2200);}
+function detailProduct(name){const t=document.getElementById('toast');t.textContent='Xem chi tiết (demo): '+name+' — giá và mô tả đầy đủ sẽ do shop thật cung cấp khi bàn giao.';t.style.display='block';setTimeout(()=>t.style.display='none',3000);}
+document.addEventListener('DOMContentLoaded',initSlider);
+function addToCart(price,name){n++;total+=price;
+ document.getElementById('cartBtn').textContent='Giỏ hàng: '+n+' món — '+total.toLocaleString('vi-VN')+'đ';
+ const t=document.getElementById('toast');t.textContent='Đã thêm vào giỏ (demo): '+name;t.style.display='block';
+ setTimeout(()=>t.style.display='none',2200);}
+function sendForm(e){e.preventDefault();document.getElementById('formMsg').textContent='Đã gửi biểu mẫu demo. Đây chưa phải đơn hàng thật, shop sẽ thay thông tin thật khi bàn giao.';}
+</script></body></html>
