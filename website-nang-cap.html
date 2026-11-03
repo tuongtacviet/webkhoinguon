@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web Khởi Nguồn — Dịch vụ thiết kế website chuyên nghiệp chuẩn SEO trọn gói tại Việt Nam. Tối ưu ra đơn cho Shop online, Cá nhân dịch vụ và Doanh nghiệp SME. Bàn giao sau 7 ngày.">
+  <title>Web Khởi Nguồn — Dịch Vụ Thiết Kế Website Chuyên Nghiệp Chuẩn SEO</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. HỆ THỐNG BIẾN THIẾT KẾ (DESIGN SYSTEM - MODERN LUXURY MINIMAL)
+       ========================================================================== */
+    :root {
+      /* Bảng màu 60 - 30 - 10 */
+      --color-bg-primary: #FFFFFF;
+      --color-bg-secondary: #F8FAFC;
+      --color-surface-dark: #0F172A;
+      --color-surface-dark-2: #1E293B;
+
+      --color-brand-primary: #2563EB;
+      --color-brand-hover: #1D4ED8;
+      --color-brand-light: #EFF6FF;
+      --color-brand-border: #BFDBFE;
+
+      --color-cta-primary: #F97316;
+      --color-cta-hover: #EA580C;
+      --color-cta-light: #FFF7ED;
+
+      --color-accent-gold: #D97706;
+      --color-success: #10B981;
+      --color-success-light: #ECFDF5;
+
+      --color-text-heading: #0F172A;
+      --color-text-body: #334155;
+      --color-text-muted: #64748B;
+      --color-border: #E2E8F0;
+
+      /* Phông chữ */
+      --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Bo góc & Đổ bóng */
+      --radius-sm: 8px;
+      --radius-button: 10px;
+      --radius-card: 16px;
+      --radius-xl: 24px;
+
+      --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --shadow-card-hover: 0 14px 30px -4px rgba(15, 23, 42, 0.11);
+      --shadow-cta: 0 10px 20px -3px rgba(249, 115, 22, 0.28);
+
+      /* Lưới & Khoảng cách */
+      --container-width: 1240px;
+      --section-py: 56px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (min-width: 1024px) {
+      :root {
+        --section-py: 96px;
+      }
+    }
+
+    /* ==========================================================================
+       2. RESET & KHẢ NĂNG TIẾP CẬN (ACCESSIBILITY)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg-primary);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--color-brand-primary);
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: var(--radius-button);
+      font-weight: 600;
+      z-index: 9999;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-text-heading);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img, svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.45);
+      outline-offset: 2px;
+    }
+
+    /* ==========================================================================
+       3. TIỆN ÍCH BỐ CỤC & NÚT BẤM (BUTTONS & LAYOUT)
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: var(--section-py) 0;
+    }
+
+    .section-bg-alt {
+      background-color: var(--color-bg-secondary);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background-color: var(--color-brand-light);
+      color: var(--color-brand-primary);
+      border: 1px solid var(--color-brand-border);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.0625rem;
+      color: var(--color-text-muted);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.35rem;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: var(--radius-button);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background-color: var(--color-cta-primary);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-cta);
+    }
+    .btn-primary:hover {
+      background-color: var(--color-cta-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: var(--color-text-heading);
+      border-color: #CBD5E1;
+    }
+    .btn-secondary:hover {
+      border-color: var(--color-brand-primary);
+      color: var(--color-brand-primary);
+      background-color: var(--color-bg-secondary);
+    }
+
+    .btn-brand {
+      background-color: var(--color-brand-primary);
+      color: #FFFFFF;
+    }
+    .btn-brand:hover {
+      background-color: var(--color-brand-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 11px 20px;
+      font-size: 0.9375rem;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       4. HEADER CỐ ĐỊNH (STICKY NAVIGATION)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-text-heading);
+    }
+
+    .brand-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-brand-primary), #1E40AF);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--color-text-body);
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      color: var(--color-brand-primary);
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      background: #FFFFFF;
+      color: var(--color-text-heading);
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--color-border);
+      padding: 16px 20px 24px;
+    }
+    .mobile-nav.is-open {
+      display: block;
+    }
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .mobile-nav-list a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      color: var(--color-text-heading);
+    }
+    .mobile-nav-list a:hover {
+      background-color: var(--color-bg-secondary);
+      color: var(--color-brand-primary);
+    }
+
+    @media (min-width: 1024px) {
+      .nav-desktop {
+        display: flex;
+      }
+      .header-cta {
+        display: inline-flex;
+      }
+      .mobile-menu-toggle {
+        display: none;
+      }
+      .mobile-nav {
+        display: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       5. PHẦN MỞ ĐẦU CUỐN HÚT (HERO SECTION VỚI KHUNG MÔ PHỎNG SỐNG)
+       ========================================================================== */
+    .hero-section {
+      padding: 44px 0 64px;
+      background: radial-gradient(circle at 85% 15%, #EFF6FF 0%, #FFFFFF 55%);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-title .highlight {
+      color: var(--color-brand-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.0625rem;
+      color: var(--color-text-body);
+      margin-bottom: 24px;
+      max-width: 620px;
+    }
+
+    .hero-checks {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .hero-check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text-heading);
+    }
+
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: var(--color-success-light);
+      color: var(--color-success);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .hero-microcopy {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Mockup Live Simulation */
+    .hero-visual-card {
+      background: var(--color-surface-dark);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      color: #FFFFFF;
+      box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.28);
+    }
+
+    .mockup-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .window-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .device-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px;
+      border-radius: 8px;
+      gap: 4px;
+    }
+
+    .device-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .device-btn.active {
+      background: var(--color-brand-primary);
+      color: #FFFFFF;
+    }
+
+    .mockup-screen {
+      background: #FFFFFF;
+      color: var(--color-text-heading);
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.3s ease;
+      margin: 0 auto;
+    }
+
+    .mockup-screen.is-mobile-view {
+      max-width: 290px;
+      border: 4px solid #334155;
+      border-radius: 24px;
+    }
+
+    .mockup-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .mockup-kpi-box {
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .hero-checks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-section {
+        padding: 80px 0 96px;
+      }
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+      }
+      .hero-title {
+        font-size: 2.9rem;
+      }
+    }
+
+    /* ==========================================================================
+       6. THANH NIỀM TIN & HỆ SINH THÁI (TRUST BAR)
+       ========================================================================== */
+    .trust-bar {
+      background-color: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border);
+      padding: 32px 0;
+    }
+
+    .trust-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .trust-metric-num {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-brand-primary);
+    }
+
+    .trust-metric-label {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .ecosystem-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--color-border);
+    }
+
+    .eco-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-text-body);
+    }
+
+    @media (min-width: 768px) {
+      .trust-metrics {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* ==========================================================================
+       7. BENTO GRID: DỊCH VỤ, LỢI ÍCH, GIÁ & DỰ ÁN
+       ========================================================================== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+    }
+
+    .bento-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: #93C5FD;
+    }
+
+    .bento-card.featured {
+      border: 2px solid var(--color-brand-primary);
+      background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 28%);
+    }
+
+    .popular-ribbon {
+      position: absolute;
+      top: -13px;
+      right: 24px;
+      background-color: var(--color-accent-gold);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: var(--color-brand-light);
+      color: var(--color-brand-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: var(--color-text-body);
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--color-text-body);
+    }
+
+    /* Kho Giao diện Mẫu */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: #FFFFFF;
+      color: var(--color-text-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-brand-primary);
+      color: #FFFFFF;
+      border-color: var(--color-brand-primary);
+    }
+
+    .template-preview-thumb {
+      height: 168px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Phần Giới thiệu Web Khởi Nguồn (Brand Story) */
+    .about-story-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .core-values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .core-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .core-values-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .value-card {
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    /* Đánh giá & FAQ */
+    .stars {
+      color: #F59E0B;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: var(--color-text-body);
+      margin-bottom: 20px;
+    }
+
+    .client-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .client-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-brand-primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    /* FAQ */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-text-heading);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 24px 20px;
+      color: var(--color-text-body);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--color-bg-secondary);
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: block;
+    }
+
+    .faq-icon {
+      transition: transform 0.25s ease;
+      font-weight: 700;
+      color: var(--color-brand-primary);
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* ==========================================================================
+       8. KHU VỰC KÊU GỌI HÀNH ĐỘNG KÉP (CONVERSION HUB)
+       ========================================================================== */
+    .cta-section {
+      background-color: var(--color-surface-dark);
+      color: #FFFFFF;
+      padding: var(--section-py) 0;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .cta-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 56px;
+      }
+    }
+
+    .guarantee-box {
+      background: var(--color-surface-dark-2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      margin-top: 28px;
+    }
+
+    .form-card {
+      background: #FFFFFF;
+      color: var(--color-text-heading);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    .mode-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--color-bg-secondary);
+      padding: 5px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      border: 1px solid var(--color-border);
+    }
+
+    .mode-tab-btn {
+      padding: 10px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mode-tab-btn.active {
+      background: #FFFFFF;
+      color: var(--color-brand-primary);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--color-text-heading);
+    }
+
+    .form-control {
+      width: 100%;
+      height: 50px;
+      padding: 0 16px;
+      border-radius: 10px;
+      border: 1px solid #CBD5E1;
+      background-color: var(--color-bg-secondary);
+      color: var(--color-text-heading);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      background-color: #FFFFFF;
+      border-color: var(--color-brand-primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: var(--color-success-light);
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+      font-size: 0.925rem;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       9. FOOTER & CÔNG CỤ NỔI (FLOATING BAR)
+       ========================================================================== */
+    .site-footer {
+      background: #090E1A;
+      color: #94A3B8;
+      padding: 56px 0 32px;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    .footer-title {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .floating-actions {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 990;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+      transition: var(--transition);
+    }
+    .float-btn:hover {
+      transform: scale(1.04);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+    .modal-backdrop.is-open {
+      display: flex;
+    }
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      max-width: 640px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Khả năng tiếp cận -->
+  <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+  <!-- ==================== 1. THANH ĐIỀU HƯỚNG ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="https://webkhoinguon.com" class="brand-logo" aria-label="Web Khởi Nguồn">
+        <span class="brand-logo-icon">W</span>
+        <span>Web Khởi Nguồn<span style="color: var(--color-brand-primary);">.VN</span></span>
+      </a>
+
+      <!-- Menu Máy tính -->
+      <nav class="nav-desktop" aria-label="Điều hướng chính">
+        <a href="#dich-vu" class="nav-link">Dịch Vụ</a>
+        <a href="#gioi-thieu" class="nav-link">Về Chúng Tôi</a>
+        <a href="#loi-ich" class="nav-link">Lợi Ích</a>
+        <a href="#giao-dien" class="nav-link">Kho Mẫu</a>
+        <a href="#bang-gia" class="nav-link">Bảng Giá</a>
+        <a href="#danh-gia" class="nav-link">Đánh Giá</a>
+        <a href="#faq" class="nav-link">Hỏi Đáp</a>
+      </nav>
+
+      <a href="#lien-he" class="btn btn-primary btn-sm header-cta">Nhận Báo Giá Miễn Phí</a>
+
+      <!-- Nút mở Menu Di động -->
+      <button type="button" id="mobile-menu-btn" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Mở menu điều hướng">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Ngăn kéo Di động -->
+    <nav id="mobile-nav-drawer" class="mobile-nav" aria-label="Menu di động">
+      <ul class="mobile-nav-list">
+        <li><a href="#dich-vu" class="mobile-nav-link">1. Dịch vụ thiết kế web</a></li>
+        <li><a href="#gioi-thieu" class="mobile-nav-link">2. Về Web Khởi Nguồn</a></li>
+        <li><a href="#loi-ich" class="mobile-nav-link">3. Lợi ích sinh lời</a></li>
+        <li><a href="#giao-dien" class="mobile-nav-link">4. Kho giao diện mẫu</a></li>
+        <li><a href="#bang-gia" class="mobile-nav-link">5. Bảng giá trọn gói</a></li>
+        <li><a href="#danh-gia" class="mobile-nav-link">6. Đánh giá khách hàng</a></li>
+        <li><a href="#faq" class="mobile-nav-link">7. Câu hỏi thường gặp</a></li>
+      </ul>
+      <a href="#lien-he" class="btn btn-primary btn-block mobile-nav-link">Nhận Tư Vấn &amp; Báo Giá Ngay</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== 2. PHẦN MỞ ĐẦU (HERO SECTION) ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Dịch Vụ Thiết Kế Website Chuyên Nghiệp Chuẩn SEO</span>
+          <h1 class="hero-title">
+            Biến Website Thành Cỗ Máy <span class="highlight">Bán Hàng &amp; Thu Phễu Tự Động 24/7</span> — Bàn Giao Sau 7 Ngày
+          </h1>
+          <p class="hero-subtitle">
+            Thiết kế may đo cho <strong>Shop bán hàng online, Chuyên gia dịch vụ và Doanh nghiệp SME</strong> tại Việt Nam. Không cần biết lập trình, tích hợp sẵn quét mã VietQR, tự tính phí vận chuyển và kết nối Zalo.
+          </p>
+
+          <ul class="hero-checks">
+            <li class="hero-check-item">
+              <span class="check-icon">✓</span> Tặng Tên miền + Hosting tốc độ cao năm đầu
+            </li>
+            <li class="hero-check-item">
+              <span class="check-icon">✓</span> Tải siêu tốc &lt; 2.5s, chuẩn Google SEO
+            </li>
+            <li class="hero-check-item">
+              <span class="check-icon">✓</span> Quản trị Tiếng Việt kéo thả trong 5 phút
+            </li>
+            <li class="hero-check-item">
+              <span class="check-icon">✓</span> Bảo hành kỹ thuật trọn đời, hỗ trợ Zalo 1-1
+            </li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#lien-he" class="btn btn-primary">Nhận Báo Giá Trọn Gói Trong 15 Phút</a>
+            <a href="#giao-dien" class="btn btn-secondary">Xem Kho 200+ Mẫu Web Thực Tế</a>
+          </div>
+          <p class="hero-microcopy">🛡️ Hợp đồng kinh tế rõ ràng • Cam kết hoàn tiền 100% nếu sai hẹn • Không chi phí ẩn</p>
+        </div>
+
+        <!-- Khung Mô Phỏng Tương Tác Sống -->
+        <div class="hero-visual-card" aria-label="Mô phỏng bảng điều khiển website">
+          <div class="mockup-toolbar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot" style="background: #EF4444;"></span>
+              <span class="window-dot" style="background: #F59E0B;"></span>
+              <span class="window-dot" style="background: #10B981;"></span>
+            </div>
+            <div class="device-switcher" role="group" aria-label="Chế độ xem">
+              <button type="button" id="btn-view-desktop" class="device-btn active">💻 Máy tính</button>
+              <button type="button" id="btn-view-mobile" class="device-btn">📱 Điện thoại</button>
+            </div>
+          </div>
+
+          <div id="interactive-mockup-screen" class="mockup-screen">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--color-brand-primary);">● Bảng Quản Trị Web Khởi Nguồn</span>
+              <span style="background: #ECFDF5; color: #059669; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 99px;">Google Speed: 98/100</span>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #1E3A8A, #2563EB); color: #FFFFFF; padding: 16px; border-radius: 10px;">
+              <p style="font-size: 0.75rem; opacity: 0.85;">Doanh thu &amp; Đơn hàng tự động tháng này</p>
+              <p style="font-size: 1.4rem; font-weight: 800; margin-top: 4px;">+168.450.000đ <span style="font-size: 0.8rem; color: #6EE7B7;">(+180%)</span></p>
+            </div>
+
+            <div class="mockup-kpi-grid">
+              <div class="mockup-kpi-box">
+                <p style="font-size: 0.75rem; color: var(--color-text-muted);">Đơn thanh toán VietQR</p>
+                <p style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-heading);">348 đơn</p>
+              </div>
+              <div class="mockup-kpi-box">
+                <p style="font-size: 0.75rem; color: var(--color-text-muted);">Khách đặt lịch &amp; Zalo</p>
+                <p style="font-size: 1.15rem; font-weight: 700; color: var(--color-brand-primary);">96 khách</p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; background: #FFF7ED; border: 1px solid #FED7AA; padding: 10px 12px; border-radius: 8px; font-size: 0.8rem;">
+              <span>⚡ <strong>Khách quét mã VietQR thành công:</strong> 2.450.000đ</span>
+              <span style="color: var(--color-cta-primary); font-weight: 700;">Vừa xong</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. THANH NIỀM TIN ==================== -->
+    <section class="trust-bar" aria-label="Chỉ số uy tín">
+      <div class="container">
+        <div class="trust-metrics">
+          <div>
+            <p class="trust-metric-num">500+</p>
+            <p class="trust-metric-label">Website Đã Bàn Giao</p>
+          </div>
+          <div>
+            <p class="trust-metric-num">99.2%</p>
+            <p class="trust-metric-label">Khách Hàng Hài Lòng</p>
+          </div>
+          <div>
+            <p class="trust-metric-num">&lt; 2.5s</p>
+            <p class="trust-metric-label">Tốc Độ Tải Chuẩn</p>
+          </div>
+          <div>
+            <p class="trust-metric-num">24/7</p>
+            <p class="trust-metric-label">Hỗ Trợ Zalo Trọn Đời</p>
+          </div>
+        </div>
+
+        <div class="ecosystem-strip">
+          <span style="font-size: 0.8125rem; font-weight: 600; color: var(--color-text-muted);">Hệ sinh thái tích hợp sẵn tại Việt Nam:</span>
+          <span class="eco-pill">💳 Thanh toán VietQR</span>
+          <span class="eco-pill">📱 Ví MoMo / VNPay</span>
+          <span class="eco-pill">🚚 GHN / GHTK / Viettel Post</span>
+          <span class="eco-pill">💬 Chat Zalo OA</span>
+          <span class="eco-pill">🔍 Chuẩn Google SEO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. DỊCH VỤ TRỌNG TÂM (TỪ BƯỚC 6) ==================== -->
+    <section id="dich-vu" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Giải pháp theo mô hình kinh doanh</span>
+          <h2 class="section-title">Chọn Đúng Giải Pháp Thiết Kế Website Cho Bạn</h2>
+          <p class="section-desc">Không dùng một mẫu rập khuôn cho tất cả. Mỗi mô hình kinh doanh có một bài toán chuyển đổi riêng biệt được giải quyết triệt để:</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Dịch vụ 1 -->
+          <article class="bento-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">🛒</div>
+              <h3 class="card-title">1. Website Bán Hàng Online</h3>
+              <p class="card-text">Dành cho <strong>Chủ shop &amp; Cá nhân kinh doanh</strong> thời trang, mỹ phẩm, thực phẩm, gia dụng muốn tự động hóa khâu chốt đơn.</p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Giỏ hàng thông minh &amp; Thanh toán quét mã VietQR tự động</li>
+                <li><span style="color: var(--color-success);">✔</span> Kết nối tự động đơn vị vận chuyển GHN, GHTK, Viettel Post</li>
+                <li><span style="color: var(--color-success);">✔</span> Tích hợp Flash Sale đếm ngược &amp; Mã giảm giá kích cầu</li>
+                <li><span style="color: var(--color-success);">✔</span> Báo đơn hàng tức thì về Zalo cá nhân ngay khi khách thanh toán</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-secondary btn-block select-service-btn" data-service="Website Bán Hàng Online">
+              Chọn Giải Pháp Web Bán Hàng →
+            </button>
+          </article>
+
+          <!-- Dịch vụ 2 -->
+          <article class="bento-card featured">
+            <span class="popular-ribbon">Tối ưu chạy Ads</span>
+            <div>
+              <div class="icon-box" aria-hidden="true">🎯</div>
+              <h3 class="card-title">2. Landing Page &amp; Web Dịch Vụ</h3>
+              <p class="card-text">Dành cho <strong>Spa, Nha khoa, Bất động sản, Khóa học, Tư vấn</strong> cần thu thập phễu số điện thoại và đặt lịch hẹn tự động.</p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Kịch bản nội dung chuẩn tâm lý học hành vi AIDA</li>
+                <li><span style="color: var(--color-success);">✔</span> Form thu phễu tự động đẩy dữ liệu về Google Sheets &amp; Zalo</li>
+                <li><span style="color: var(--color-success);">✔</span> Hệ thống chọn khung giờ đặt lịch và nhắc lịch hẹn tự động</li>
+                <li><span style="color: var(--color-success);">✔</span> Cài sẵn mã đo lường Facebook Pixel, TikTok Ads, Google Analytics</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-block select-service-btn" data-service="Landing Page & Web Dịch Vụ">
+              Nhận Tư Vấn Phễu Thu Khách →
+            </button>
+          </article>
+
+          <!-- Dịch vụ 3 -->
+          <article class="bento-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">🏢</div>
+              <h3 class="card-title">3. Website Doanh Nghiệp SME</h3>
+              <p class="card-text">Dành cho <strong>Công ty sản xuất, thương mại, tổng thầu xây dựng, B2B</strong> cần khẳng định uy tín khi đấu thầu và tiếp cận đối tác lớn.</p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Bản vẽ UI/UX độc quyền theo nhận diện thương hiệu công ty</li>
+                <li><span style="color: var(--color-success);">✔</span> Trưng bày Hồ sơ năng lực số (Digital Portfolio) đa phương tiện</li>
+                <li><span style="color: var(--color-success);">✔</span> Tích hợp bộ chuyển đổi đa ngôn ngữ (Việt – Anh – Trung – Hàn)</li>
+                <li><span style="color: var(--color-success);">✔</span> Tiêu chuẩn bảo mật SSL cấp cao, chống tấn công &amp; sao lưu tự động</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-secondary btn-block select-service-btn" data-service="Website Doanh Nghiệp SME">
+              Đặt Lịch Tư Vấn Doanh Nghiệp →
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. VỀ WEB KHỞI NGUỒN (TỪ BƯỚC 7) ==================== -->
+    <section id="gioi-thieu" class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Câu chuyện thương hiệu chân thực</span>
+          <h2 class="section-title">Chúng Tôi Không Chỉ Viết Code — Chúng Tôi Đồng Hành Cùng Bạn</h2>
+          <p class="section-desc">Web Khởi Nguồn ra đời từ sự đồng cảm sâu sắc với các chủ shop và doanh nghiệp từng chật vật, mất tiền oan vì làm web phức tạp:</p>
+        </div>
+
+        <div class="about-story-box">
+          <h3 style="font-size: 1.35rem; margin-bottom: 14px; color: var(--color-text-heading);">
+            Lời Tự Bạch Từ Đội Ngũ Sáng Lập Web Khởi Nguồn
+          </h3>
+          <p style="margin-bottom: 14px; color: var(--color-text-body);">
+            Chúng tôi từng chứng kiến nhiều người thân và bạn bè bỏ ra cả chục triệu đồng làm website nhưng rồi phải "bỏ xó" vì quản trị quá khó, tải chậm, và khi cần hỗ trợ thì bên làm web biến mất. Nỗi ám ảnh <em>"bị đem con bỏ chợ"</em> cùng ma trận thuật ngữ kỹ thuật xa lạ đã vô tình tước đi cơ hội số hóa của những người làm kinh doanh chân chính.
+          </p>
+          <p style="color: var(--color-text-body);">
+            Tại <strong>Web Khởi Nguồn</strong>, sứ mệnh của chúng tôi là đưa công nghệ về đúng giá trị phục vụ con người: <strong>Đơn giản, Minh bạch, Thực chiến và Đồng hành trọn đời.</strong>
+          </p>
+
+          <div class="core-values-grid">
+            <div class="value-card">
+              <h4 style="font-size: 1rem; color: var(--color-brand-primary); margin-bottom: 6px;">1. Minh Bạch</h4>
+              <p style="font-size: 0.875rem; color: var(--color-text-body);">Báo giá 1 lần trọn gói, không phụ phí ẩn, rõ ràng từng ngày bàn giao.</p>
+            </div>
+            <div class="value-card">
+              <h4 style="font-size: 1rem; color: var(--color-brand-primary); margin-bottom: 6px;">2. Thực Chiến</h4>
+              <p style="font-size: 0.875rem; color: var(--color-text-body);">Giao diện lấy hiệu quả ra đơn và thu phễu làm thước đo hàng đầu.</p>
+            </div>
+            <div class="value-card">
+              <h4 style="font-size: 1rem; color: var(--color-brand-primary); margin-bottom: 6px;">3. Đơn Giản</h4>
+              <p style="font-size: 0.875rem; color: var(--color-text-body);">Quản trị kéo thả Tiếng Việt dễ dàng như lướt điện thoại chỉ sau 15 phút.</p>
+            </div>
+            <div class="value-card">
+              <h4 style="font-size: 1rem; color: var(--color-brand-primary); margin-bottom: 6px;">4. Đồng Hành</h4>
+              <p style="font-size: 0.875rem; color: var(--color-text-body);">Có người thật việc thật túc trực hỗ trợ qua Zalo 1-1 trong suốt vòng đời web.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. BA LỢI ÍCH CỐT LÕI ==================== -->
+    <section id="loi-ich" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Giá trị sinh lời thực tế</span>
+          <h2 class="section-title">Bạn Không Cần Một Website "Cho Có" — Bạn Cần Một Website Mang Về Doanh Thu</h2>
+          <p class="section-desc">Chúng tôi loại bỏ mọi rào cản kỹ thuật để mang lại 3 kết quả kinh doanh rõ ràng nhất:</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="bento-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">📱</div>
+              <h3 class="card-title">1. Khách Tự Đặt Hàng &amp; Quét Mã VietQR Ngay Cả Khi Bạn Ngủ</h3>
+              <p class="card-text">Giao diện Mobile-First tối ưu cho hơn 82% khách hàng lướt web trên điện thoại. Khách xem hàng, quét mã QR thanh toán đúng từng đồng trong 30 giây mà bạn không cần thức khuya trả lời tin nhắn.</p>
+            </div>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-brand-primary);">📈 Tăng 2–3 lần tỷ lệ khách tự chốt đơn</p>
+          </article>
+
+          <article class="bento-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">🚀</div>
+              <h3 class="card-title">2. Thu Hút Khách Hàng Tự Nhiên Từ Google (Chuẩn SEO)</h3>
+              <p class="card-text">Cấu trúc mã nguồn sạch, tốc độ tải dưới 2.5s và tối ưu sẵn Schema dữ liệu giúp sản phẩm dễ dàng lên Top Google. Giảm phụ thuộc vào chi phí quảng cáo đắt đỏ và phí sàn TMĐT.</p>
+            </div>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-brand-primary);">🔍 Tiết kiệm 40–60% ngân sách Marketing</p>
+          </article>
+
+          <article class="bento-card">
+            <div>
+              <div class="icon-box" aria-hidden="true">✨</div>
+              <h3 class="card-title">3. Quản Trị Tiếng Việt Kéo Thả Trong 5 Phút</h3>
+              <p class="card-text">Bảng điều khiển trực quan 100% tiếng Việt. Tự thêm sản phẩm mới, đổi giá khuyến mãi, thay banner ngay trên điện thoại chỉ sau một buổi hướng dẫn mà không cần thuê IT.</p>
+            </div>
+            <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-brand-primary);">🤝 Bàn giao 100% mã nguồn &amp; Bảo hành trọn đời</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. KHO GIAO DIỆN MẪU & DEMO SỐNG ==================== -->
+    <section id="giao-dien" class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Kho mẫu giao diện thực tế</span>
+          <h2 class="section-title">Trải Nghiệm Các Bản Chạy Thử Thực Tế</h2>
+          <p class="section-desc">Bấm chọn ngành hàng của bạn để lọc nhanh các mẫu website sẵn sàng bàn giao trong 3–7 ngày:</p>
+        </div>
+
+        <div class="filter-tabs" role="tablist" aria-label="Lọc mẫu giao diện">
+          <button type="button" class="filter-btn active" data-filter="all">Tất cả ngành hàng</button>
+          <button type="button" class="filter-btn" data-filter="shop">Shop Bán Hàng</button>
+          <button type="button" class="filter-btn" data-filter="service">Spa &amp; Dịch Vụ</button>
+          <button type="button" class="filter-btn" data-filter="corp">Doanh Nghiệp &amp; BĐS</button>
+        </div>
+
+        <div class="grid-3" id="template-grid">
+          <!-- Mẫu 1 -->
+          <article class="bento-card template-item" data-category="shop">
+            <div>
+              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #EC4899, #8B5CF6);">
+                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Shop Bán Hàng</span>
+                <div>
+                  <p style="font-weight: 800; font-size: 1.15rem;">Lumina Beauty &amp; Fashion</p>
+                  <p style="font-size: 0.8rem; opacity: 0.9;">Tích hợp Flash Sale + Giỏ hàng VietQR</p>
+                </div>
+              </div>
+              <h3 class="card-title">Mẫu Web Mỹ Phẩm &amp; Thời Trang</h3>
+              <p class="card-text">Thiết kế phong cách hiện đại, bộ lọc biến thể size/màu mượt mà, tối ưu chuyển đổi nhanh trên điện thoại.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Mỹ Phẩm & Thời Trang (Lumina)" data-features="Giỏ hàng 1 bước siêu nhanh, Thanh toán mã VietQR tự động, Bộ lọc thuộc tính màu/size, Đánh giá sản phẩm kèm ảnh, Đồng bộ đơn về Zalo.">Xem Demo</button>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Mỹ Phẩm & Thời Trang">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <!-- Mẫu 2 -->
+          <article class="bento-card template-item" data-category="service">
+            <div>
+              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #0D9488, #10B981);">
+                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Dịch Vụ &amp; Đặt Lịch</span>
+                <div>
+                  <p style="font-weight: 800; font-size: 1.15rem;">Aura Clinic &amp; Luxury Spa</p>
+                  <p style="font-size: 0.8rem; opacity: 0.9;">Tăng 145% khách đặt lịch hẹn</p>
+                </div>
+              </div>
+              <h3 class="card-title">Mẫu Web Thẩm Mỹ Viện &amp; Nha Khoa</h3>
+              <p class="card-text">Tích hợp đặt lịch hẹn theo khung giờ, bảng giá dịch vụ minh bạch, thư viện ảnh Before/After thuyết phục.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Thẩm Mỹ Viện & Nha Khoa (Aura)" data-features="Hệ thống chọn giờ hẹn còn trống, Bảng giá liệu trình rõ ràng, Thư viện ảnh Trước/Sau trượt mượt mà, Báo lịch hẹn tức thì về Zalo.">Xem Demo</button>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Thẩm Mỹ Viện & Nha Khoa">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <!-- Mẫu 3 -->
+          <article class="bento-card template-item" data-category="corp">
+            <div>
+              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #1E293B, #2563EB);">
+                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Doanh Nghiệp &amp; BĐS</span>
+                <div>
+                  <p style="font-weight: 800; font-size: 1.15rem;">ArchViet Nội Thất &amp; Xây Dựng</p>
+                  <p style="font-size: 0.8rem; opacity: 0.9;">Hồ sơ năng lực số &amp; Báo giá tự động</p>
+                </div>
+              </div>
+              <h3 class="card-title">Mẫu Web Công Ty Nội Thất – Xây Dựng</h3>
+              <p class="card-text">Trình bày dự án chuyên nghiệp, công cụ tính nhẩm chi phí thi công giúp thu thập phễu số điện thoại chất lượng cao.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Công Ty Nội Thất & Xây Dựng (ArchViet)" data-features="Portfolio dự án sắc nét phân theo hạng mục, Công cụ dự toán chi phí tự động, Tích hợp tải Profile PDF, Hỗ trợ đa ngôn ngữ Việt - Anh.">Xem Demo</button>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Công Ty Nội Thất - Xây Dựng">Chọn Mẫu Này</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. BẢNG GIÁ MINH BẠCH ==================== -->
+    <section id="bang-gia" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Báo giá một lần trọn gói</span>
+          <h2 class="section-title">Bảng Giá Thiết Kế Website — Không Chi Phí Ẩn</h2>
+          <p class="section-desc">Cam kết bằng hợp đồng kinh tế rõ ràng, đã bao gồm toàn bộ quà tặng Tên miền quốc tế và Hosting tốc độ cao năm đầu:</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Gói 1 -->
+          <article class="bento-card">
+            <div>
+              <h3 class="card-title">Gói Khởi Nghiệp</h3>
+              <p class="card-text">Dành cho cá nhân kinh doanh, shop mới bắt đầu hoặc cần Landing Page chạy quảng cáo gấp.</p>
+              <p style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-text-heading); margin-bottom: 20px;">
+                586.000đ <span style="font-size: 0.85rem; font-weight: 500; color: var(--color-text-muted);">/ trọn gói</span>
+              </p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Chọn từ kho 200+ mẫu giao diện chuẩn SEO</li>
+                <li><span style="color: var(--color-success);">✔</span> Tặng Tên miền (.com/.net) + Hosting NVMe 1 năm</li>
+                <li><span style="color: var(--color-success);">✔</span> Tích hợp Giỏ hàng / Form thu Leads &amp; Zalo</li>
+                <li><span style="color: var(--color-success);">✔</span> Bàn giao nhanh trong 3 – 5 ngày làm việc</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-secondary btn-block select-service-btn" data-service="Gói Khởi Nghiệp (586.000đ)">Đăng Ký Gói Khởi Nghiệp</button>
+          </article>
+
+          <!-- Gói 2 -->
+          <article class="bento-card featured">
+            <span class="popular-ribbon">Được chọn nhiều nhất</span>
+            <div>
+              <h3 class="card-title">Gói Kinh Doanh Chuyên Nghiệp</h3>
+              <p class="card-text">Giải pháp toàn diện cho Shop bán hàng chuyên nghiệp &amp; Công ty vừa và nhỏ muốn bứt phá doanh số.</p>
+              <p style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-brand-primary); margin-bottom: 20px;">
+                1.500.000đ <span style="font-size: 0.85rem; font-weight: 500; color: var(--color-text-muted);">/ trọn gói</span>
+              </p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Tùy biến theo nhận diện thương hiệu riêng</li>
+                <li><span style="color: var(--color-success);">✔</span> Tặng Tên miền + Hosting Business tốc độ cao 1 năm</li>
+                <li><span style="color: var(--color-success);">✔</span> Tích hợp tự động VietQR, MoMo, GHN/GHTK, Đặt lịch</li>
+                <li><span style="color: var(--color-success);">✔</span> Tối ưu tốc độ Google PageSpeed &gt; 90 điểm</li>
+                <li><span style="color: var(--color-success);">✔</span> Nhập liệu mẫu 20 sản phẩm/bài viết chuẩn SEO</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-block select-service-btn" data-service="Gói Kinh Doanh Chuyên Nghiệp (1.500.000đ)">Chọn Gói Kinh Doanh Ngay</button>
+          </article>
+
+          <!-- Gói 3 -->
+          <article class="bento-card">
+            <div>
+              <h3 class="card-title">Gói Doanh Nghiệp Độc Quyền</h3>
+              <p class="card-text">Thiết kế UI/UX độc bản theo yêu cầu riêng cho Công ty, Tập đoàn hoặc hệ thống thương mại điện tử lớn.</p>
+              <p style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-text-heading); margin-bottom: 20px;">
+                6.000.000đ <span style="font-size: 0.85rem; font-weight: 500; color: var(--color-text-muted);">/ theo yêu cầu</span>
+              </p>
+              <ul class="feature-list">
+                <li><span style="color: var(--color-success);">✔</span> Vẽ giao diện Figma độc quyền 100%</li>
+                <li><span style="color: var(--color-success);">✔</span> Đa ngôn ngữ (Việt – Anh) &amp; Tính năng lập trình riêng</li>
+                <li><span style="color: var(--color-success);">✔</span> Kết nối phần mềm quản lý bán hàng (CRM/ERP)</li>
+                <li><span style="color: var(--color-success);">✔</span> Chuyên gia tư vấn chiến lược nội dung &amp; SEO 1-1</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-secondary btn-block select-service-btn" data-service="Gói Doanh Nghiệp Độc Quyền (6.000.000đ)">Đặt Lịch Tư Vấn 1-1</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. ĐÁNH GIÁ THỰC TẾ ==================== -->
+    <section id="danh-gia" class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Bằng chứng xã hội thực tế</span>
+          <h2 class="section-title">Khách Hàng Nói Gì Về Web Khởi Nguồn?</h2>
+          <p class="section-desc">Những cảm nhận chân thực từ những người từng lo lắng không biết gì về công nghệ trước khi làm web:</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="bento-card">
+            <div>
+              <div class="stars" aria-label="Đánh giá 5 sao">★★★★★</div>
+              <p class="quote-text">"Trước đây mình bán trên sàn bị trừ phí sàn cao quá. Từ ngày làm web bên Web Khởi Nguồn có sẵn mã VietQR và đồng bộ GHN, khách cũ tự vào đặt hàng rất tiện. Doanh số tháng rồi tăng gần 45% mà không phải tốn thêm tiền quảng cáo."</p>
+            </div>
+            <div class="client-meta">
+              <div class="client-avatar">TH</div>
+              <div>
+                <p style="font-weight: 700; color: var(--color-text-heading);">Chị Thanh Hương</p>
+                <p style="font-size: 0.8125rem; color: var(--color-text-muted);">Chủ Shop Mỹ Phẩm &amp; Thời Trang (TP.HCM)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div>
+              <div class="stars" aria-label="Đánh giá 5 sao">★★★★★</div>
+              <p class="quote-text">"Mình sợ nhất là bị bỏ rơi sau khi làm web. Nhưng các bạn bên Web Khởi Nguồn lập nhóm Zalo riêng hướng dẫn cực kỳ nhiệt tình. Hệ thống đặt lịch Spa hoạt động trơn tru, khách chọn giờ hẹn tự động rất chuyên nghiệp."</p>
+            </div>
+            <div class="client-meta">
+              <div class="client-avatar" style="background: #0D9488;">MA</div>
+              <div>
+                <p style="font-weight: 700; color: var(--color-text-heading);">Chị Minh Anh</p>
+                <p style="font-size: 0.8125rem; color: var(--color-text-muted);">Nhà sáng lập Hệ thống Aura Spa (Hà Nội)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div>
+              <div class="stars" aria-label="Đánh giá 5 sao">★★★★★</div>
+              <p class="quote-text">"Website mới của công ty tải rất nhanh, giao diện sang trọng. Khi gửi hồ sơ năng lực số cho các đối tác lớn và nhà đầu tư, họ đánh giá rất cao tính chuyên nghiệp của công ty chúng tôi."</p>
+            </div>
+            <div class="client-meta">
+              <div class="client-avatar" style="background: #0F172A;">QĐ</div>
+              <div>
+                <p style="font-weight: 700; color: var(--color-text-heading);">Anh Quốc Đạt</p>
+                <p style="font-size: 0.8125rem; color: var(--color-text-muted);">Giám đốc Công ty Kiến Trúc &amp; Xây Dựng (Đà Nẵng)</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. CÂU HỎI THƯỜNG GẶP (FAQ ACCORDION) ==================== -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Giải đáp minh bạch</span>
+          <h2 class="section-title">Câu Hỏi Thường Gặp Trước Khi Thiết Kế Website</h2>
+          <p class="section-desc">Mọi thắc mắc về chi phí, kỹ thuật và bảo hành đều được giải tỏa rõ ràng:</p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-question" aria-expanded="true">
+              <span>1. Tôi không rành về máy tính thì có tự quản lý website được không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Hoàn toàn được! Bảng điều khiển được Việt hóa 100% với thao tác kéo thả và nhập liệu đơn giản như đăng bài Facebook. Chúng tôi gửi video hướng dẫn riêng cho trang của bạn và hỗ trợ 1-1 qua Zalo bất cứ khi nào bạn cần.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>2. Chi phí thiết kế đã trọn gói chưa? Năm sau duy trì những khoản nào?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Báo giá là thanh toán một lần, cam kết không phát sinh chi phí ẩn. Năm đầu tiên bạn được tặng miễn phí Tên miền và Hosting NVMe tốc độ cao. Từ năm thứ 2 trở đi, bạn chỉ cần nộp phí duy trì Tên miền và Hosting (khoảng 1.200.000đ – 1.800.000đ/năm).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>3. Thời gian hoàn thiện một website mất bao lâu?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Với các gói chọn mẫu có sẵn, thời gian bàn giao chỉ từ 3 – 5 ngày. Với các gói thiết kế theo nhận diện thương hiệu doanh nghiệp, thời gian là từ 7 – 10 ngày làm việc.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>4. Tôi có được sở hữu toàn quyền mã nguồn website không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Có! Bạn là chủ nhân thực sự của website. Chúng tôi bàn giao 100% mã nguồn và toàn bộ tài khoản quản trị tên miền, hosting mà không khóa quyền hay giữ bất kỳ cổng sau nào.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. KHU VỰC KÊU GỌI HÀNH ĐỘNG KÉP (CONVERSION HUB) ==================== -->
+    <section id="lien-he" class="cta-section">
+      <div class="container cta-grid">
+        <div>
+          <span class="badge" style="background: rgba(249, 115, 22, 0.2); color: #FDBA74; border-color: rgba(249, 115, 22, 0.4);">Ưu đãi đặc biệt trong tuần này</span>
+          <h2 class="section-title" style="color: #FFFFFF;">
+            Mỗi Ngày Chưa Có Website Riêng Là Một Ngày Bạn Nhường Khách Hàng Cho Đối Thủ
+          </h2>
+          <p style="color: #CBD5E1; font-size: 1.05rem; margin-bottom: 20px;">
+            Chỉ mất <strong>60 giây</strong> để lại thông tin, chuyên gia của Web Khởi Nguồn sẽ gửi ngay <strong>3–5 mẫu giao diện chạy thử phù hợp nhất</strong> kèm bảng dự toán chi phí chi tiết qua Zalo cho bạn.
+          </p>
+
+          <ul class="feature-list" style="color: #F1F5F9;">
+            <li><span style="color: #34D399;">🎁</span> <strong>Quà tặng 1:</strong> Miễn phí Tên miền + Hosting NVMe tốc độ cao 1 năm (Trị giá 1.800.000đ)</li>
+            <li><span style="color: #34D399;">🎁</span> <strong>Quà tặng 2:</strong> Tích hợp sẵn cổng thanh toán VietQR và nút chat Zalo OA</li>
+            <li><span style="color: #34D399;">🎁</span> <strong>Quà tặng 3:</strong> Khám và tư vấn cấu trúc SEO On-Page trị giá 2.000.000đ</li>
+          </ul>
+
+          <div class="guarantee-box">
+            <h3 style="color: #FFFFFF; font-size: 1.1rem; margin-bottom: 8px;">🛡️ Cam Kết Bằng Hợp Đồng Pháp Lý</h3>
+            <p style="color: #94A3B8; font-size: 0.9rem;">
+              Hoàn tiền 100% nếu giao diện không đúng cam kết hoặc trễ tiến độ. Bàn giao 100% mã nguồn sở hữu riêng và bảo hành kỹ thuật trọn đời qua nhóm Zalo riêng.
+            </p>
+          </div>
+        </div>
+
+        <!-- Biểu mẫu Chuyển đổi Kép -->
+        <div class="form-card">
+          <div class="mode-tabs" role="tablist" aria-label="Chọn hình thức tư vấn">
+            <button type="button" id="tab-lead-mode" class="mode-tab-btn active">⚡ Nhận Báo Giá Qua Zalo</button>
+            <button type="button" id="tab-booking-mode" class="mode-tab-btn">📅 Đặt Lịch Họp Tư Vấn 1-1</button>
+          </div>
+
+          <form id="conversion-form" novalidate>
+            <div class="form-group">
+              <label for="input-name" class="form-label">Họ và tên của bạn *</label>
+              <input type="text" id="input-name" class="form-control" placeholder="Ví dụ: Nguyễn Minh Tuấn" required>
+            </div>
+
+            <div class="form-group">
+              <label for="input-phone" class="form-label">Số điện thoại (Có dùng Zalo) *</label>
+              <input type="tel" id="input-phone" class="form-control" placeholder="Ví dụ: 0912 345 678" required>
+            </div>
+
+            <div class="form-group">
+              <label for="input-service" class="form-label">Gói giải pháp hoặc mẫu web bạn quan tâm</label>
+              <select id="input-service" class="form-control">
+                <option value="Website Bán Hàng Online">1. Website Bán Hàng Online (Shop / Cá nhân)</option>
+                <option value="Landing Page & Web Dịch Vụ">2. Landing Page &amp; Web Dịch Vụ / Đặt Lịch</option>
+                <option value="Website Doanh Nghiệp SME">3. Website Doanh Nghiệp SME (Hồ sơ năng lực)</option>
+                <option value="Gói Khởi Nghiệp (586.000đ)">Gói Khởi Nghiệp — 586.000đ trọn gói</option>
+                <option value="Gói Kinh Doanh Chuyên Nghiệp (1.500.000đ)">Gói Kinh Doanh Chuyên Nghiệp — 1.500.000đ</option>
+                <option value="Gói Doanh Nghiệp Độc Quyền (6.000.000đ)">Gói Doanh Nghiệp Độc Quyền — 6.000.000đ</option>
+              </select>
+            </div>
+
+            <div id="booking-fields" class="form-group" style="display: none;">
+              <label for="input-time" class="form-label">Chọn khung giờ họp tư vấn (Google Meet / Zalo)</label>
+              <select id="input-time" class="form-control">
+                <option value="Sáng mai (09:00 - 11:00)">Sáng mai (09:00 – 11:00)</option>
+                <option value="Chiều mai (14:00 - 16:00)">Chiều mai (14:00 – 16:00)</option>
+                <option value="Tối nay (19:30 - 21:00)">Tối nay (19:30 – 21:00 - Dành cho người bận rộn)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-note" class="form-label">Ngành nghề kinh doanh của bạn (Tùy chọn)</label>
+              <input type="text" id="input-note" class="form-control" placeholder="Ví dụ: Mỹ phẩm, Nội thất, Spa, Công ty xây dựng...">
+            </div>
+
+            <button type="submit" id="submit-form-btn" class="btn btn-primary btn-block">
+              Gửi Yêu Cầu — Nhận Mẫu &amp; Báo Giá Sau 15 Phút
+            </button>
+
+            <div id="form-feedback" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 12. CHÂN TRANG ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title">Web Khởi Nguồn — Đồng Hành Cùng Hành Trình Kinh Doanh Số</p>
+          <p style="margin-bottom: 12px;">Đồng hành cùng hơn 500+ chủ shop, cá nhân dịch vụ và doanh nghiệp SME tại Việt Nam xây dựng website chuẩn SEO, tối ưu ra đơn.</p>
+          <p>📍 Văn phòng: TP. Hồ Chí Minh &amp; Hà Nội (Hỗ trợ toàn quốc 24/7)</p>
+          <p>📞 Hotline / Zalo: 0909 888 999 • Email: donghanh@webkhoinguon.vn</p>
+        </div>
+        <div>
+          <p class="footer-title">Dịch Vụ Trọng Tâm</p>
+          <ul class="feature-list">
+            <li><a href="#dich-vu">Thiết kế Website Bán hàng Online</a></li>
+            <li><a href="#dich-vu">Thiết kế Landing Page Thu Phễu &amp; Đặt Lịch</a></li>
+            <li><a href="#dich-vu">Thiết kế Website Doanh nghiệp SME</a></li>
+            <li><a href="#giao-dien">Kho 200+ Giao diện mẫu theo ngành</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Cam Kết Chất Lượng</p>
+          <ul class="feature-list">
+            <li><a href="#faq">Bàn giao 100% mã nguồn sở hữu riêng</a></li>
+            <li><a href="#faq">Bảo hành kỹ thuật trọn đời sử dụng</a></li>
+            <li><a href="#faq">Hoàn tiền 100% nếu sai cam kết</a></li>
+            <li><a href="#lien-he">Tư vấn chiến lược 1-1 miễn phí</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.8125rem;">
+        © 2026 Web Khởi Nguồn. Tất cả quyền được bảo lưu. Giao diện chuẩn HTML5 ngữ nghĩa, tối ưu Mobile-First.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cụm nút chuyển đổi nổi góc dưới -->
+  <aside class="floating-actions" aria-label="Liên hệ nhanh">
+    <button type="button" id="floating-zalo-btn" class="float-btn" style="background: #0068FF;">
+      💬 Chat Zalo Ngay
+    </button>
+    <a href="#lien-he" class="float-btn" style="background: var(--color-cta-primary);">
+      ⚡ Nhận Báo Giá
+    </a>
+  </aside>
+
+  <!-- Hộp thoại Xem thử Giao diện (Live Demo Modal) -->
+  <div id="demo-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-demo-title">
+    <div class="modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+        <div>
+          <span class="badge">Bản xem trước tính năng</span>
+          <h3 id="modal-demo-title" class="card-title" style="margin-bottom: 0;">Mẫu Giao Diện</h3>
+        </div>
+        <button type="button" id="close-modal-btn" class="mobile-menu-toggle" aria-label="Đóng cửa sổ">✕</button>
+      </div>
+      <p id="modal-demo-features" class="card-text" style="background: var(--color-bg-secondary); padding: 16px; border-radius: 10px; border: 1px solid var(--color-border);"></p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <button type="button" id="modal-choose-btn" class="btn btn-primary" style="flex: 1;">Chọn Mẫu Này &amp; Nhận Báo Giá</button>
+        <button type="button" id="modal-cancel-btn" class="btn btn-secondary">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 13. JAVASCRIPT TƯƠNG TÁC ==================== -->
+  <script>
+    (function () {
+      // 1. Menu Di động
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileMenuBtn && mobileNavDrawer) {
+        mobileMenuBtn.addEventListener('click', function () {
+          const isOpen = mobileNavDrawer.classList.toggle('is-open');
+          mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        mobileNavLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileNavDrawer.classList.remove('is-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. Chuyển đổi thiết bị Máy tính / Điện thoại trong Hero
+      const btnDesktop = document.getElementById('btn-view-desktop');
+      const btnMobile = document.getElementById('btn-view-mobile');
+      const mockupScreen = document.getElementById('interactive-mockup-screen');
+
+      if (btnDesktop && btnMobile && mockupScreen) {
+        btnDesktop.addEventListener('click', function () {
+          btnDesktop.classList.add('active');
+          btnMobile.classList.remove('active');
+          mockupScreen.classList.remove('is-mobile-view');
+        });
+
+        btnMobile.addEventListener('click', function () {
+          btnMobile.classList.add('active');
+          btnDesktop.classList.remove('active');
+          mockupScreen.classList.add('is-mobile-view');
+        });
+      }
+
+      // 3. Bộ lọc Kho Mẫu
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const templateItems = document.querySelectorAll('.template-item');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = btn.getAttribute('data-filter');
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          templateItems.forEach(function (item) {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 4. Chọn dịch vụ hoặc mẫu -> Tự điền vào form & cuộn xuống
+      const serviceSelect = document.getElementById('input-service');
+      const noteInput = document.getElementById('input-note');
+      const contactSection = document.getElementById('lien-he');
+
+      document.querySelectorAll('.select-service-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const selectedService = btn.getAttribute('data-service');
+          if (serviceSelect && selectedService) {
+            serviceSelect.value = selectedService;
+          }
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      document.querySelectorAll('.choose-template-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const tpl = btn.getAttribute('data-template');
+          if (noteInput && tpl) {
+            noteInput.value = 'Quan tâm: ' + tpl;
+          }
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 5. Hộp thoại Xem thử Giao diện (Live Demo Modal)
+      const demoModal = document.getElementById('demo-modal');
+      const modalTitle = document.getElementById('modal-demo-title');
+      const modalFeatures = document.getElementById('modal-demo-features');
+      const modalChooseBtn = document.getElementById('modal-choose-btn');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const cancelModalBtn = document.getElementById('modal-cancel-btn');
+      let currentModalTemplate = '';
+
+      function closeDemoModal() {
+        if (demoModal) demoModal.classList.remove('is-open');
+      }
+
+      document.querySelectorAll('.preview-template-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          currentModalTemplate = btn.getAttribute('data-title') || '';
+          if (modalTitle) modalTitle.textContent = currentModalTemplate;
+          if (modalFeatures) {
+            modalFeatures.textContent = 'Tính năng tích hợp: ' + (btn.getAttribute('data-features') || '');
+          }
+          if (demoModal) demoModal.classList.add('is-open');
+        });
+      });
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeDemoModal);
+      if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeDemoModal);
+      if (modalChooseBtn) {
+        modalChooseBtn.addEventListener('click', function () {
+          if (noteInput && currentModalTemplate) {
+            noteInput.value = 'Đăng ký bản Demo: ' + currentModalTemplate;
+          }
+          closeDemoModal();
+          if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      // 6. Nút Chat Zalo nổi
+      const floatingZaloBtn = document.getElementById('floating-zalo-btn');
+      if (floatingZaloBtn) {
+        floatingZaloBtn.addEventListener('click', function () {
+          window.open('https://zalo.me/84868895144', '_blank');
+        });
+      }
+
+      // 7. Đóng / Mở FAQ
+      document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const parent = btn.closest('.faq-item');
+          if (!parent) return;
+          const isOpen = parent.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', String(isOpen));
+        });
+      });
+
+      // 8. Chuyển đổi tab Nhận Báo Giá vs Đặt Lịch
+      const tabLeadMode = document.getElementById('tab-lead-mode');
+      const tabBookingMode = document.getElementById('tab-booking-mode');
+      const bookingFields = document.getElementById('booking-fields');
+      const submitFormBtn = document.getElementById('submit-form-btn');
+      let currentMode = 'lead';
+
+      if (tabLeadMode && tabBookingMode && bookingFields && submitFormBtn) {
+        tabLeadMode.addEventListener('click', function () {
+          currentMode = 'lead';
+          tabLeadMode.classList.add('active');
+          tabBookingMode.classList.remove('active');
+          bookingFields.style.display = 'none';
+          submitFormBtn.textContent = 'Gửi Yêu Cầu — Nhận Mẫu & Báo Giá Sau 15 Phút';
+        });
+
+        tabBookingMode.addEventListener('click', function () {
+          currentMode = 'booking';
+          tabBookingMode.classList.add('active');
+          tabLeadMode.classList.remove('active');
+          bookingFields.style.display = 'block';
+          submitFormBtn.textContent = 'Xác Nhận Đặt Lịch Tư Vấn Chiến Lược 1-1';
+        });
+      }
+
+      // 9. Gửi biểu mẫu (Inline Feedback)
+      const conversionForm = document.getElementById('conversion-form');
+      const formFeedback = document.getElementById('form-feedback');
+
+      if (conversionForm && formFeedback) {
+        conversionForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const nameVal = (document.getElementById('input-name').value || '').trim();
+          const phoneVal = (document.getElementById('input-phone').value || '').trim();
+          const serviceVal = document.getElementById('input-service').value;
+          const timeVal = document.getElementById('input-time').value;
+
+          formFeedback.style.display = 'block';
+
+          if (!nameVal || !phoneVal) {
+            formFeedback.style.backgroundColor = '#FEF2F2';
+            formFeedback.style.borderColor = '#FECACA';
+            formFeedback.style.color = '#991B1B';
+            formFeedback.textContent = '⚠️ Vui lòng nhập đầy đủ Họ tên và Số điện thoại Zalo để chúng tôi gửi mẫu và báo giá cho bạn.';
+            return;
+          }
+
+          formFeedback.style.backgroundColor = '#ECFDF5';
+          formFeedback.style.borderColor = '#A7F3D0';
+          formFeedback.style.color = '#065F46';
+
+          if (currentMode === 'booking') {
+            formFeedback.innerHTML = '✅ <strong>Đã đặt lịch thành công!</strong> Chào <strong>' + nameVal + '</strong>, lịch họp tư vấn 1-1 về <em>' + serviceVal + '</em> vào khung giờ <strong>' + timeVal + '</strong> đã được ghi nhận. Chuyên viên Web Khởi Nguồn sẽ gửi lời mời qua Zalo <strong>' + phoneVal + '</strong> trong ít phút.';
+          } else {
+            formFeedback.innerHTML = '✅ <strong>Gửi yêu cầu thành công!</strong> Cảm ơn <strong>' + nameVal + '</strong>, bộ giao diện mẫu và bảng dự toán chi tiết cho <em>' + serviceVal + '</em> đang được gửi tới Zalo <strong>' + phoneVal + '</strong> của bạn.';
+          }
+          conversionForm.reset();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
