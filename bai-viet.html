@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài viết | Web Khởi Nguồn</title>
+<meta name="description" content="Bài viết chia sẻ kinh nghiệm chọn mẫu website, vận hành shop online và bán hàng hiệu quả — Web Khởi Nguồn.">
+<link rel="canonical" href="https://webkhoinguon.com/bai-viet.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bài viết | Web Khởi Nguồn">
+<meta property="og:description" content="Bài viết chia sẻ kinh nghiệm chọn mẫu website, vận hành shop online và bán hàng hiệu quả — Web Khởi Nguồn.">
+<meta property="og:url" content="https://webkhoinguon.com/bai-viet.html">
+<meta property="og:image" content="https://webkhoinguon.com/mau-website-thoi-trang.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#03a84e;--green-deep:#027a3a;--green-soft:#e3f6ea;--gold:#f2a007;--ink:#10231a;--muted:#3e5648;--bg:#f6faf7;--surface:#ffffff;--line:#d9e8dd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:var(--green-deep)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sticky-head{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head-in{display:flex;align-items:center;gap:22px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.06rem}
+.brand-mark{display:inline-flex;width:34px;height:34px;border-radius:10px;background:var(--green);color:#fff;align-items:center;justify-content:center}
+.brand small{display:block;font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.4px}
+.topnav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
+.topnav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.94rem;display:inline-flex;align-items:center;min-height:48px}
+.topnav a:hover{color:var(--green-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;min-height:48px;border:0;cursor:pointer}
+.btn:hover{background:var(--green-deep)}
+.btn.gold{background:var(--gold);color:#231a00}
+.head-cta{margin-left:6px;white-space:nowrap}
+.nav-toggle{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-size:1.15rem}
+.mobile-nav{display:none;border-top:1px solid var(--line);padding:8px 0 14px}
+.mobile-nav a{display:flex;align-items:center;min-height:48px;text-decoration:none;color:var(--ink);font-weight:600;padding:0 4px}
+.mobile-nav.open{display:block}
+@media(max-width:860px){.topnav,.head-cta{display:none}.nav-toggle{display:inline-flex;align-items:center;justify-content:center}}
+main{padding:34px 0 10px}
+.crumb{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+.crumb a{text-decoration:none}
+.page-head h1{font-size:2rem;line-height:1.25;margin:0 0 10px}
+.page-head p{color:var(--muted);max-width:720px;margin:0}
+.post{max-width:780px;margin:0 auto}
+.post h1{font-size:2.05rem;line-height:1.28;margin:6px 0 10px}
+.post-date{color:var(--muted);font-size:.93rem;margin-bottom:18px}
+.cover{width:100%;height:auto;border-radius:16px;display:block}
+.cover-cap{font-size:.86rem;color:var(--muted);text-align:center;margin:8px 0 22px}
+.post-body p{margin:0 0 16px;font-size:1.04rem;line-height:1.8}
+.post-body h2{font-size:1.45rem;line-height:1.35;color:var(--green-deep);margin:34px 0 14px}
+.post-body h3{font-size:1.18rem;line-height:1.4;margin:26px 0 10px}
+.post-body a{font-weight:600}
+.demo-link{display:block;background:var(--green-soft);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:0 0 18px;text-decoration:none;font-weight:700}
+.cta-box{background:var(--green-soft);border:1px solid var(--line);border-radius:16px;padding:22px;margin:30px 0 8px;text-align:center}
+.cta-box h2{margin:0 0 8px;font-size:1.3rem;color:var(--green-deep)}
+.cta-box p{margin:0 0 16px;color:var(--ink)}
+.cta-box .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.back-list{display:inline-block;margin-top:26px;font-weight:700;text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin:26px 0 10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card:hover{box-shadow:0 14px 30px -18px rgba(4,80,40,.35)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card .in{padding:18px}
+.card .d{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.card h2{font-size:1.16rem;line-height:1.4;margin:0 0 8px}
+.card p{font-size:.95rem;color:var(--muted);margin:0 0 12px}
+.card .more{font-weight:700;color:var(--green-deep)}
+footer{margin-top:44px;background:#0d2016;color:#d9ecdf;padding:36px 0 30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+@media(max-width:760px){.foot{grid-template-columns:1fr}}
+footer .brand{color:#fff}
+footer p{font-size:.93rem;color:#b9cec0}
+footer p a{color:#fff}
+.foot-links{display:grid;gap:2px;font-size:.94rem;align-content:start}
+.foot-links a{color:#d9ecdf;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;min-height:48px}
+.foot-links a:hover{text-decoration:underline}
+.foot-links a.foot-top-link{display:none}
+@media(max-width:759px){.foot-links a.foot-top-link{display:inline-flex}#backTopPill{display:none}}
+.sticky-cta{display:none}
+@media(max-width:759px){.sticky-cta{display:flex;gap:10px;position:fixed;left:10px;right:10px;bottom:10px;z-index:9998}}
+.sticky-cta .btn{flex:1;padding:12px 8px;font-size:.92rem}
+.sc-zalo{background:#0068ff}
+.quick-contact-bar{position:fixed;right:18px;bottom:18px;z-index:9998;display:flex;flex-direction:column;gap:10px}
+@media(max-width:759px){.quick-contact-bar{display:none}}
+</style>
+
+</head>
+<body id="top">
+<header class="sticky-head">
+  <div class="wrap">
+    <div class="head-in">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>Web Khởi Nguồn<small>.COM</small></span></a>
+      <nav class="topnav" aria-label="Điều hướng chính">
+        <a href="index.html#goi-bao-gom">Gói 586k gồm gì?</a>
+        <a href="index.html#mau-web">Mẫu web theo nghề</a>
+        <a href="index.html#quy-trinh">Quy trình làm thử</a>
+        <a href="website-nang-cap.html">Gói web cao cấp</a>
+        <a href="index.html#faq">Hỏi đáp</a>
+      </nav>
+      <a class="btn head-cta" href="index.html#dat-lam-web">Đặt làm web</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Mở menu">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu điện thoại">
+      <a href="index.html#goi-bao-gom">Gói 586k gồm gì?</a>
+      <a href="index.html#mau-web">Mẫu web theo nghề</a>
+      <a href="index.html#quy-trinh">Quy trình làm thử</a>
+      <a href="website-nang-cap.html">Gói web cao cấp</a>
+      <a href="index.html#faq">Hỏi đáp</a>
+      <a href="index.html#dat-lam-web">Đặt làm web</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="crumb"><a href="index.html">Trang chủ</a> › Bài viết</div>
+<div class="page-head">
+  <h1>Bài viết</h1>
+  <p>Chia sẻ kinh nghiệm chọn mẫu website, vận hành shop online và bán hàng hiệu quả cho chủ shop và doanh nghiệp nhỏ — cập nhật thường xuyên từ Web Khởi Nguồn.</p>
+</div>
+<div class="cards">
+  <a class="card" href="5-mau-website-thoi-trang-cho-shop-online.html">
+    <img src="mau-website-thoi-trang.jpg" alt="5 mẫu website thời trang ấn tượng cho shop online">
+    <span class="in">
+      <span class="d">📅 04/11/2026</span>
+      <h2>5 mẫu website thời trang ấn tượng cho shop online</h2>
+      <p>Bạn vừa nhập về một lô váy áo ưng ý, chụp cả trăm tấm hình mẫu lung linh… nhưng tin nhắn hỏi giá, hỏi size dồn dập mỗi đêm khiến bạn trả lời không xuể. Đã đến lúc shop cần một website riêng — và đây là 5 mẫu giao diện đáng tham khảo nhất.</p>
+      <span class="more">Đọc tiếp →</span>
+    </span>
+  </a>
+</div>
+
+</main>
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>Web Khởi Nguồn</span></a>
+      <p>Dịch vụ làm website - Landingpage trọn gói 586.000đ cho cửa hàng, dịch vụ và doanh nghiệp nhỏ tại Việt Nam. Trang web chính thức: <a href="https://webkhoinguon.com" target="_blank" rel="noopener">webkhoinguon.com</a> — thuộc hệ sinh thái tăng tương tác mạng xã hội tại <a href="https://viettuongtac.com" target="_blank" rel="noopener">viettuongtac.com</a>.</p>
+    </div>
+    <nav class="foot-links" aria-label="Liên kết chân trang">
+      <a href="#top" class="foot-top-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ Lên đầu trang</a>
+      <a href="index.html#goi-bao-gom">Gói bao gồm</a>
+      <a href="index.html#ai-can-web">Ai cần website?</a>
+      <a href="index.html#bang-gia">Bảng giá</a>
+      <a href="mau-web.html">Mẫu web</a>
+      <a href="index.html#dat-lam-web">Đặt làm web</a>
+      <a href="gioi-thieu.html">Giới thiệu</a>
+      <a href="bai-viet.html">Bài viết</a>
+      <a href="https://webkhoinguon.com" target="_blank" rel="noopener">webkhoinguon.com</a>
+      <a href="https://viettuongtac.com" target="_blank" rel="noopener">viettuongtac.com</a>
+    </nav>
+  </div>
+</footer>
+<div class="sticky-cta">
+  <a class="btn sc-zalo" href="https://zalo.me/84868895144" target="_blank" rel="noopener" aria-label="Chat Zalo tư vấn">💬 Chat Zalo Tư Vấn</a>
+  <a class="btn gold" href="index.html#dat-lam-web" aria-label="Đăng ký làm web 586.000đ">⚡ Đăng Ký 586k</a>
+</div>
+<div class="quick-contact-bar">
+  <a class="btn sc-zalo" href="https://zalo.me/84868895144" target="_blank" rel="noopener">💬 Chat Zalo 0868.895.144</a>
+  <a class="btn gold" href="index.html#dat-lam-web">⚡ Giữ suất 586k</a>
+</div>
+<a id="backTopPill" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="position:fixed;left:16px;bottom:16px;z-index:9999;background:#027a3a;color:#fff;padding:10px 16px;border-radius:999px;font-size:.9rem;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.28)">⬆ Lên đầu trang</a>
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){document.getElementById('mobileNav').classList.toggle('open');});
+</script>
+</body>
+</html>
