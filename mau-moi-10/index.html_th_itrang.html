@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO On-Page Meta Tags -->
+  <title>Thời Trang Nữ Thanh Lịch & Trẻ Trung | Tiệm Nhà Nắng</title>
+  <meta name="description" content="Khám phá các thiết kế thời trang nữ thanh lịch, hiện đại cho nàng 20–30. Đồ công sở, đầm dạo phố tôn dáng, vải chống nhăn. Đổi size tận nhà, kiểm tra hàng khi nhận!">
+  <meta name="keywords" content="thời trang nữ thanh lịch, đồ công sở nữ trẻ trung, đầm thiết kế nữ thanh lịch, set đồ nữ thanh lịch, Tiệm Nhà Nắng">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cormorant Garamond & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF8F5',
+            linen: '#F1EDE6',
+            obsidian: '#171717',
+            taupe: '#5C554E',
+            greige: '#E5E0D8',
+            bronze: '#B89D79',
+            berry: '#8B2635',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #171717;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hero-bg {
+      background: linear-gradient(180deg, rgba(241, 237, 230, 0.6) 0%, rgba(250, 248, 245, 1) 100%);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #E5E0D8;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden selection:bg-bronze/20 selection:text-obsidian">
+
+  <!-- TOP BAR / ANNOUNCEMENT -->
+  <div class="bg-obsidian text-alabaster text-xs py-2 px-4 text-center tracking-wider font-light flex items-center justify-center space-x-3">
+    <span>Tặng mã <strong class="text-bronze font-semibold">NANG50</strong> giảm 50.000đ cho đơn đầu tiên</span>
+    <span class="opacity-40">•</span>
+    <span>Freeship đơn từ 499.000đ</span>
+    <span class="opacity-40 hidden sm:inline">•</span>
+    <span class="hidden sm:inline">Đổi size tận nhà trong 7 ngày</span>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-alabaster/95 backdrop-blur-md border-b border-greige/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-obsidian focus:outline-none" aria-label="Mở Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <!-- Logo Thương Hiệu -->
+      <a href="#" class="flex flex-col items-center">
+        <span class="font-serif text-2xl sm:text-3xl tracking-[0.2em] font-medium uppercase text-obsidian">TIỆM NHÀ NẮNG</span>
+        <span class="text-[9px] tracking-[0.35em] text-taupe uppercase -mt-1 font-sans">Modern Chic & Minimal</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm tracking-widest uppercase font-medium text-obsidian/90">
+        <a href="#new-arrivals" class="hover:text-bronze transition-colors">Hàng Mới Về</a>
+        <a href="#categories" class="hover:text-bronze transition-colors">Bộ Sưu Tập</a>
+        <a href="#smart-size" class="hover:text-bronze transition-colors">Đo Size Tự Động</a>
+        <a href="#services" class="hover:text-bronze transition-colors">Dịch Vụ VIP</a>
+        <a href="#story" class="hover:text-bronze transition-colors">Về Nắng</a>
+        <a href="#faq" class="hover:text-bronze transition-colors">Hỏi Đáp</a>
+      </nav>
+
+      <!-- Quick Action Icons -->
+      <div class="flex items-center space-x-5 text-obsidian">
+        <button onclick="scrollToSection('smart-size')" class="hidden sm:flex items-center space-x-1.5 text-xs text-taupe hover:text-obsidian py-1.5 px-2.5 rounded border border-greige">
+          <svg class="w-4 h-4 text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          <span>Gợi ý Size</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button onclick="toggleCart()" class="relative p-2 hover:opacity-80 transition-opacity" aria-label="Giỏ hàng">
+          <svg class="w-6 h-6 stroke-[1.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span id="cart-count-badge" class="absolute top-1 right-0 bg-obsidian text-alabaster text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden transition-opacity">
+    <div class="w-4/5 max-w-sm bg-alabaster h-full p-6 flex flex-col justify-between shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-greige">
+          <span class="font-serif text-xl tracking-wider uppercase">TIỆM NHÀ NẮNG</span>
+          <button onclick="toggleMobileMenu()" class="p-2 text-taupe hover:text-obsidian">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="mt-6 flex flex-col space-y-4 text-sm font-medium tracking-wider uppercase">
+          <a href="#new-arrivals" onclick="toggleMobileMenu()" class="py-2 border-b border-greige/50">Hàng Mới Về</a>
+          <a href="#categories" onclick="toggleMobileMenu()" class="py-2 border-b border-greige/50">Bộ Sưu Tập Công Sở & Dạo Phố</a>
+          <a href="#smart-size" onclick="toggleMobileMenu()" class="py-2 border-b border-greige/50 text-bronze">Máy Tính Đo Size Chuẩn</a>
+          <a href="#services" onclick="toggleMobileMenu()" class="py-2 border-b border-greige/50">3 Dịch Vụ Đặc Quyền</a>
+          <a href="#story" onclick="toggleMobileMenu()" class="py-2 border-b border-greige/50">Câu Chuyện Tiệm Nhà Nắng</a>
+          <a href="#faq" onclick="toggleMobileMenu()" class="py-2">Câu Hỏi Thường Gặp</a>
+        </nav>
+      </div>
+      <div class="text-xs text-taupe pt-6 border-t border-greige">
+        <p class="font-medium text-obsidian mb-1">Hotline tư vấn: 0988.123.456</p>
+        <p>Hỗ trợ đổi trả tại nhà từ 8:30 - 21:30</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION (COPYWRITING PHẢN HỒI TRỰC TIẾP & SEO H1) -->
+    <section class="hero-bg py-12 md:py-20 lg:py-24 border-b border-greige/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center space-x-2 py-1 px-3 bg-linen rounded text-xs tracking-widest uppercase text-taupe font-medium">
+              <span class="w-2 h-2 rounded-full bg-bronze"></span>
+              <span>Bộ Sưu Tập Mùa Mới • Thiết Kế 2026</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-obsidian leading-[1.15] font-normal tracking-tight">
+              Đừng để đồ công sở biến bạn thành phiên bản <em class="italic font-normal font-serif text-bronze">"già trước tuổi"</em>.
+            </h1>
+
+            <p class="text-base sm:text-lg text-taupe font-normal max-w-xl leading-relaxed">
+              Thời trang thiết kế chuẩn phom dáng Á Đông cho nàng 20–30: Tôn trọn nét thanh lịch trẻ trung, chất vải không nhăn suốt 8 tiếng ngồi máy lạnh, tự tin từ phòng họp sáng đến buổi hẹn tối.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row gap-4">
+              <a href="#new-arrivals" class="inline-flex justify-center items-center px-8 py-4 bg-obsidian text-alabaster text-xs uppercase tracking-[0.15em] font-semibold rounded-[2px] hover:bg-taupe transition-colors duration-200 shadow-sm text-center">
+                Khám Phá Bộ Sưu Tập Mới
+              </a>
+              <a href="#smart-size" class="inline-flex justify-center items-center px-7 py-4 bg-transparent border border-obsidian text-obsidian text-xs uppercase tracking-[0.15em] font-medium rounded-[2px] hover:bg-obsidian hover:text-alabaster transition-all duration-200 text-center">
+                Tính Size Chuẩn Của Bạn
+              </a>
+            </div>
+
+            <!-- Mini Trust Elements -->
+            <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-taupe">
+              <div class="flex items-center space-x-1.5">
+                <span class="text-bronze">★★★★★</span>
+                <span class="font-semibold text-obsidian">4.9/5</span>
+                <span>(Hơn 25.000 khách tin chọn)</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <svg class="w-4 h-4 text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d
