@@ -80,4 +80,10 @@
     <loc>https://webkhoinguon.com/mau-moi-10/mau-11-thoi-trang-nu.html</loc>
     <lastmod>2026-11-04</lastmod>
   </url>
+  <url>
+    <loc>https://webkhoinguon.com/chinh-sach-bao-hanh.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
