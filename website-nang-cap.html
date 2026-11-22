@@ -352,12 +352,24 @@
       color: var(--color-brand-primary);
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1220px) {
       .nav-desktop {
         display: flex;
+        gap: 16px;
+      }
+      .nav-link {
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+      .brand-logo {
+        white-space: nowrap;
+        flex-shrink: 0;
       }
       .header-cta {
         display: inline-flex;
+        padding: 11px 14px;
+        white-space: nowrap;
+        flex-shrink: 0;
       }
       .mobile-menu-toggle {
         display: none;
@@ -1386,63 +1398,133 @@
           <button type="button" class="filter-btn" data-filter="shop">Shop Bán Hàng</button>
           <button type="button" class="filter-btn" data-filter="service">Spa &amp; Dịch Vụ</button>
           <button type="button" class="filter-btn" data-filter="corp">Doanh Nghiệp &amp; BĐS</button>
+          <button type="button" class="filter-btn" data-filter="dien-lanh">Điện lạnh</button>
         </div>
 
         <div class="grid-3" id="template-grid">
-          <!-- Mẫu 1 -->
           <article class="bento-card template-item" data-category="shop">
             <div>
-              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #EC4899, #8B5CF6);">
-                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Shop Bán Hàng</span>
-                <div>
-                  <p style="font-weight: 800; font-size: 1.15rem;">Lumina Beauty &amp; Fashion</p>
-                  <p style="font-size: 0.8rem; opacity: 0.9;">Tích hợp Flash Sale + Giỏ hàng VietQR</p>
-                </div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Thời trang &amp; Shop bán hàng" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
-              <h3 class="card-title">Mẫu Web Mỹ Phẩm &amp; Thời Trang</h3>
-              <p class="card-text">Thiết kế phong cách hiện đại, bộ lọc biến thể size/màu mượt mà, tối ưu chuyển đổi nhanh trên điện thoại.</p>
+              <h3 class="card-title">Thời trang &amp; Shop bán hàng</h3>
+              <p class="card-text">Cho shop quần áo, phụ kiện bán online: khách xem bộ sưu tập, chọn size/màu, bỏ giỏ và thanh toán ngay trên web.</p>
             </div>
             <div style="display: flex; gap: 10px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Mỹ Phẩm & Thời Trang (Lumina)" data-features="Giỏ hàng 1 bước siêu nhanh, Thanh toán mã VietQR tự động, Bộ lọc thuộc tính màu/size, Đánh giá sản phẩm kèm ảnh, Đồng bộ đơn về Zalo.">Xem Demo</button>
-              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Mỹ Phẩm & Thời Trang">Chọn Mẫu Này</button>
+              <a href="mau-web.html#thoi-trang" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Thời trang &amp; Shop bán hàng">Chọn Mẫu Này</button>
             </div>
           </article>
 
-          <!-- Mẫu 2 -->
           <article class="bento-card template-item" data-category="service">
             <div>
-              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #0D9488, #10B981);">
-                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Dịch Vụ &amp; Đặt Lịch</span>
-                <div>
-                  <p style="font-weight: 800; font-size: 1.15rem;">Aura Clinic &amp; Luxury Spa</p>
-                  <p style="font-size: 0.8rem; opacity: 0.9;">Tăng 145% khách đặt lịch hẹn</p>
-                </div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Nhà hàng &amp; Quán ăn" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
-              <h3 class="card-title">Mẫu Web Thẩm Mỹ Viện &amp; Nha Khoa</h3>
-              <p class="card-text">Tích hợp đặt lịch hẹn theo khung giờ, bảng giá dịch vụ minh bạch, thư viện ảnh Before/After thuyết phục.</p>
+              <h3 class="card-title">Nhà hàng &amp; Quán ăn</h3>
+              <p class="card-text">Cho nhà hàng, quán ăn, quán nhậu: thực đơn có giá rõ ràng, khách đặt bàn trước và gọi món mang về ngay trên web.</p>
             </div>
             <div style="display: flex; gap: 10px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Thẩm Mỹ Viện & Nha Khoa (Aura)" data-features="Hệ thống chọn giờ hẹn còn trống, Bảng giá liệu trình rõ ràng, Thư viện ảnh Trước/Sau trượt mượt mà, Báo lịch hẹn tức thì về Zalo.">Xem Demo</button>
-              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Thẩm Mỹ Viện & Nha Khoa">Chọn Mẫu Này</button>
+              <a href="mau-web.html#nha-hang" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Nhà hàng &amp; Quán ăn">Chọn Mẫu Này</button>
             </div>
           </article>
 
-          <!-- Mẫu 3 -->
-          <article class="bento-card template-item" data-category="corp">
+          <article class="bento-card template-item" data-category="service">
             <div>
-              <div class="template-preview-thumb" style="background: linear-gradient(135deg, #1E293B, #2563EB);">
-                <span style="background: rgba(0,0,0,0.28); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; width: fit-content;">Doanh Nghiệp &amp; BĐS</span>
-                <div>
-                  <p style="font-weight: 800; font-size: 1.15rem;">ArchViet Nội Thất &amp; Xây Dựng</p>
-                  <p style="font-size: 0.8rem; opacity: 0.9;">Hồ sơ năng lực số &amp; Báo giá tự động</p>
-                </div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Spa &amp; Làm đẹp" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
-              <h3 class="card-title">Mẫu Web Công Ty Nội Thất – Xây Dựng</h3>
-              <p class="card-text">Trình bày dự án chuyên nghiệp, công cụ tính nhẩm chi phí thi công giúp thu thập phễu số điện thoại chất lượng cao.</p>
+              <h3 class="card-title">Spa &amp; Làm đẹp</h3>
+              <p class="card-text">Cho spa, salon tóc, nail, thẩm mỹ: bảng giá dịch vụ minh bạch, khách đặt lịch online, xem ảnh không gian thật.</p>
             </div>
             <div style="display: flex; gap: 10px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-block preview-template-btn" data-title="Mẫu Web Công Ty Nội Thất & Xây Dựng (ArchViet)" data-features="Portfolio dự án sắc nét phân theo hạng mục, Công cụ dự toán chi phí tự động, Tích hợp tải Profile PDF, Hỗ trợ đa ngôn ngữ Việt - Anh.">Xem Demo</button>
-              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Mẫu Web Công Ty Nội Thất - Xây Dựng">Chọn Mẫu Này</button>
+              <a href="mau-web.html#spa" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Spa &amp; Làm đẹp">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="corp">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Khách sạn &amp; Du lịch" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Khách sạn &amp; Du lịch</h3>
+              <p class="card-text">Cho khách sạn, homestay, công ty tour: khách xem phòng/tour, giá theo ngày và gửi yêu cầu đặt ngay.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="mau-web.html#khach-san" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Khách sạn &amp; Du lịch">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="corp">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Bất động sản" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Bất động sản</h3>
+              <p class="card-text">Cho môi giới và sàn BĐS: danh sách nhà đất có lọc theo khu vực/giá, khách để lại số là nhận tư vấn ngay.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="mau-web.html#bat-dong-san" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Bất động sản">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="corp">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Ô tô &amp; Xe máy" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Ô tô &amp; Xe máy</h3>
+              <p class="card-text">Cho gara ô tô, tiệm sửa xe, bán phụ tùng: bảng giá bảo dưỡng, đặt lịch trước và tra cứu phụ tùng theo dòng xe.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="mau-web.html#o-to" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Ô tô &amp; Xe máy">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="dien-lanh">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Điện lạnh &amp; Điều hòa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Điện lạnh &amp; Điều hòa</h3>
+              <p class="card-text">Điện lạnh công trình: nhà xưởng, biệt thự, thương mại — trang web đầy đủ với ảnh công trình thật.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="demo-dien-lanh-thanh-tin.html" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Điện lạnh &amp; Điều hòa">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="dien-lanh">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Thành Tín CoolPro" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Thành Tín CoolPro</h3>
+              <p class="card-text">Thi công điều hòa công trình tại Hải Phòng – Quảng Ninh: đúng tiến độ, mát đều, không phát sinh.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="demo-thanh-tin-coolpro.html" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Thành Tín CoolPro">Chọn Mẫu Này</button>
+            </div>
+          </article>
+
+          <article class="bento-card template-item" data-category="dien-lanh">
+            <div>
+              <div class="template-preview-thumb" style="padding:0;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Điện Lạnh Thành Tín — Mẫu 4" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <h3 class="card-title">Điện Lạnh Thành Tín — Mẫu 4</h3>
+              <p class="card-text">Điện lạnh công trình: lắp đặt, bảo trì và sửa chữa — trang web đầy đủ với ảnh công trình thật.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="demo-dien-lanh-thanh-tin-4.html" target="_blank" rel="noopener" class="btn btn-secondary btn-sm btn-block" style="text-align:center;text-decoration:none;">Xem Mẫu Thật →</a>
+              <button type="button" class="btn btn-brand btn-sm btn-block choose-template-btn" data-template="Điện Lạnh Thành Tín — Mẫu 4">Chọn Mẫu Này</button>
             </div>
           </article>
         </div>
