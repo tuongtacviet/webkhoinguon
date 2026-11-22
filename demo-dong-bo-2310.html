@@ -126,9 +126,9 @@
       }
       .brand small{display:block;font-weight:500;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
       .topnav{margin-left:auto;display:none;gap:26px;font-size:.92rem;font-weight:600}
-      .topnav a{color:var(--ink-2);text-decoration:none}
+      .topnav a{color:var(--ink-2);text-decoration:none;white-space:nowrap}
       .topnav a:hover{color:var(--green-ink)}
-      @media(min-width:860px){.topnav{display:flex}}
+      @media(min-width:1200px){.topnav{display:flex}}
       .btn{
         display:inline-flex;align-items:center;justify-content:center;gap:8px;
         background:var(--green);color:#fff;font-weight:700;text-decoration:none;
@@ -141,7 +141,7 @@
       .btn.ghost{background:transparent;color:var(--green-ink);border:1.5px solid var(--green);box-shadow:none}
       .btn.ghost:hover{background:var(--green-soft)}
       .btn.small{padding:9px 18px;font-size:.9rem;margin-left:auto}
-      @media(min-width:860px){.btn.small{margin-left:26px}}
+      @media(min-width:1200px){.btn.small{margin-left:26px}}
 
       /* ---------- Hero ---------- */
       .hero{position:relative;overflow:hidden;background:
@@ -629,11 +629,11 @@
       .mobile-nav a:last-child{border-bottom:0}
       .mobile-nav a.btn{margin-top:10px;color:#fff}
       .mobile-nav.open{display:block}
-      @media(max-width:859px){
+      @media(max-width:1199px){
         .nav-toggle{display:inline-flex}
         .topbar-in .btn.small{display:none}
       }
-      @media(min-width:860px){
+      @media(min-width:1200px){
         .nav-toggle{display:none!important}
         .mobile-nav{display:none!important}
       }
